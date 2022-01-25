@@ -1,16 +1,16 @@
 import React from "react";
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
-import Navbar from "./components/Nav";
-import Home from './pages/Home'
-import About from './pages/About';
-import Contact from './pages/Contact';
-import FAQ from './pages/FAQ';
+import Navbar       from "./components/Nav";
+import Home         from './pages/Home'
+import About        from './pages/About';
+import Contact      from './pages/Contact';
+import FAQ          from './pages/FAQ';
 import Registration from './components/Login';
-import Admin from './components/Admin';
-import Selection from "./pages/Selection";
-import Footer from "./components/Footer";
-import Error from "./components/NoMatch";
-import Cart from "./components/Cart";
+import Admin        from './components/Admin';
+import Selection    from "./pages/Selection";
+import Footer       from "./components/Footer";
+import Error        from "./components/NoMatch";
+import Cart         from "./components/Cart";
 import OrderHistory from "./components/OrderHistory";
 import OrderSummary from "./components/OrderSummary";
 
