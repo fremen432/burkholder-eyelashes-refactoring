@@ -40,12 +40,12 @@ export default function Navbar() {
                   >
                     Best Sellers
                   </a>
-                  <a
+                  {/* <a
                     href="/"
                     className="inline-flex items-center px-1 pt-1 text-sm font-medium text-gray-500 border-b-2 border-transparent hover:border-gray-300 hover:text-gray-700"
                   >
                     Rewards
-                  </a>
+                  </a> */}
                   <a
                     href="/about"
                     className="inline-flex items-center px-1 pt-1 text-sm font-medium text-gray-500 border-b-2 border-transparent hover:border-gray-300 hover:text-gray-700"
