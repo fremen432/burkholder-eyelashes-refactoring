@@ -15,6 +15,8 @@ export default function Navbar() {
           <div className="px-2 mx-auto max-w-7xl sm:px-4 lg:px-8">
             <div className="flex justify-between h-16">
               <div className="flex px-2 lg:px-0">
+
+                {/* Logo goes here */}
                 <div className="flex items-center flex-shrink-0">
                   {/* <img
                     className="block w-auto h-8 lg:hidden"
@@ -27,18 +29,20 @@ export default function Navbar() {
                     alt="Company Logo"
                   /> */}
                 </div>
+
+                {/* Nav bar routes */}
                 <div className="hidden lg:ml-6 lg:flex lg:space-x-8">
                   <a
                     href="/"
                     className="inline-flex items-center px-1 pt-1 text-sm font-medium text-gray-900 border-b-2 border-indigo-500"
                   >
-                    Shop All
+                    Home
                   </a>
                   <a
-                    href="/"
+                    href="/products"
                     className="inline-flex items-center px-1 pt-1 text-sm font-medium text-gray-500 border-b-2 border-transparent hover:border-gray-300 hover:text-gray-700"
                   >
-                    Best Sellers
+                    Products
                   </a>
                   {/* <a
                     href="/"
@@ -58,12 +62,12 @@ export default function Navbar() {
                   >
                     Contact
                   </a>
-                  <a
+                  {/* <a
                     href="/faq"
                     className="inline-flex items-center px-1 pt-1 text-sm font-medium text-gray-500 border-b-2 border-transparent hover:border-gray-300 hover:text-gray-700"
                   >
                     FAQ
-                  </a>
+                  </a> */}
                   <a
                     href="/admin"
                     className="inline-flex items-center px-1 pt-1 text-sm font-medium text-gray-500 border-b-2 border-transparent hover:border-gray-300 hover:text-gray-700"
@@ -89,7 +93,10 @@ export default function Navbar() {
                     Order Summary
                   </a>
                 </div>
+
               </div>
+
+              {/* Search Bar */}
               <div className="flex items-center justify-center flex-1 px-2 lg:ml-6 lg:justify-end">
                 <div className="w-full max-w-lg lg:max-w-xs">
                   <label htmlFor="search" className="sr-only">
@@ -109,10 +116,13 @@ export default function Navbar() {
                   </div>
                 </div>
               </div>
+
               <div className="flex items-center lg:hidden">
+
                 {/* Mobile menu button */}
                 <Disclosure.Button className="inline-flex items-center justify-center p-2 text-gray-400 rounded-md hover:text-gray-500 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-indigo-500">
                   <span className="sr-only">Open main menu</span>
+                  {/* If mobile menu is open, show X icon. If mobile menu is closed, show hamburger menu icon */}
                   {open ? (
                     <XIcon className="block w-6 h-6" aria-hidden="true" />
                   ) : (
@@ -120,6 +130,7 @@ export default function Navbar() {
                   )}
                 </Disclosure.Button>
               </div>
+
               <div className="hidden lg:ml-4 lg:flex lg:items-center">
                 <button
                   type="button"
@@ -132,6 +143,7 @@ export default function Navbar() {
                 {/* Profile dropdown */}
                 <Menu as="div" className="relative flex-shrink-0 ml-4">
                   <div>
+                    {/* Open profile button */}
                     <Menu.Button className="flex text-sm bg-white rounded-full focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">
                       <span className="sr-only">Open user menu</span>
                       <img
@@ -140,6 +152,7 @@ export default function Navbar() {
                         alt=""
                       />
                     </Menu.Button>
+
                   </div>
                   <Transition
                     as={Fragment}
@@ -184,11 +197,15 @@ export default function Navbar() {
                     </Menu.Items>
                   </Transition>
                 </Menu>
+
               </div>
             </div>
           </div>
 
+          {/* Mobile drop-down Menu */}
           <Disclosure.Panel className="lg:hidden">
+
+            {/* Routes */}
             <div className="pt-2 pb-3 space-y-1">
               <Disclosure.Button
                 as="a"
@@ -240,6 +257,8 @@ export default function Navbar() {
                 Admin
               </Disclosure.Button>
             </div>
+            
+            {/* Profile drop-down */}
             <div className="pt-4 pb-3 border-t border-gray-200">
               <div className="flex items-center px-4">
                 <div className="flex-shrink-0">
@@ -253,13 +272,14 @@ export default function Navbar() {
                   <div className="text-base font-medium text-gray-800">Tom Cook</div>
                   <div className="text-sm font-medium text-gray-500">tom@example.com</div>
                 </div>
-                <button
+                {/* notification bell icon */}
+                {/* <button
                   type="button"
                   className="flex-shrink-0 p-1 ml-auto text-gray-400 bg-white rounded-full hover:text-gray-500 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
                 >
                   <span className="sr-only">View notifications</span>
                   <BellIcon className="w-6 h-6" aria-hidden="true" />
-                </button>
+                </button> */}
               </div>
               <div className="mt-3 space-y-1">
                 <Disclosure.Button
@@ -285,6 +305,7 @@ export default function Navbar() {
                 </Disclosure.Button>
               </div>
             </div>
+
           </Disclosure.Panel>
         </>
       )}
