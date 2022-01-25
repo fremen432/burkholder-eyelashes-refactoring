@@ -16,7 +16,7 @@ export default function Navbar() {
             <div className="flex justify-between h-16">
               <div className="flex px-2 lg:px-0">
                 <div className="flex items-center flex-shrink-0">
-                  <img
+                  {/* <img
                     className="block w-auto h-8 lg:hidden"
                     src="https://tailwindui.com/img/logos/workflow-mark-indigo-600.svg"
                     alt="Company Logo"
@@ -25,7 +25,7 @@ export default function Navbar() {
                     className="hidden w-auto h-8 lg:block"
                     src="https://tailwindui.com/img/logos/workflow-logo-indigo-600-mark-gray-800-text.svg"
                     alt="Company Logo"
-                  />
+                  /> */}
                 </div>
                 <div className="hidden lg:ml-6 lg:flex lg:space-x-8">
                   <a
