@@ -18,12 +18,12 @@ export default function Navbar() {
 
                 {/* Logo goes here */}
                 <div className="flex items-center flex-shrink-0">
-                  {/* <img
-                    className="block w-auto h-8 lg:hidden"
-                    src="https://tailwindui.com/img/logos/workflow-mark-indigo-600.svg"
-                    alt="Company Logo"
-                  />
                   <img
+                    className="block w-auto h-8 lg:block"
+                    src="../../images/logo1.svg"
+                    // alt="Company Logo"
+                  />
+                  {/* <img
                     className="hidden w-auto h-8 lg:block"
                     src="https://tailwindui.com/img/logos/workflow-logo-indigo-600-mark-gray-800-text.svg"
                     alt="Company Logo"
@@ -97,7 +97,7 @@ export default function Navbar() {
               </div>
 
               {/* Search Bar */}
-              <div className="flex items-center justify-center flex-1 px-2 lg:ml-6 lg:justify-end">
+              {/* <div className="flex items-center justify-center flex-1 px-2 lg:ml-6 lg:justify-end">
                 <div className="w-full max-w-lg lg:max-w-xs">
                   <label htmlFor="search" className="sr-only">
                     Search
@@ -115,7 +115,7 @@ export default function Navbar() {
                     />
                   </div>
                 </div>
-              </div>
+              </div> */}
 
               <div className="flex items-center lg:hidden">
 
