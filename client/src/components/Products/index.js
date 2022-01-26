@@ -44,9 +44,9 @@ export default function Products() {
       <div className="max-w-2xl mx-auto py-16 px-4 sm:py-24 sm:px-6 lg:max-w-7xl lg:px-8">
         <div className="md:flex md:items-center md:justify-between">
           <h2 className="text-2xl font-extrabold tracking-tight text-gray-900 uppercase">Trending products</h2>
-          <a href="/products" className="hidden text-sm font-medium text-indigo-600 hover:text-indigo-500 md:block">
+          {/* <a href="/products" className="hidden text-sm font-medium text-indigo-600 hover:text-indigo-500 md:block">
             Show More<span aria-hidden="true"> &rarr;</span>
-          </a>
+          </a> */}
         </div>
 
         <div className="mt-6 grid grid-cols-2 gap-x-4 gap-y-10 sm:gap-x-6 md:grid-cols-4 md:gap-y-0 lg:gap-x-8">
