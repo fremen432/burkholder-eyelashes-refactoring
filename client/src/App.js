@@ -18,6 +18,7 @@ import { ApolloClient, InMemoryCache, ApolloProvider, createHttpLink} from '@apo
 import { setContext } from '@apollo/client/link/context'
 
 import './App.css';
+import './assets/style.css'
 
 const httpLink = createHttpLink({
   uri: '/graphql'
@@ -46,17 +47,17 @@ function App() {
         <Navbar />
 
         <Switch>
-          <Route exact path='/' component={Home}/>
-          <Route exact path='/products' component={Selection} />
-          <Route exact path='/about' component={About} />
-          <Route exact path='/contact' component={Contact} />
-          <Route exact path='/faq' component={FAQ} />
-          <Route exact path='/admin' component={Admin} />
-          <Route exact path='/cart' component={Cart} />
+          <Route exact path='/'             component={Home}/>
+          <Route exact path='/products'     component={Selection} />
+          <Route exact path='/about'        component={About} />
+          <Route exact path='/contact'      component={Contact} />
+          <Route exact path='/faq'          component={FAQ} />
+          <Route exact path='/admin'        component={Admin} />
+          <Route exact path='/cart'         component={Cart} />
           <Route exact path='/orderhistory' component={OrderHistory} />
           <Route exact path='/ordersummary' component={OrderSummary} />
           <Route exact path='/registration' component={Registration} />
-          <Route component={Error} />
+          <Route                            component={Error} />
         </Switch>
         <Footer />
       </Router>

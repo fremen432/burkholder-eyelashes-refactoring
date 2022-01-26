@@ -1,4 +1,7 @@
+// social media icons
 const navigation = [
+
+  // Facebook icon
   {
     name: 'Facebook',
     href: '#',
@@ -12,6 +15,8 @@ const navigation = [
       </svg>
     ),
   },
+
+  // Instagram icon
   {
     name: 'Instagram',
     href: '#',
@@ -25,6 +30,8 @@ const navigation = [
       </svg>
     ),
   },
+
+  // Twitter icon
   {
     name: 'Twitter',
     href: '#',
@@ -38,8 +45,11 @@ const navigation = [
 
 export default function Footer() {
   return (
-    <footer className="bg-white">
-      <div className="max-w-7xl mx-auto py-14 px-4 sm:px-6 md:flex md:items-center md:justify-between lg:px-8">
+    <footer className="bg-white ">
+
+      {/* <div className="box max-w-7xl mx-auto py-14 px-4 sm:px-6 md:flex md:items-center md:justify-between lg:px-8"> */}
+      <div className="cbm-border-top bg-white shadow max-w-7xl mx-auto py-5 px-4 sm:px-6 md:flex md:items-center md:justify-between lg:px-8">
+        {/* Social Media icons */}
         <div className="flex justify-center space-x-6 md:order-2">
           {navigation.map((item) => (
             <a key={item.name} href={item.href} className="text-gray-400 hover:text-gray-500">
@@ -48,6 +58,7 @@ export default function Footer() {
             </a>
           ))}
         </div>
+        {/* Copyright statement */}
         <div className="mt-8 md:mt-0 md:order-1">
           <p className="text-center text-base text-gray-400">&copy; 2022 Burkholder Eyelashes. All rights reserved.</p>
         </div>

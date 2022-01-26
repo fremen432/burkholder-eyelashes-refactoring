@@ -9,11 +9,13 @@ function classNames(...classes) {
 
 export default function Navbar() {
   return (
-    <Disclosure as="nav" className="bg-white shadow">
+    <Disclosure as="nav" className="bg-white cbm-border-bottom">
       {({ open }) => (
         <>
           <div className="px-2 mx-auto max-w-7xl sm:px-4 lg:px-8">
+            {/* Entire non-mobile nav bar */}
             <div className="flex justify-between h-16">
+              {/* Nav Routes */}
               <div className="flex px-2 lg:px-0">
 
                 {/* Logo goes here */}
@@ -34,13 +36,13 @@ export default function Navbar() {
                 <div className="hidden lg:ml-6 lg:flex lg:space-x-8">
                   <a
                     href="/"
-                    className="inline-flex items-center px-1 pt-1 text-sm font-medium text-gray-900 border-b-2 border-indigo-500"
+                    className="nav-el inline-flex items-center px-1 pt-1 text-sm font-medium text-gray-900 border-b-2 border-indigo-500"
                   >
                     Home
                   </a>
                   <a
                     href="/products"
-                    className="inline-flex items-center px-1 pt-1 text-sm font-medium text-gray-500 border-b-2 border-transparent hover:border-gray-300 hover:text-gray-700"
+                    className="nav-el inline-flex items-center px-1 pt-1 text-sm font-medium text-gray-500 border-b-2 border-transparent hover:border-gray-300 hover:text-gray-700"
                   >
                     Products
                   </a>
@@ -52,13 +54,13 @@ export default function Navbar() {
                   </a> */}
                   <a
                     href="/about"
-                    className="inline-flex items-center px-1 pt-1 text-sm font-medium text-gray-500 border-b-2 border-transparent hover:border-gray-300 hover:text-gray-700"
+                    className="nav-el inline-flex items-center px-1 pt-1 text-sm font-medium text-gray-500 border-b-2 border-transparent hover:border-gray-300 hover:text-gray-700"
                   >
                     About
                   </a>
                   <a
                     href="/contact"
-                    className="inline-flex items-center px-1 pt-1 text-sm font-medium text-gray-500 border-b-2 border-transparent hover:border-gray-300 hover:text-gray-700"
+                    className="nav-el inline-flex items-center px-1 pt-1 text-sm font-medium text-gray-500 border-b-2 border-transparent hover:border-gray-300 hover:text-gray-700"
                   >
                     Contact
                   </a>
@@ -130,7 +132,7 @@ export default function Navbar() {
                   )}
                 </Disclosure.Button>
               </div>
-
+              
               <div className="hidden lg:ml-4 lg:flex lg:items-center">
                 <button
                   type="button"
@@ -200,6 +202,7 @@ export default function Navbar() {
 
               </div>
             </div>
+
           </div>
 
           {/* Mobile drop-down Menu */}
