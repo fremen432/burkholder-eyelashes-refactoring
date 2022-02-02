@@ -1,7 +1,8 @@
-import { Fragment } from 'react'
+import React, { Fragment } from 'react'
 import { Disclosure, Menu, Transition } from '@headlessui/react'
 import { SearchIcon } from '@heroicons/react/solid'
 import { BellIcon, MenuIcon, XIcon } from '@heroicons/react/outline'
+import NavEl from './navEl'
 
 function classNames(...classes) {
   return classes.filter(Boolean).join(' ')
@@ -16,13 +17,14 @@ export default function Navbar() {
             {/* Entire non-mobile nav bar */}
             <div className="flex justify-between h-16">
               {/* Nav Routes */}
+
               <div className="flex px-2 lg:px-0">
 
                 {/* Logo goes here */}
                 <div className="flex items-center flex-shrink-0">
                   <img
                     className="block w-auto h-8 lg:block"
-                    src="../../images/logo1.svg"
+                    // src="../../images/logo1.svg"
                     // alt="Company Logo"
                   />
                   {/* <img
@@ -34,69 +36,12 @@ export default function Navbar() {
 
                 {/* Nav bar routes */}
                 <div className="hidden lg:ml-6 lg:flex lg:space-x-8">
-                  <a
-                    href="/"
-                    className="nav-el inline-flex items-center px-1 pt-1 text-sm font-medium text-gray-900 border-b-2 border-indigo-500"
-                  >
-                    Home
-                  </a>
-                  <a
-                    href="/products"
-                    className="nav-el inline-flex items-center px-1 pt-1 text-sm font-medium text-gray-500 border-b-2 border-transparent hover:border-gray-300 hover:text-gray-700"
-                  >
-                    Products
-                  </a>
-                  {/* <a
-                    href="/"
-                    className="inline-flex items-center px-1 pt-1 text-sm font-medium text-gray-500 border-b-2 border-transparent hover:border-gray-300 hover:text-gray-700"
-                  >
-                    Rewards
-                  </a> */}
-                  <a
-                    href="/about"
-                    className="nav-el inline-flex items-center px-1 pt-1 text-sm font-medium text-gray-500 border-b-2 border-transparent hover:border-gray-300 hover:text-gray-700"
-                  >
-                    About
-                  </a>
-                  <a
-                    href="/contact"
-                    className="nav-el inline-flex items-center px-1 pt-1 text-sm font-medium text-gray-500 border-b-2 border-transparent hover:border-gray-300 hover:text-gray-700"
-                  >
-                    Contact
-                  </a>
-                  {/* <a
-                    href="/faq"
-                    className="inline-flex items-center px-1 pt-1 text-sm font-medium text-gray-500 border-b-2 border-transparent hover:border-gray-300 hover:text-gray-700"
-                  >
-                    FAQ
-                  </a> */}
-                  <a
-                    href="/admin"
-                    className="inline-flex items-center px-1 pt-1 text-sm font-medium text-gray-500 border-b-2 border-transparent hover:border-gray-300 hover:text-gray-700"
-                  >
-                    Admin
-                  </a>
-                  <a
-                    href="/cart"
-                    className="inline-flex items-center px-1 pt-1 text-sm font-medium text-gray-500 border-b-2 border-transparent hover:border-gray-300 hover:text-gray-700"
-                  >
-                    Cart
-                  </a>
-                  <a
-                    href="/orderhistory"
-                    className="inline-flex items-center px-1 pt-1 text-sm font-medium text-gray-500 border-b-2 border-transparent hover:border-gray-300 hover:text-gray-700"
-                  >
-                    Order History
-                  </a>
-                  <a
-                    href="/ordersummary"
-                    className="inline-flex items-center px-1 pt-1 text-sm font-medium text-gray-500 border-b-2 border-transparent hover:border-gray-300 hover:text-gray-700"
-                  >
-                    Order Summary
-                  </a>
+                  <NavEl />
                 </div>
 
               </div>
+
+
 
               {/* Search Bar */}
               {/* <div className="flex items-center justify-center flex-1 px-2 lg:ml-6 lg:justify-end">
