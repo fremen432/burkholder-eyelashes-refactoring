@@ -2,13 +2,14 @@ import React, { Fragment } from 'react'
 import { Disclosure, Menu, Transition } from '@headlessui/react'
 import { SearchIcon } from '@heroicons/react/solid'
 import { BellIcon, MenuIcon, XIcon } from '@heroicons/react/outline'
+
 import NavEl from './navEl'
 
 function classNames(...classes) {
   return classes.filter(Boolean).join(' ')
 }
 
-export default function Navbar() {
+function Navbar() {
   return (
     <Disclosure as="nav" className="bg-white cbm-border-bottom">
       {({ open }) => (
@@ -22,12 +23,12 @@ export default function Navbar() {
 
                 {/* Logo goes here */}
                 <div className="flex items-center flex-shrink-0">
-                  <img
-                    className="block w-auto h-8 lg:block"
-                    // src="../../images/logo1.svg"
-                    // alt="Company Logo"
-                  />
                   {/* <img
+                    className="block w-auto h-8 lg:block"
+                    src="../../images/logo1.svg"
+                    alt="Company Logo"
+                  />
+                  <img
                     className="hidden w-auto h-8 lg:block"
                     src="https://tailwindui.com/img/logos/workflow-logo-indigo-600-mark-gray-800-text.svg"
                     alt="Company Logo"
@@ -36,6 +37,7 @@ export default function Navbar() {
 
                 {/* Nav bar routes */}
                 <div className="hidden lg:ml-6 lg:flex lg:space-x-8">
+                  {/* imported component from navEl.jsx. */}
                   <NavEl />
                 </div>
 
@@ -260,3 +262,5 @@ export default function Navbar() {
     </Disclosure>
   )
 }
+
+export default Navbar;

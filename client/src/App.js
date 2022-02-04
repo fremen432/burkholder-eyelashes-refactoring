@@ -5,7 +5,8 @@ import Home         from './pages/Home'
 import About        from './pages/About';
 import Contact      from './pages/Contact';
 import FAQ          from './pages/FAQ';
-import Registration from './components/Login';
+import Login        from './components/Login';
+import SignUp       from './components/SignUp';
 import Admin        from './components/Admin';
 import Selection    from "./pages/Selection";
 import Footer       from "./components/Footer";
@@ -56,7 +57,8 @@ function App() {
           <Route exact path='/cart'         component={Cart} />
           <Route exact path='/orderhistory' component={OrderHistory} />
           <Route exact path='/ordersummary' component={OrderSummary} />
-          <Route exact path='/registration' component={Registration} />
+          <Route exact path='/login' component={Login} />
+          <Route exact path='/signup' component={SignUp} />
           <Route                            component={Error} />
         </Switch>
         <Footer />

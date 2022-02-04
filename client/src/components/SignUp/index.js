@@ -1,22 +1,84 @@
+import React, { useState } from 'react';
+import { useMutation } from '@apollo/client';
+import { ADD_USER } from '../../utils/mutation';
+
+import Auth from '../../utils/auth';
+
 import { LockClosedIcon } from '@heroicons/react/solid'
-import React from 'react'
 
 
-export default function Login() {
+function SignUp() {
+
+      // keeps track of when the username, email and password is updated
+  const [formState, setFormState] = useState({
+    username: '',
+    email: '',
+    password: '',
+  });
+
+  // this comes from @apollo/client node module
+  const [addUser, { error }] = useMutation(ADD_USER);
+
+  // update state based on form input changes
+  const handleChange = (event) => {
+    // whenever the event is changed, we're taking the 'name' property from the input in the form and it's corresponding value.
+    const { name, value } = event.target;
+    // once we've 'targeted' the property that's been changed, we update the form state with the new value
+    setFormState({
+      ...formState,
+      [name]: value,
+    });
+  };
+
+  // submit form
+  const handleFormSubmit = async (event) => {
+    event.preventDefault();
+
+    try {
+      const { data } = await addUser({
+        variables: { ...formState },
+      });
+
+      Auth.login(data.addUser.token);
+    } catch (e) {
+      console.error(e);
+    }
+  };
+
   return (
     <>
       <div className="min-h-full flex items-center justify-center py-12 px-4 sm:px-6 lg:px-8">
+
         <div className="max-w-md w-full space-y-8">
+
+            {/* Logo */}
           <div>
-            <img
+            {/* <img
               className="mx-auto h-12 w-auto"
               src="https://tailwindui.com/img/logos/workflow-mark-indigo-600.svg"
               alt="Workflow"
-            />
+            /> */}
           </div>
+
+            {/* Input form */}
           <form className="mt-8 space-y-6" action="#" method="POST">
             <input type="hidden" name="remember" defaultValue="true"/>
+            {/* Input fields */}
             <div className="rounded-md shadow-sm -space-y-px">
+              <div>
+                <label htmlFor="username" className="sr-only">
+                  Username
+                </label>
+                <input
+                  id="username"
+                  name="username"
+                  type="username"
+                  autoComplete="username"
+                  required
+                  className="appearance-none rounded-none relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 rounded-t-md focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 focus:z-10 sm:text-sm"
+                  placeholder="Username"
+                />
+              </div>
               <div>
                 <label htmlFor="email-address" className="sr-only">
                   Email address
@@ -47,8 +109,9 @@ export default function Login() {
               </div>
             </div>
 
+            {/* 'Remember Me' & 'Forgot your password?' */}
             <div className="flex items-center justify-between">
-              <div className="flex items-center">
+              {/* <div className="flex items-center">
                 <input
                   id="remember-me"
                   name="remember-me"
@@ -64,9 +127,10 @@ export default function Login() {
                 <a href="/" className="font-medium text-indigo-600 hover:text-indigo-500">
                   Forgot your password?
                 </a>
-              </div>
+              </div> */}
             </div>
 
+            {/* Submit button */}
             <div>
               <button
                 type="submit"
@@ -78,9 +142,13 @@ export default function Login() {
                 Submit
               </button>
             </div>
+
           </form>
         </div>
+
       </div>
     </>
   )
 }
+
+export default SignUp;

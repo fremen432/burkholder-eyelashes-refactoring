@@ -11,8 +11,8 @@ class NavEl extends React.Component {
     { name: 'Cart',             ref: 'cart', },
     { name: 'Order History',    ref: 'orderHistory', },
     { name: 'Order Summary',    ref: 'orderSummary', },
-    { name: 'Log In',           ref: 'registration', },
-    // { name: 'Sign Up',          ref:    'sign-up', },
+    { name: 'Log In',           ref: 'login', },
+    { name: 'Sign Up',          ref: 'signup', },
   ]
   basicClasses = ` nav-el inline-flex  items-center px-1  pt-1 text-sm  font-medium  border-b-2`
   nonFocusedClasses = ` text-gray-500 border-transparent hover:border-gray-300 hover:text-gray-700`
