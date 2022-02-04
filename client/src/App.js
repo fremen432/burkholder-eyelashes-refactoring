@@ -57,8 +57,8 @@ function App() {
           <Route exact path='/cart'         component={Cart} />
           <Route exact path='/orderhistory' component={OrderHistory} />
           <Route exact path='/ordersummary' component={OrderSummary} />
-          <Route exact path='/login' component={Login} />
-          <Route exact path='/signup' component={SignUp} />
+          <Route exact path='/login'        component={Login} />
+          <Route exact path='/signup'       component={SignUp} />
           <Route                            component={Error} />
         </Switch>
         <Footer />

@@ -50,6 +50,7 @@ function SignUp() {
       <div className="min-h-full flex items-center justify-center py-12 px-4 sm:px-6 lg:px-8">
 
         <div className="max-w-md w-full space-y-8">
+            <h4 className="card-header">Sign Up</h4>   
 
             {/* Logo */}
           <div>
@@ -61,7 +62,7 @@ function SignUp() {
           </div>
 
             {/* Input form */}
-          <form className="mt-8 space-y-6" action="#" method="POST">
+          <form className="mt-8 space-y-6" action="#" onSubmit={handleFormSubmit} >
             <input type="hidden" name="remember" defaultValue="true"/>
             {/* Input fields */}
             <div className="rounded-md shadow-sm -space-y-px">
@@ -70,13 +71,15 @@ function SignUp() {
                   Username
                 </label>
                 <input
-                  id="username"
-                  name="username"
-                  type="username"
-                  autoComplete="username"
-                  required
                   className="appearance-none rounded-none relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 rounded-t-md focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 focus:z-10 sm:text-sm"
                   placeholder="Username"
+                  name="username"
+                  type="username"
+                  id="username"
+                  value={formState.username}
+                  onChange={handleChange}
+                  autoComplete="username"
+                  required
                 />
               </div>
               <div>
@@ -91,6 +94,8 @@ function SignUp() {
                   required
                   className="appearance-none rounded-none relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 rounded-t-md focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 focus:z-10 sm:text-sm"
                   placeholder="Email address"
+                  value={formState.email}
+                  onChange={handleChange}
                 />
               </div>
               <div>
@@ -105,6 +110,8 @@ function SignUp() {
                   required
                   className="appearance-none rounded-none relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 rounded-b-md focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 focus:z-10 sm:text-sm"
                   placeholder="Password"
+                  value={formState.password}
+                  onChange={handleChange}
                 />
               </div>
             </div>
