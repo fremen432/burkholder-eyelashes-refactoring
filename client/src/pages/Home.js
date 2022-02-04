@@ -1,7 +1,7 @@
 import React from 'react';
 import Hero from '../components/Hero';
 import Collections from '../components/Collections';
-import Products from '../components/Products';
+import Products from './Products';
 import Blog from '../components/Blog';
 
 const Home = () => {

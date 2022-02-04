@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
 import { useMutation } from '@apollo/client';
-import { ADD_USER } from '../../utils/mutation';
+import { ADD_USER } from '../utils/mutation';
 
-import Auth from '../../utils/auth';
+import Auth from '../utils/auth';
 
 import { LockClosedIcon } from '@heroicons/react/solid'
 

@@ -38,7 +38,7 @@ const products = [
     // More products...
   ]
   
-  export default function ProductsEl() {
+  export default function ProductCards() {
     return (
         <>
             {/* Create a product card for each product in products array */}

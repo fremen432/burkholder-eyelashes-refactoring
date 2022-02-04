@@ -11,26 +11,27 @@ import { setContext } from '@apollo/client/link/context'
 
 // Pages imports
 import Home         from './pages/Home'
+import Login        from './pages/Login';
+import Signup       from './pages/Signup';
 import About        from './pages/About';
 import Contact      from './pages/Contact';
 import FAQ          from './pages/FAQ';
+import Products     from "./pages/Products";
+import OrderSummary from "./pages/OrderSummary";
+import OrderHistory from "./pages/OrderHistory";
+import Error        from "./pages/NoMatch";
+import Cart         from "./pages/Cart";
+import Admin        from './pages/Admin';
 
 // Components imports
 import Navbar       from "./components/Nav";
-import Login        from './components/Login';
-import SignUp       from './components/SignUp';
-import Admin        from './components/Admin';
-import Selection    from "./pages/Selection";
 import Footer       from "./components/Footer";
-import Error        from "./components/NoMatch";
-import Cart         from "./components/Cart";
-import OrderHistory from "./components/OrderHistory";
-import OrderSummary from "./components/OrderSummary";
 
 // CSS imports
 import './App.css';
 import './assets/style.css'
 
+// sends http requests to server at this link
 const httpLink = createHttpLink({
   uri: '/graphql'
 })
@@ -59,7 +60,7 @@ function App() {
 
         <Switch>
           <Route exact path='/'             component={Home}/>
-          <Route exact path='/products'     component={Selection} />
+          <Route exact path='/products'     component={Products} />
           <Route exact path='/about'        component={About} />
           <Route exact path='/contact'      component={Contact} />
           <Route exact path='/faq'          component={FAQ} />
@@ -68,10 +69,11 @@ function App() {
           <Route exact path='/orderhistory' component={OrderHistory} />
           <Route exact path='/ordersummary' component={OrderSummary} />
           <Route exact path='/login'        component={Login} />
-          <Route exact path='/signup'       component={SignUp} />
+          <Route exact path='/signup'       component={Signup} />
 
           <Route                            component={Error} />
         </Switch>
+        
         <Footer />
       </Router>
     </ApolloProvider>

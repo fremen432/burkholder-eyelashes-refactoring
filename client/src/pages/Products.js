@@ -1,5 +1,5 @@
 // import React, { Component } from 'react';
-import ProductCards from './productCards'
+import ProductCards from '../components/ProductCards'
 
 
 export default function Products() {
