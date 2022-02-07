@@ -2,12 +2,15 @@ import React, { useState } from 'react';
 import { useMutation } from '@apollo/client';
 import { ADD_USER } from '../utils/mutation';
 
-import Auth from '../utils/auth';
+// import Auth from '../utils/auth';
 
 import { LockClosedIcon } from '@heroicons/react/solid'
 
+const formInputStyles = `appearance-none rounded-none relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 focus:z-10 sm:text-sm`
+const formSubmitBtnStyles = `group relative w-full flex justify-center py-2 px-4 border border-transparent text-sm font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500`
 
-function SignUp() {
+
+const SignUp = () => {
 
       // keeps track of when the username, email and password is updated
   const [formState, setFormState] = useState({
@@ -33,13 +36,12 @@ function SignUp() {
   // submit form
   const handleFormSubmit = async (event) => {
     event.preventDefault();
-
     try {
       const { data } = await addUser({
         variables: { ...formState },
       });
-
-      Auth.login(data.addUser.token);
+      console.log(data);
+      // Auth.login(data.addUser.token);
     } catch (e) {
       console.error(e);
     }
@@ -61,24 +63,60 @@ function SignUp() {
             /> */}
           </div>
 
-            {/* Input form */}
-          <form className="mt-8 space-y-6" action="#" onSubmit={handleFormSubmit} >
+          {/* New Signup form */}
+          <form className=" rounded-md shadow-sm space-y-px mt-8 space-y-6" action="#" onSubmit={handleFormSubmit} >  
+              <input
+                className={formInputStyles}
+                placeholder="Your username"
+                name="username"
+                type="username"
+                id="username"
+                value={formState.username}
+                onChange={handleChange}
+              />
+              <input
+                className={formInputStyles}
+                placeholder="Your email"
+                name="email"
+                type="email"
+                id="email"
+                value={formState.email}
+                onChange={handleChange}
+              />
+              <input
+                className={formInputStyles} 
+                placeholder="******"
+                name="password"
+                type="password"
+                id="password"
+                value={formState.password}
+                onChange={handleChange}
+              />
+              <button className={formSubmitBtnStyles} type="submit">
+                Submit
+              </button>
+          </form>
+
+            {/* Old input form */}
+          <form className="mt-8 space-y-6 hidden" action="#" onSubmit={handleFormSubmit} >
             <input type="hidden" name="remember" defaultValue="true"/>
             {/* Input fields */}
             <div className="rounded-md shadow-sm -space-y-px">
+
               <div>
                 <label htmlFor="username" className="sr-only">
                   Username
                 </label>
+
                 <input
-                  className="appearance-none rounded-none relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 rounded-t-md focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 focus:z-10 sm:text-sm"
+                  className="appearance-none rounded-none relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 focus:z-10 sm:text-sm rounded-t-md"
                   placeholder="Username"
                   name="username"
                   type="username"
                   id="username"
                   value={formState.username}
                   onChange={handleChange}
-                  autoComplete="username"
+                  // autoComplete="username"
                   required
                 />
               </div>
@@ -87,12 +125,12 @@ function SignUp() {
                   Email address
                 </label>
                 <input
+                  className="appearance-none rounded-none relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 focus:z-10 sm:text-sm rounded-t-md"
                   id="email-address"
                   name="email"
                   type="email"
-                  autoComplete="email"
+                  // autoComplete="email"
                   required
-                  className="appearance-none rounded-none relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 rounded-t-md focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 focus:z-10 sm:text-sm"
                   placeholder="Email address"
                   value={formState.email}
                   onChange={handleChange}
@@ -106,9 +144,9 @@ function SignUp() {
                   id="password"
                   name="password"
                   type="password"
-                  autoComplete="current-password"
+                  // autoComplete="current-password"
                   required
-                  className="appearance-none rounded-none relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 rounded-b-md focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 focus:z-10 sm:text-sm"
+                  className="appearance-none rounded-none relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 focus:z-10 sm:text-sm rounded-b-md"
                   placeholder="Password"
                   value={formState.password}
                   onChange={handleChange}
@@ -151,6 +189,7 @@ function SignUp() {
             </div>
 
           </form>
+
         </div>
 
       </div>

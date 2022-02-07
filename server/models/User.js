@@ -34,10 +34,10 @@ const userSchema = new Schema(
             }
         ],
         //role_id: 1 for admin, 2 for user
-        role_id: {
-            type: Number,
-            required: true
-        }
+        // role_id: {
+        //     type: Number,
+        //     required: true
+        // }
     },
     {
         toJSON:{
