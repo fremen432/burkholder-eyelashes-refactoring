@@ -7,6 +7,7 @@ class NavEl extends Component {
   logout(event) {
     event.preventDefault();
     Auth.logout();
+    window.location.href="/"
   };
 
   loggedOutNavElements =  [
