@@ -33,7 +33,7 @@ import './assets/style.css'
 
 // sends http requests to server at this link
 const httpLink = createHttpLink({
-  uri: '/graphql'
+  uri: 'http://localhost:3001/graphql'
 })
 
 const authLink = setContext((_, { headers }) => {

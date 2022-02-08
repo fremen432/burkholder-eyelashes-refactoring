@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { useMutation } from '@apollo/client';
 import { ADD_USER } from '../utils/mutation';
 
-// import Auth from '../utils/auth';
+import Auth from '../utils/auth';
 
 import { LockClosedIcon } from '@heroicons/react/solid'
 
@@ -12,11 +12,12 @@ const formSubmitBtnStyles = `group relative w-full flex justify-center py-2 px-4
 
 const SignUp = () => {
 
-      // keeps track of when the username, email and password is updated
+  // keeps track of when the username, email and password is updated
   const [formState, setFormState] = useState({
     username: '',
     email: '',
     password: '',
+    // role: '',
   });
 
   // this comes from @apollo/client node module
@@ -33,18 +34,22 @@ const SignUp = () => {
     });
   };
 
-  // submit form
+  // ---- SUBMIT FORM ----
   const handleFormSubmit = async (event) => {
+    
     event.preventDefault();
+    // console.log("this works");
+
     try {
       const { data } = await addUser({
         variables: { ...formState },
       });
-      console.log(data);
-      // Auth.login(data.addUser.token);
+      // console.log(data);
+      Auth.login(data.addUser.token);
     } catch (e) {
       console.error(e);
     }
+
   };
 
   return (
@@ -92,6 +97,15 @@ const SignUp = () => {
                 value={formState.password}
                 onChange={handleChange}
               />
+              {/* <input
+                className={formInputStyles} 
+                placeholder="Your role (1 or 2)"
+                name="role"
+                type="role"
+                id="role"
+                value={formState.role}
+                onChange={handleChange}
+              /> */}
               <button className={formSubmitBtnStyles} type="submit">
                 Submit
               </button>

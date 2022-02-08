@@ -1,5 +1,5 @@
 const { Schema, model } = require('mongoose');
-const historySchema = require('./History')
+// const historySchema = require('./History')
 const bcrypt = require('bcrypt');
 
 const userSchema = new Schema(
