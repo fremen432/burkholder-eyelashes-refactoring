@@ -1,13 +1,26 @@
 import { Disclosure, Menu, Transition } from '@headlessui/react'
 import React, { Fragment } from 'react'
+// import { BellIcon, UserIcon } from '@heroicons/react/solid';
+import { BellIcon, UserIcon } from '@heroicons/react/outline'
+
+import BellIconBtn from './bellIcon';
 
 import Auth from '../../utils/auth';
 
-function classNames(...classes) {
-    return classes.filter(Boolean).join(' ')
-  }
+import stockUserPic from '../../assets/images/stock-user-pic.jpeg'
 
-function UserProfile() {
+// import { get } from 'mongoose';
+
+// const notificationBell = JSON.parse(bellIconBtn)
+
+// const userImageLink = `https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80`
+const userImageLink = stockUserPic
+
+function classNames(...classes) { return classes.filter(Boolean).join(' ') }
+
+function getProfile() { console.log(Auth.getProfile()) }
+
+function UserIconAndNotificationBell() {
    const loggedIn = Auth.loggedIn();
 
     return (
@@ -17,26 +30,19 @@ function UserProfile() {
             <div className="hidden lg:block lg:flex lg:items-center">
 
                 {/* Bell Icon Button */}
-                <button
-                type="button"
-                className="hidden flex-shrink-0 p-1 text-gray-400 bg-white rounded-full hover:text-gray-500 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
-                >
-                {/* <span className="sr-only">View notifications</span>
-                <BellIcon className="w-6 h-6" aria-hidden="true" /> */}
-                </button>
-
+                <BellIconBtn />
                 {/* Profile dropdown */}
                 <Menu as="div" className="  relative flex-shrink-0 ">
+                    {/* <button onClick={getProfile}>
+                        getProfile
+                    </button> */}
                     {/* Open profile button */}
                     <div className=" flex justify-center align-center ">
-                        <Menu.Button className=" rounded-full flex justify-center align-center focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">
-                        {/* <span className="sr-only">Open user menu</span> */}
-                        {/* User Image */}
-                        <img
-                            className=" w-8 h-8 rounded-full"
-                            src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80"
-                            alt=""
-                        />
+                        <Menu.Button className="px-2 rounded-full flex justify-center align-center focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">
+                            {/* User Image */}
+                            <span className="sr-only">Open user menu</span>
+                            {/* <UserIcon className="w-6 h-6" aria-hidden="true" /> */}
+                            <img className=" w-8 h-8 rounded-full" src={userImageLink} alt="" />
                         </Menu.Button>
                     </div>
 
@@ -86,8 +92,10 @@ function UserProfile() {
 
             </div>
             ) : null}
+
+
         </>
     )
 }
 
-export default UserProfile;
+export default UserIconAndNotificationBell;

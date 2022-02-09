@@ -30,14 +30,14 @@ class NavEl extends Component {
   loggedInNavElements =  [
     { name: 'Log Out',  ref: '/', onClick: this.logout}
   ]
-  basicClasses = ` nav-el inline-flex  items-center px-1  pt-1 text-sm  font-medium  border-b-2`
+  basicClasses = ` nav-el inline-flex  items-center px-2  pt-1 text-sm  font-medium  border-b-2`
   nonFocusedClasses = ` text-gray-500 border-transparent hover:border-gray-300 hover:text-gray-700`
   focusedClasses = ` text-gray-900 border-indigo-500 `
 
   render() {
     return (
       <>
-        <div className="hidden lg:ml-6 lg:flex lg:space-x-8">
+        <div className="hidden lg:px-2 lg:flex ">
           <>
             {
               this.navRoutes.map( el => 

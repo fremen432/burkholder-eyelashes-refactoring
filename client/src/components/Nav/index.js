@@ -3,25 +3,22 @@ import { Disclosure, Menu, Transition } from '@headlessui/react'
 import { SearchIcon } from '@heroicons/react/solid'
 import { BellIcon, MenuIcon, XIcon } from '@heroicons/react/outline'
 
+// Importing components
 import NavEl from './navEl'
 import Logo from './logo'
 import MobileHamburgerBtn from './mobileHamburgerBtn'
 
 import SearchBar from './searchBar'
-import UserProfile from './userProfile'
+import UserIconAndNotificationBell from './userProfile'
 import CartIcon from './shoppingCart'
 
 // import MobileNavEl from './mobileNavEl'
-
-import Auth from '../../utils/auth';
 
 const mobileNavClasses = `block py-2 pl-3 pr-4 text-base font-medium border-l-4`
 const focusedMobileNav = `text-indigo-700 border-indigo-500 bg-indigo-50`
 const UnFocusedMobileNav = `text-gray-600 border-transparent hover:bg-gray-50 hover:border-gray-300 hover:text-gray-800`
 
 function Navbar() {
-
-  const loggedIn = Auth.loggedIn();
 
   return (
     <Disclosure as="nav" className="bg-white cbm-border-bottom">
@@ -30,18 +27,18 @@ function Navbar() {
           {/* DESKTOP VIEW */}
           <div className="px-2 mx-auto max-w-7xl sm:px-4 lg:px-8">
 
-            {/* Nav bar */}
-            <div className="flex justify-between h-16">
+            {/* Header */}
+            <div id="" className="flex justify-between h-16">
 
               {/* Logo, Nav Routes, Search bar, UserProfile */}
-              <div className="flex px-2 lg:px-0 box">
+              <div id="nav" className="flex px-2 lg:px-0 ">
                 <Logo />
                 <NavEl />
               </div>
 
               <div id="header-controls" className="flex justify-around px-2 lg:px-0 m-2">
                 <SearchBar />
-                <UserProfile />
+                <UserIconAndNotificationBell />
                 <CartIcon />
               </div>
 

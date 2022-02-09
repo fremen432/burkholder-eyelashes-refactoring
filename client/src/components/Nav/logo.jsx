@@ -4,7 +4,7 @@ class Logo extends Component {
     render() {
         return (
             <>
-                <a href="/" className="flex items-center flex-shrink-0">
+                <a href="/" className="px-2 flex items-center flex-shrink-0">
                   {/* <img
                     className="block w-auto h-8 lg:block"
                     src="../../assets/images/logo1.svg"
