@@ -4,7 +4,7 @@ class Logo extends Component {
     render() {
         return (
             <>
-                <div className="flex items-center flex-shrink-0">
+                <a href="/" className="flex items-center flex-shrink-0">
                   {/* <img
                     className="block w-auto h-8 lg:block"
                     src="../../assets/images/logo1.svg"
@@ -15,7 +15,7 @@ class Logo extends Component {
                     src="https://tailwindui.com/img/logos/workflow-logo-indigo-600-mark-gray-800-text.svg"
                     alt="Company Logo"
                   />
-                </div>
+                </a>
             </>
         )
     }
