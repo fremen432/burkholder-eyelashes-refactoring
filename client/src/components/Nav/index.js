@@ -4,6 +4,10 @@ import { SearchIcon } from '@heroicons/react/solid'
 import { BellIcon, MenuIcon, XIcon } from '@heroicons/react/outline'
 
 import NavEl from './navEl'
+import SearchBar from './searchBar'
+import Logo from './logo'
+import UserProfile from './userProfile'
+import MobileHamburgerBtn from './mobileHamburgerBtn'
 
 // import MobileNavEl from './mobileNavEl'
 
@@ -25,144 +29,32 @@ function Navbar() {
 
           {/* DESKTOP VIEW */}
           <div className="px-2 mx-auto max-w-7xl sm:px-4 lg:px-8">
+
             {/* Nav bar */}
             <div className="flex justify-between h-16">
 
-              {/* Nav Routes */}
-              <div className="flex px-2 lg:px-0">
-
-                {/* Logo goes here */}
-                <div className="flex items-center flex-shrink-0">
-                  {/* <img
-                    className="block w-auto h-8 lg:block"
-                    src="../../images/logo1.svg"
-                    alt="Company Logo"
-                  />
-                  <img
-                    className="hidden w-auto h-8 lg:block"
-                    src="https://tailwindui.com/img/logos/workflow-logo-indigo-600-mark-gray-800-text.svg"
-                    alt="Company Logo"
-                  /> */}
-                </div>
-
-                {/* Nav bar routes */}
-                <div className="hidden lg:ml-6 lg:flex lg:space-x-8">
-                  {/* imported component from navEl.jsx. */}
-                  <NavEl />
-                </div>
-
+              {/* Logo, Nav Routes, Search bar, UserProfile */}
+              <div className="flex px-2 lg:px-0 box">
+                <Logo />
+                <NavEl />
+                <SearchBar />
+                <UserProfile />
               </div>
 
-              {/* Search Bar */}
-              <div className="flex items-center justify-center flex-1 px-2 lg:ml-6 lg:justify-end">
-                {/* <div className="w-full max-w-lg lg:max-w-xs">
-                  <label htmlFor="search" className="sr-only">
-                    Search
-                  </label>
-                  <div className="relative">
-                    <div className="absolute inset-y-0 left-0 flex items-center pl-3 pointer-events-none">
-                      <SearchIcon className="w-5 h-5 text-gray-400" aria-hidden="true" />
-                    </div>
-                    <input
-                      id="search"
-                      name="search"
-                      className="block w-full py-2 pl-10 pr-3 leading-5 placeholder-gray-500 bg-white border border-gray-300 rounded-md focus:outline-none focus:placeholder-gray-400 focus:ring-1 focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
-                      placeholder="Search"
-                      type="search"
-                    />
-                  </div>
-                </div> */}
-              </div>
-                  
-                {/* Mobile menu button */}
+              {/* Mobile hamburger menu button */}
               <div className="flex items-center lg:hidden">
+                {/* <MobileHamburgerBtn /> */}
                 <Disclosure.Button className="inline-flex items-center justify-center p-2 text-gray-400 rounded-md hover:text-gray-500 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-indigo-500">
-                  <span className="sr-only">Open main menu</span>
-                  {/* If mobile menu is open, show X icon. If mobile menu is closed, show hamburger menu icon */}
-                  {open ? (
-                    <XIcon className="block w-6 h-6" aria-hidden="true" />
-                  ) : (
-                    <MenuIcon className="block w-6 h-6" aria-hidden="true" />
-                  )}
-                </Disclosure.Button>
-              </div>
-              
-              {/* If user is logged in, show user icon and bell icon. Otherwise show nothing */}
-              {loggedIn ? (
-              <div className="hidden lg:ml-4 lg:flex lg:items-center">
-
-                {/* Bell Icon Button */}
-                <button
-                  type="button"
-                  className="flex-shrink-0 p-1 text-gray-400 bg-white rounded-full hover:text-gray-500 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
-                >
-                  {/* <span className="sr-only">View notifications</span>
-                  <BellIcon className="w-6 h-6" aria-hidden="true" /> */}
-                </button>
-
-                {/* Profile dropdown */}
-                <Menu as="div" className="relative flex-shrink-0 ml-4">
-
-
-                  {/* Open profile button */}
-                  <div>
-                    <Menu.Button className="flex text-sm bg-white rounded-full focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">
-                      <span className="sr-only">Open user menu</span>
-                      {/* User Image */}
-                      <img
-                        className="w-8 h-8 rounded-full"
-                        src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80"
-                        alt=""
-                      />
-                    </Menu.Button>
-                  </div>
-
-                  <Transition
-                    as={Fragment}
-                    enter="transition ease-out duration-100"
-                    enterFrom="transform opacity-0 scale-95"
-                    enterTo="transform opacity-100 scale-100"
-                    leave="transition ease-in duration-75"
-                    leaveFrom="transform opacity-100 scale-100"
-                    leaveTo="transform opacity-0 scale-95"
-                  >
-                    <Menu.Items className="absolute right-0 w-48 py-1 mt-2 origin-top-right bg-white rounded-md shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none">
-                      <Menu.Item>
-                        {({ active }) => (
-                          <a
-                            href="/"
-                            className={classNames(active ? 'bg-gray-100' : '', 'block px-4 py-2 text-sm text-gray-700')}
-                          >
-                            Your Profile
-                          </a>
-                        )}
-                      </Menu.Item>
-                      <Menu.Item>
-                        {({ active }) => (
-                          <a
-                            href="/"
-                            className={classNames(active ? 'bg-gray-100' : '', 'block px-4 py-2 text-sm text-gray-700')}
-                          >
-                            Settings
-                          </a>
-                        )}
-                      </Menu.Item>
-                      <Menu.Item>
-                        {({ active }) => (
-                          <a
-                            href="/"
-                            className={classNames(active ? 'bg-gray-100' : '', 'block px-4 py-2 text-sm text-gray-700')}
-                          >
-                            Sign out
-                          </a>
-                        )}
-                      </Menu.Item>
-                    </Menu.Items>
-                  </Transition>
-                </Menu>
+                <span className="sr-only">Open main menu</span>
+                {/* If mobile menu is open, show 'X' icon. If mobile menu is closed, show hamburger 'menu' icon */}
+                {open ? (
+                <XIcon className="block w-6 h-6" aria-hidden="true" />
+                ) : (
+                <MenuIcon className="block w-6 h-6" aria-hidden="true" />
+                )}
+            </Disclosure.Button>
 
               </div>
-              ) : null}
 
             </div>
 

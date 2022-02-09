@@ -40,33 +40,37 @@ class NavEl extends Component {
   render() {
     return (
       <>
-        {Auth.loggedIn() ? (
-          <>
-            {
-              this.loggedInNavElements.map( el => 
-                <a  
-                  href={ el.ref } 
-                  key={ el.name } 
-                  onClick={ el.onClick } 
-                  className={ this.basicClasses + this.nonFocusedClasses } 
-                >{ el.name }</a>
-              )
-            }
-          </>
-        ) : (
-          <>
-            {
-              this.loggedOutNavElements.map( el => 
-                <a  
-                  href={ el.ref } 
-                  key={ el.name } 
-                  onClick={ el.onClick } 
-                  className={ this.basicClasses + this.nonFocusedClasses } 
-                >{ el.name }</a>
-              )
-            }
-          </>
-        )}
+        <div className="hidden lg:ml-6 lg:flex lg:space-x-8">
+
+          {Auth.loggedIn() ? (
+            <>
+              {
+                this.loggedInNavElements.map( el => 
+                  <a  
+                    href={ el.ref } 
+                    key={ el.name } 
+                    onClick={ el.onClick } 
+                    className={ this.basicClasses + this.nonFocusedClasses } 
+                  >{ el.name }</a>
+                )
+              }
+            </>
+          ) : (
+            <>
+              {
+                this.loggedOutNavElements.map( el => 
+                  <a  
+                    href={ el.ref } 
+                    key={ el.name } 
+                    onClick={ el.onClick } 
+                    className={ this.basicClasses + this.nonFocusedClasses } 
+                  >{ el.name }</a>
+                )
+              }
+            </>
+          )}
+        </div>
+
       </>
     )
   }
