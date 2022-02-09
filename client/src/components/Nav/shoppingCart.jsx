@@ -1,0 +1,20 @@
+import React, { Fragment } from 'react'
+import { Disclosure, Menu, Transition } from '@headlessui/react'
+import { ShoppingCartIcon } from '@heroicons/react/outline'
+
+
+function CartIcon() {
+    return (
+        <>
+            {/* Open profile button */}
+            <div className="hidden lg:ml-4 lg:flex lg:items-center" >
+                <a href="/cart" className="flex text-sm bg-white rounded-full focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">
+                    <ShoppingCartIcon className="w-5 h-5 text-gray-400" aria-hidden="true" />
+                    <span className="cart-item-counter" >1</span>
+                </a>
+            </div>
+        </>
+    )
+}
+
+export default CartIcon;

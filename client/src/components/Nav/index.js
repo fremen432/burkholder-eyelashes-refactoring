@@ -4,19 +4,20 @@ import { SearchIcon } from '@heroicons/react/solid'
 import { BellIcon, MenuIcon, XIcon } from '@heroicons/react/outline'
 
 import NavEl from './navEl'
-import SearchBar from './searchBar'
 import Logo from './logo'
-import UserProfile from './userProfile'
 import MobileHamburgerBtn from './mobileHamburgerBtn'
+
+import SearchBar from './searchBar'
+import UserProfile from './userProfile'
+import CartIcon from './shoppingCart'
 
 // import MobileNavEl from './mobileNavEl'
 
 import Auth from '../../utils/auth';
 
-
-function classNames(...classes) {
-  return classes.filter(Boolean).join(' ')
-}
+const mobileNavClasses = `block py-2 pl-3 pr-4 text-base font-medium border-l-4`
+const focusedMobileNav = `text-indigo-700 border-indigo-500 bg-indigo-50`
+const UnFocusedMobileNav = `text-gray-600 border-transparent hover:bg-gray-50 hover:border-gray-300 hover:text-gray-800`
 
 function Navbar() {
 
@@ -26,7 +27,6 @@ function Navbar() {
     <Disclosure as="nav" className="bg-white cbm-border-bottom">
       {({ open }) => (
         <main>
-
           {/* DESKTOP VIEW */}
           <div className="px-2 mx-auto max-w-7xl sm:px-4 lg:px-8">
 
@@ -37,22 +37,26 @@ function Navbar() {
               <div className="flex px-2 lg:px-0 box">
                 <Logo />
                 <NavEl />
+              </div>
+
+              <div id="header-controls" className="flex justify-around px-2 lg:px-0 m-2">
                 <SearchBar />
                 <UserProfile />
+                <CartIcon />
               </div>
 
               {/* Mobile hamburger menu button */}
-              <div className="flex items-center lg:hidden">
+              <div className=" flex items-center lg:hidden">
                 {/* <MobileHamburgerBtn /> */}
                 <Disclosure.Button className="inline-flex items-center justify-center p-2 text-gray-400 rounded-md hover:text-gray-500 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-indigo-500">
-                <span className="sr-only">Open main menu</span>
-                {/* If mobile menu is open, show 'X' icon. If mobile menu is closed, show hamburger 'menu' icon */}
-                {open ? (
-                <XIcon className="block w-6 h-6" aria-hidden="true" />
-                ) : (
-                <MenuIcon className="block w-6 h-6" aria-hidden="true" />
-                )}
-            </Disclosure.Button>
+                  <span className="sr-only">Open main menu</span>
+                  {/* If mobile menu is open, show 'X' icon. If mobile menu is closed, show hamburger 'menu' icon */}
+                  {open ? (
+                    <XIcon className="block w-6 h-6" aria-hidden="true" />
+                  ) : (
+                    <MenuIcon className="block w-6 h-6" aria-hidden="true" />
+                  )}
+                </Disclosure.Button>
 
               </div>
 
@@ -68,49 +72,49 @@ function Navbar() {
               <Disclosure.Button
                 as="a"
                 href="/"
-                className="block py-2 pl-3 pr-4 text-base font-medium text-indigo-700 border-l-4 border-indigo-500 bg-indigo-50"
+                className={mobileNavClasses + focusedMobileNav}
               >
                 Shop All
               </Disclosure.Button>
               <Disclosure.Button
                 as="a"
                 href="/"
-                className="block py-2 pl-3 pr-4 text-base font-medium text-gray-600 border-l-4 border-transparent hover:bg-gray-50 hover:border-gray-300 hover:text-gray-800"
+                className={mobileNavClasses + UnFocusedMobileNav}
               >
                 Best Sellers
               </Disclosure.Button>
               <Disclosure.Button
                 as="a"
                 href="/"
-                className="block py-2 pl-3 pr-4 text-base font-medium text-gray-600 border-l-4 border-transparent hover:bg-gray-50 hover:border-gray-300 hover:text-gray-800"
+                className={mobileNavClasses + UnFocusedMobileNav}
               >
                 Rewards
               </Disclosure.Button>
               <Disclosure.Button
                 as="a"
                 href="/about"
-                className="block py-2 pl-3 pr-4 text-base font-medium text-gray-600 border-l-4 border-transparent hover:bg-gray-50 hover:border-gray-300 hover:text-gray-800"
+                className={mobileNavClasses + UnFocusedMobileNav}
               >
                 About
               </Disclosure.Button>
               <Disclosure.Button
                 as="a"
                 href="/contact"
-                className="block py-2 pl-3 pr-4 text-base font-medium text-gray-600 border-l-4 border-transparent hover:bg-gray-50 hover:border-gray-300 hover:text-gray-800"
+                className={mobileNavClasses + UnFocusedMobileNav}
               >
                 Contact
               </Disclosure.Button>
               <Disclosure.Button
                 as="a"
                 href="/faq"
-                className="block py-2 pl-3 pr-4 text-base font-medium text-gray-600 border-l-4 border-transparent hover:bg-gray-50 hover:border-gray-300 hover:text-gray-800"
+                className={mobileNavClasses + UnFocusedMobileNav}
               >
                 FAQ
               </Disclosure.Button>
               <Disclosure.Button
                 as="a"
                 href="/admin"
-                className="block py-2 pl-3 pr-4 text-base font-medium text-gray-600 border-l-4 border-transparent hover:bg-gray-50 hover:border-gray-300 hover:text-gray-800"
+                className={mobileNavClasses + UnFocusedMobileNav}
               >
                 Admin
               </Disclosure.Button>
@@ -175,9 +179,6 @@ function Navbar() {
               </div>
 
             </div>
-            
-            
-
 
           </Disclosure.Panel>
 
