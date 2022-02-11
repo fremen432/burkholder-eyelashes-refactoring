@@ -11,7 +11,7 @@ export default function Hero() {
           />
         </div>
 
-        {/* Dimms image */}
+        {/* Dimming layer */}
         <div aria-hidden="true" className="absolute inset-0 bg-gray-900 opacity-50" />
 
         {/* Hero Text */}

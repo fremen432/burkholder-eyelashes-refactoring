@@ -1,5 +1,7 @@
 import React, { Fragment } from 'react'
-import { Disclosure, Menu, Transition } from '@headlessui/react'
+import {  Menu, Transition } from '@headlessui/react'
+
+import Auth from '../../utils/auth'
 
 import stockUserPic from '../../assets/images/stock-user-pic.jpeg'
 
@@ -7,12 +9,19 @@ const userImageLink = `https://images.unsplash.com/photo-1472099645785-5658abf4f
 
 function classNames(...classes) { return classes.filter(Boolean).join(' ') }
 
+function logout(event) {
+    event.preventDefault();
+    Auth.logout();
+    window.location.href="/"
+};
+
+
 function ProfileIcon() {
     return (
         <>
             {/* Profile dropdown */}
             <Menu as="div" className="  relative flex-shrink-0 ">
-                {/* Open profile button */}
+                {/* User Profile Icon */}
                 <div className=" flex justify-center align-center ">
                     <Menu.Button className="px-2 rounded-full flex justify-center align-center focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">
                         {/* User Image */}
@@ -31,7 +40,7 @@ function ProfileIcon() {
                     leaveFrom="transform opacity-100 scale-100"
                     leaveTo="transform opacity-0 scale-95"
                 >
-                    <Menu.Items className="absolute right-0 w-48 py-1 mt-2 origin-top-right bg-white rounded-md shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none">
+                    <Menu.Items className="z1 absolute right-0 w-48 py-1 mt-2 origin-top-right bg-white rounded-md shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none">
                     <Menu.Item>
                         {({ active }) => (
                         <a
@@ -57,8 +66,9 @@ function ProfileIcon() {
                         <a
                             href="/"
                             className={classNames(active ? 'bg-gray-100' : '', 'block px-4 py-2 text-sm text-gray-700')}
+                            onClick= {logout}
                         >
-                            Sign out
+                            Log out
                         </a>
                         )}
                     </Menu.Item>

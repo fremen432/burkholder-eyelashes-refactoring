@@ -1,7 +1,4 @@
-import React, { Fragment } from 'react'
-import { Disclosure, Menu, Transition } from '@headlessui/react'
 import { ShoppingCartIcon } from '@heroicons/react/outline'
-
 
 function CartIcon() {
     return (
