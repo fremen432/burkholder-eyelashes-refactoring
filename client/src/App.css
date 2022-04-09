@@ -1,5 +1,7 @@
-.box{
-  border: 1px solid black;
+.box{ border: 1px solid black;}
+* {
+  --bgColor_indigo: rgb(79,70,229);
+  --bgColor_indigo_Hover: rgb(165, 160, 255);
 }
 
 .App {
@@ -30,6 +32,14 @@
 
 .App-link {
   color: #61dafb;
+}
+
+.productCard-checkoutBtn{
+ background-color: var(--bgColor_indigo);
+ color: rgba(255, 255, 255, 0.884);
+}
+.productCard-checkoutBtn:hover{
+  background-color: var(--bgColor_indigo_Hover);
 }
 
 @keyframes App-logo-spin {

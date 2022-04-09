@@ -1,54 +1,4 @@
-const people = [
-  {
-    name: 'Jane Doe',
-    role: 'CEO',
-    imageUrl:
-      'https://images.unsplash.com/photo-1517365830460-955ce3ccd263?ixlib=rb-=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=8&w=1024&h=1024&q=80',
-    twitterUrl: '#',
-    linkedinUrl: '#',
-  },
-  {
-    name: 'Jane Doe',
-    role: 'CEO',
-    imageUrl:
-      'https://images.unsplash.com/photo-1517365830460-955ce3ccd263?ixlib=rb-=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=8&w=1024&h=1024&q=80',
-    twitterUrl: '#',
-    linkedinUrl: '#',
-  },
-  {
-    name: 'Jane Doe',
-    role: 'CEO',
-    imageUrl:
-      'https://images.unsplash.com/photo-1517365830460-955ce3ccd263?ixlib=rb-=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=8&w=1024&h=1024&q=80',
-    twitterUrl: '#',
-    linkedinUrl: '#',
-  },
-  {
-    name: 'Jane Doe',
-    role: 'CEO',
-    imageUrl:
-      'https://images.unsplash.com/photo-1517365830460-955ce3ccd263?ixlib=rb-=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=8&w=1024&h=1024&q=80',
-    twitterUrl: '#',
-    linkedinUrl: '#',
-  },
-  {
-    name: 'Jane Doe',
-    role: 'CEO',
-    imageUrl:
-      'https://images.unsplash.com/photo-1517365830460-955ce3ccd263?ixlib=rb-=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=8&w=1024&h=1024&q=80',
-    twitterUrl: '#',
-    linkedinUrl: '#',
-  },
-  {
-    name: 'Jane Doe',
-    role: 'CEO',
-    imageUrl:
-      'https://images.unsplash.com/photo-1517365830460-955ce3ccd263?ixlib=rb-=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=8&w=1024&h=1024&q=80',
-    twitterUrl: '#',
-    linkedinUrl: '#',
-  },
-  // More people...
-]
+import { people } from "../data"
 
 export default function About() {
   return (
@@ -75,6 +25,8 @@ export default function About() {
                       <h3>{person.name}</h3>
                       <p className="text-indigo-600">{person.role}</p>
                     </div>
+                    
+                    {/* Social Media */}
                     <ul role="list" className="flex justify-center space-x-5">
                       <li>
                         <a href={person.twitterUrl} className="text-gray-400 hover:text-gray-500">

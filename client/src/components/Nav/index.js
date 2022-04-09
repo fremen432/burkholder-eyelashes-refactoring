@@ -21,11 +21,11 @@ const UnFocusedMobileNav = `text-gray-600 border-transparent hover:bg-gray-50 ho
 function Navbar() {
 
   return (
-    <Disclosure as="nav" className="bg-white cbm-border-bottom">
+    <Disclosure as="nav" className="SECTION__Nav bg-white cbm-border-bottom">
       {({ open }) => (
-        <main>
+        <main className="">
           {/* DESKTOP VIEW */}
-          <div className="px-2 mx-auto max-w-7xl sm:px-4 lg:px-8">
+          <div className="SECTION__Nav_Desktop px-2 mx-auto max-w-7xl sm:px-4 lg:px-8">
 
             {/* Header */}
             <div id="" className="flex justify-between h-16">
@@ -62,7 +62,7 @@ function Navbar() {
           </div>
           
           {/* MOBILE VIEW */}
-          <Disclosure.Panel className="lg:hidden">
+          <Disclosure.Panel className="SECTION__Nav_Mobile lg:hidden">
 
             {/* Routes */}
             <div className="pt-2 pb-3 space-y-1">

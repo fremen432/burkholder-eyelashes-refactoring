@@ -1,6 +1,6 @@
 export default function Hero() {
   return (
-    <div className="">
+    <div className="SECTION__Hero">
       <div className="relative bg-gray-900">
         {/* Hero Image */}
         <div aria-hidden="true" className="absolute inset-0 overflow-hidden">

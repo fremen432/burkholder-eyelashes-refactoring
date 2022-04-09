@@ -9,13 +9,13 @@ const logout = (event) => {
 const adminRoutes = { name: 'Admin', ref: 'admin', }
 
 const basicNavRoutes = [
-  { name: 'Home',             ref: '/', },
+  // { name: 'Home',             ref: '/', },
   { name: 'Products',         ref: 'products', },
   { name: 'About',            ref: 'about', },
   { name: 'Contact',          ref: 'contact', },
   // { name: 'Admin',            ref: 'admin', },
   { name: 'Cart',             ref: 'cart', },
-  { name: 'Order History',    ref: 'orderHistory', },
+  // { name: 'Order History',    ref: 'orderHistory', },
   // { name: 'Order Summary',    ref: 'orderSummary', },
 ]
 

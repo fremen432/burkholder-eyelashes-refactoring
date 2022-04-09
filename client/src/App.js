@@ -1,6 +1,7 @@
 // Node Module imports
 import React from "react";
-import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+// import { BrowserRouter as Router, Routes, Route, Switch, BrowserRouter } from 'react-router-dom@next';
 import { 
   ApolloClient, 
   InMemoryCache, 
@@ -9,27 +10,15 @@ import {
 } from '@apollo/client'
 import { setContext } from '@apollo/client/link/context'
 
-// Pages imports
-import Home         from './pages/Home'
-import Login        from './pages/Login';
-import Signup       from './pages/Signup';
-import About        from './pages/About';
-import Contact      from './pages/Contact';
-import FAQ          from './pages/FAQ';
-import Products     from "./pages/Products";
-import OrderSummary from "./pages/OrderSummary";
-import OrderHistory from "./pages/OrderHistory";
-import Error        from "./pages/NoMatch";
-import Cart         from "./pages/Cart";
-import Admin        from './pages/Admin';
-
-// Components imports
-import Navbar       from "./components/Nav";
-import Footer       from "./components/Footer";
+// newPage imports
+import HomePage from "./newPages/HomePage";
+import Cart from "./newPages/Cart";
+import Login_SignUp from "./newPages/Login_SignUp";
 
 // CSS imports
 import './App.css';
 import './assets/style.css'
+// import { Switch } from "@headlessui/react";
 
 // sends http requests to server at this link
 const httpLink = createHttpLink({
@@ -46,38 +35,22 @@ const authLink = setContext((_, { headers }) => {
     }
   }
 });
-
+ 
 const client = new ApolloClient({
   link: httpLink,
   cache: new InMemoryCache()
 })
-
-function App() {
+ 
+export default function App() {
   return (
-    <ApolloProvider client = {client}>
-      <Router>
-        <Navbar />
-
-        <Switch>
-          <Route exact path='/'             component={Home}/>
-          <Route exact path='/products'     component={Products} />
-          <Route exact path='/about'        component={About} />
-          <Route exact path='/contact'      component={Contact} />
-          <Route exact path='/faq'          component={FAQ} />
-          <Route exact path='/admin'        component={Admin} />
-          <Route exact path='/cart'         component={Cart} />
-          <Route exact path='/orderhistory' component={OrderHistory} />
-          <Route exact path='/ordersummary' component={OrderSummary} />
-          <Route exact path='/login'        component={Login} />
-          <Route exact path='/signup'       component={Signup} />
-
-          <Route                            component={Error} />
-        </Switch>
-        
-        <Footer />
-      </Router>
-    </ApolloProvider>
+    <Router>
+      <div className="App" >
+          <Routes>
+            <Route path='/' exact={true} element={ <HomePage /> } />
+            {/* <Route path='/cart' element={<Cart />} />
+            <Route path='/cart' element={<Login_SignUp  />} /> */}
+          </Routes>
+      </div>
+    </Router>
   );
 }
-
-export default App;

@@ -45,7 +45,7 @@ const navigation = [
 
 export default function Footer() {
   return (
-    <footer className="bg-white ">
+    <footer className="SECTION__Footer bg-white ">
 
       {/* <div className="box max-w-7xl mx-auto py-14 px-4 sm:px-6 md:flex md:items-center md:justify-between lg:px-8"> */}
       <div className="cbm-border-top bg-white shadow max-w-7xl mx-auto py-5 px-4 sm:px-6 md:flex md:items-center md:justify-between lg:px-8">
