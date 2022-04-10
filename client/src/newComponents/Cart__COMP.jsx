@@ -1,8 +1,9 @@
 import { CheckIcon, ClockIcon, QuestionMarkCircleIcon, XIcon } from '@heroicons/react/solid'
 import { products } from '../data'
-import { num, setNum, incramentNum, decramentNum } from '../dynamicElements'
 
-function CartItems() {
+function CartItems(props) {
+    const { page, setPage } = props;
+
     return(
         <div className="cartItmes__COMPONENT">
           <ul role="list" className="border-t border-b border-gray-200 divide-y divide-gray-200">

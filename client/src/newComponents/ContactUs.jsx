@@ -9,7 +9,7 @@ export default function ContactUs() {
   const [agreed, setAgreed] = useState(false)
 
   return (
-    <div className="bg-white py-16 px-4 overflow-hidden sm:px-6 lg:px-8 lg:py-24">
+    <div id="ContactUs" className="bottomSection bg-white py-16 px-4 overflow-hidden sm:px-6 lg:px-8 lg:py-24">
       <div className="relative max-w-xl mx-auto">
         <svg
           className="absolute left-full transform translate-x-1/2"
@@ -133,7 +133,8 @@ export default function ContactUs() {
                 />
               </div>
             </div>
-            <div className="sm:col-span-2">
+            {/* Privacy and Cookie agreement */}
+            {/* <div className="sm:col-span-2">
               <div className="flex items-start">
                 <div className="flex-shrink-0">
                   <Switch
@@ -168,7 +169,7 @@ export default function ContactUs() {
                   </p>
                 </div>
               </div>
-            </div>
+            </div> */}
             <div className="sm:col-span-2">
               <button
                 type="submit"
