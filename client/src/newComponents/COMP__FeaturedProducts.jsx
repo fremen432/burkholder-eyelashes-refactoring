@@ -8,23 +8,23 @@ function ProductCards(props) {
 
     return (
         <>
-          {/* Create a product card for each product in products array */}
-          {products.map(product => (
+          {/* Create a product card for each featured product in products array */}
+          {products.map((product, index) => (
+            product.featured ?
             <div key={product.id} className="productCard box">
               {/* Product Image */}
-              <div className="w-full h-56 bg-gray-200 rounded-md overflow-hidden lg:h-72 xl:h-80">
                 <img
                   src={product.imageSrc}
                   alt={product.imageAlt}
-                  className="w-full h-full object-center object-cover"
+                  className="w-full h-full object-center object-cover bg-gray-200 rounded-md overflow-hidden lg:h-72 xl:h-80"
                 />
-              </div>
+                {/* Product Description */}
               <div className=" flex justify-between flex-col ">
+
                 <div className="productCard-innerWrapper  ">
                   <h3 className="mt-2 text-sm text-gray-700 box h-12">
                     <a href={product.href}>
                       <span className="absolute " />
-                      {/* {page} */}
                       {product.name}
                     </a>
                   </h3>
@@ -35,19 +35,21 @@ function ProductCards(props) {
                   <button onClick={addToCart} className={"productCard-checkoutBtn p-1 text-sm font-medium text-gray-900 box rounded-lg" + (page == 'products' ? ' ' : ' hidden')}>Add to Cart</button>
                   <p className=" flex justify-end items-center text-sm font-medium text-gray-900 text-right box">{product.price}</p>
                 </div>
+                
               </div>
-            </div>
+            </div> :
+            <></>
           ))}  
       </>
     )
   }
 
-export default function Products(props) {
-  const {page} = props;
+export default function FeaturedProducts(props) {
+  const { page } = props;
   return (
-      <div id="Products" className="section SECTION__Products max-w-2xl mx-auto py-16 px-4 sm:py-24 sm:px-6 lg:max-w-7xl lg:px-8">
+      <div id="Featured" className="section SECTION__Products max-w-2xl mx-auto py-16 px-4 sm:py-24 sm:px-6 lg:max-w-7xl lg:px-8">
         <div className="md:flex md:items-center md:justify-between">
-          <h2 className="text-2xl font-extrabold tracking-tight text-gray-900 uppercase">All Products</h2>
+          <h2 className="text-2xl font-extrabold tracking-tight text-gray-900 uppercase">Featured Products</h2>
         </div>
 
         {/* Products container */}

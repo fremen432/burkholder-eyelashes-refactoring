@@ -11,7 +11,9 @@ const formSubmitBtnStyles = `group relative w-full flex justify-center py-2 px-4
 
 
 export default function SignUp__COMP(props) {
-    const { page, setPage } = props;
+    const { page, setPageMethods } = props;
+
+    const handleClickHere = () => setPageMethods.login();
 
   // keeps track of when the username, email and password is updated
   const [formState, setFormState] = useState({
@@ -54,6 +56,7 @@ export default function SignUp__COMP(props) {
     // }
 
   };
+
 
   return (
     <>
@@ -112,8 +115,8 @@ export default function SignUp__COMP(props) {
               <button className={formSubmitBtnStyles} type="submit">
                 Submit
               </button>
-              <p className=" text-sm " >Already have an account? Click <a className="loginHere" href="/Login" >here</a> to login.</p>
-          </form>
+            </form>
+            <p className=" text-sm " >Already have an account? Click <a className="loginHere" href='#Login' onClick={handleClickHere} >here</a> to login.</p>
         </div>
       </div>
     </>

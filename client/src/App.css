@@ -12,7 +12,7 @@
 }
 
 .App {
-  background: #000;
+  /* background: #000; */
 
   display: flex;
   flex-direction: column;
@@ -26,13 +26,8 @@
 /* .App-logo {
   height: 40vmin;
   pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
 } */
+
 .COMPONENT__Header{
   display: flex;
   justify-content: space-around;
@@ -48,7 +43,9 @@
   min-height: calc(100vh - var(--header_height) - var(--footer_height));
 }
 
+.COMPONENT__AllProducts{
 
+}
 .COMPONENT__Cart, .section{
   width: 100%;
   min-height: calc(100vh - var(--header_height));
@@ -77,8 +74,6 @@
   display: flex;
   flex-direction: column;
 
-  background-color: chartreuse;
-
   /* max-height: calc( 100vh - var(--headerFooter_height)); */
 
   /* height: calc( 100vh - var(--headerFooter_height)); */
@@ -106,7 +101,6 @@
 
 .section{
   /* min-height: 100vh; */
-  border: 1px solid black;
 }
 .topBottom_section{
   /* min-height: calc(100vh - var(--headerFooter_height)); */
@@ -116,16 +110,14 @@
   justify-content: center;
   align-items: center;
   /* flex-direction: column; */
+
   min-height: var(--footer_height);
-  /* min-height: 20vh; */
-  /* min-width: 20vh; */
-  border: 1px solid black
 }
-.loginHere{
+.signUpHere, .loginHere{
   font-weight: bold;
   color: var(--bgColor_indigo)
 }
-.loginHere:hover{
+.signUpHere:hover, .loginHere:hover{
   color: var(--bgColor_indigo_Hover)
 
 }

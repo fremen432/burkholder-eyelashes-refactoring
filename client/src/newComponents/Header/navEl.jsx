@@ -13,11 +13,12 @@ const nonFocusedClasses = ` text-gray-500 border-transparent hover:border-gray-3
 const focusedClasses = ` text-gray-900 border-indigo-500 `
 
 const ternaryExpression = route =>
-  route.map(el =>
+  route.map((el, index) =>
     <a
+    key={ el.name } 
+    // index={ index }
     href={ el.ref } 
     onClick={ el.onClick }
-    key={ el.name } 
     className={ basicClasses + nonFocusedClasses } 
     >{ el.name }</a> 
   )
@@ -27,14 +28,15 @@ export default function NavEl(props){
 
   const basicNavRoutes = [
     { name: 'About',            ref: '/#AboutUs', onClick: setPageMethods.home },
-    { name: 'Products',         ref: '/#Products', onClick: setPageMethods.home },
+    { name: 'Featured',         ref: '/#Featured', onClick: setPageMethods.home },
     { name: 'Contact',          ref: '/#ContactUs', onClick: setPageMethods.home },
+    { name: 'Products',         ref: '/#Products', onClick: setPageMethods.allProducts },
     { name: 'Cart',             ref: '/#Cart', onClick: setPageMethods.cart },
   ]
   
   const loggedOutNavElements =  [
-    { name: 'Log In',  onClick: setPageMethods.login },
-    { name: 'Sign Up', onClick: setPageMethods.signUp },
+    { name: 'Log In',  ref: '/#Login', onClick: setPageMethods.login },
+    { name: 'Sign Up', ref: '/#SignUp', onClick: setPageMethods.signUp },
   ]
 
   const loggedInNavElements = [

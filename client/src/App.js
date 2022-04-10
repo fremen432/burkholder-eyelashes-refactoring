@@ -11,12 +11,14 @@ import {
 import { setContext } from '@apollo/client/link/context'
 
 // newPage imports
-import HomePage from "./newPages/HomePage";
-import Cart from "./newPages/Cart";
-import Login_SignUp from "./newPages/Login_SignUp";
+import HomePage from "./newPages/PAGE__HomePage";
+import Cart from "./newPages/PAGE__Cart";
+import Login_SignUp from "./newPages/PAGE__Login_SignUp";
 
 import Login__COMP from "./newComponents/Login__COMP";
 import SignUp__COMP from "./newComponents/SignUp__COMP";
+import FeaturedProducts from './newComponents/COMP__FeaturedProducts'
+import AllProducts from './newComponents/COMP__AllProducts'
 
 import Header from "./newComponents/Header";
 import Footer from "./newComponents/Footer";
@@ -51,6 +53,7 @@ export default function App() {
 
   const setPageMethods = {
     home: () => setPage('home'),
+    allProducts: () => setPage('allProducts'),
     cart: () => setPage('cart'),
     login: () => setPage('login'),
     signUp: () => setPage('signUp')
@@ -60,15 +63,13 @@ export default function App() {
       <div className="App ">
         <Header page={page} setPageMethods={setPageMethods} />
         <div className="Body_Content box " >
-          {/* <HomePage/> */}
-          {/* <Cart/> */}
-
           {
-            page == 'home' ? <HomePage /> :
-            page == 'cart' ? <Cart /> :
-            page == 'login' ? <Login__COMP /> :
-            page == 'signUp' ? <SignUp__COMP /> :
-            <HomePage />
+            page == 'home' ? <HomePage page={page} setPageMethods={setPageMethods} /> :
+            page == 'allProducts' ? <AllProducts page={page} setPageMethods={setPageMethods} /> :
+            page == 'cart' ? <Cart page={page} setPageMethods={setPageMethods} /> :
+            page == 'login' ? <Login__COMP page={page} setPageMethods={setPageMethods} /> :
+            page == 'signUp' ? <SignUp__COMP page={page} setPageMethods={setPageMethods} /> :
+            <HomePage page={page} setPageMethods={setPageMethods} />
           }
           <Footer />
         </div>
