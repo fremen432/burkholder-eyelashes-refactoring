@@ -29,7 +29,7 @@ export default function NavEl(props){
     { name: 'About',            ref: '/#AboutUs', onClick: setPageMethods.home },
     { name: 'Products',         ref: '/#Products', onClick: setPageMethods.home },
     { name: 'Contact',          ref: '/#ContactUs', onClick: setPageMethods.home },
-    { name: 'Cart',             onClick: setPageMethods.cart },
+    { name: 'Cart',             ref: '/#Cart', onClick: setPageMethods.cart },
   ]
   
   const loggedOutNavElements =  [

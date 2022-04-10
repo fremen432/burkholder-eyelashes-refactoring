@@ -48,7 +48,8 @@
   min-height: calc(100vh - var(--header_height) - var(--footer_height));
 }
 
-.section{
+
+.COMPONENT__Cart, .section{
   width: 100%;
   min-height: calc(100vh - var(--header_height));
 }

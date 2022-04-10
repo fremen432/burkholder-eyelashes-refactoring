@@ -81,7 +81,7 @@ function CartItems(props) {
 
 export default function Cart__COMP() {
   return (
-    <div className="Cart__COMP">
+    <div id="Cart" className="COMPONENT__Cart">
             <>
       <div className="bg-white">
         <div className="max-w-2xl px-4 pt-16 pb-24 mx-auto sm:px-6 lg:max-w-7xl lg:px-8">
