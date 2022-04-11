@@ -2,17 +2,20 @@ import { CheckIcon, ClockIcon, QuestionMarkCircleIcon, XIcon } from '@heroicons/
 import { products } from '../data'
 
 function CartItems(props) {
-    const { page, setPage } = props;
+    const { page, setPage, cartItems, onAdd, onRemove } = props;
+    const me = () => console.log(cartItems)
+    
 
     return(
-        <div className="cartItmes__COMPONENT">
+        <div className="COMPONENT__cartItems">
           <ul role="list" className="border-t border-b border-gray-200 divide-y divide-gray-200">
-            {products.map((product, productIdx) => (
+            {cartItems.map((product, productIdx) => (
               <li key={product.id} className="flex py-6 sm:py-10">
                   <img
                     src={product.imageSrc}
                     alt={product.imageAlt}
                     className="object-cover object-center w-24 h-24 rounded-md sm:w-48 sm:h-48 flex-shrink-0 box"
+                    onClick={me}
                   />
   
                 <div className="flex flex-col justify-between flex-1 ml-4 sm:ml-6">
@@ -54,7 +57,7 @@ function CartItems(props) {
                       </select>
   
                       <div className="absolute top-0 right-0">
-                        <button type="button" className="inline-flex p-2 -m-2 text-gray-400 hover:text-gray-500">
+                        <button onClick={() => onRemove(product)} type="button" className="inline-flex p-2 -m-2 text-gray-400 hover:text-gray-500">
                           <span className="sr-only">Remove</span>
                           <XIcon className="w-5 h-5" aria-hidden="true" />
                         </button>
@@ -79,7 +82,8 @@ function CartItems(props) {
     )
   }
 
-export default function Cart__COMP() {
+export default function Cart__COMP(props) {
+  const { cartItems, onAdd, onRemove } = props;
   return (
     <div id="Cart" className="COMPONENT__Cart">
             <>
@@ -94,7 +98,7 @@ export default function Cart__COMP() {
               <h2 id="cart-heading" className="sr-only">
                 Items in your shopping cart
               </h2>
-              <CartItems/>
+              <CartItems cartItems={cartItems} onAdd={onAdd} onRemove={onRemove} />
 
             </div>
 

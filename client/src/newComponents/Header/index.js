@@ -10,7 +10,7 @@ import MobileHamburgerBtn from './mobileHamburgerBtn'
 
 import SearchBar from './searchBar'
 import UserIconAndNotificationBell from './userProfile'
-import CartIcon from './shoppingCart'
+import CartIcon from './cartIcon'
 
 // import MobileNavEl from './mobileNavEl'
 
@@ -19,7 +19,7 @@ const focusedMobileNav = `text-indigo-700 border-indigo-500 bg-indigo-50`
 const UnFocusedMobileNav = `text-gray-600 border-transparent hover:bg-gray-50 hover:border-gray-300 hover:text-gray-800`
 
 export default function Header(props) {
-  const { page, setPageMethods } = props; 
+  const { page, setPageMethods, cartItems } = props; 
 
   return (
     <div className="COMPONENT__Header bg-white cbm-border-bottom ">
@@ -30,7 +30,7 @@ export default function Header(props) {
       <div id="header-controls" className="flex justify-around px-2 lg:px-0 m-2">
         <SearchBar />
         <UserIconAndNotificationBell />
-        <CartIcon />
+        <CartIcon cartItems={cartItems} />
       </div>
     </div>
   )
