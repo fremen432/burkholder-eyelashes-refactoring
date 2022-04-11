@@ -57,7 +57,7 @@ function ProductCards(props) {
 export default function AllProducts(props) {
   const { page, onAdd, onRemove } = props;
   return (
-      <div id="Featured" className="COMPONENT__AllProducts max-w-2xl mx-auto py-16 px-4 sm:py-24 sm:px-6 lg:max-w-7xl lg:px-8">
+      <div id="Products" className="COMPONENT__AllProducts max-w-2xl mx-auto py-16 px-4 sm:py-24 sm:px-6 lg:max-w-7xl lg:px-8">
         <div className="md:flex md:items-center md:justify-between">
           <h2 className="text-2xl font-extrabold tracking-tight text-gray-900 uppercase">All Products</h2>
         </div>

@@ -7,7 +7,7 @@ import AllProducts from '../newComponents/COMP__AllProducts'
 export default function HomePage(props) {
     const { page } = props;
     return (
-        <div className="PAGE__HomePage">
+        <div id="Home" className="PAGE__HomePage">
             <Hero/>
             <AboutUs/>
             <FeaturedProducts/>

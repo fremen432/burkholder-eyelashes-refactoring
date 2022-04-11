@@ -24,13 +24,13 @@ export default function Header(props) {
   return (
     <div className="COMPONENT__Header bg-white cbm-border-bottom ">
       <div id="nav" className="flex px-2 lg:px-0 ">
-        <Logo />
+        <Logo setPageMethods={setPageMethods} />
         <NavEl page={page} setPageMethods={setPageMethods} />
       </div>
       <div id="header-controls" className="flex justify-around px-2 lg:px-0 m-2">
         <SearchBar />
         <UserIconAndNotificationBell />
-        <CartIcon cartItems={cartItems} />
+        <CartIcon cartItems={cartItems} setPageMethods={setPageMethods} />
       </div>
     </div>
   )

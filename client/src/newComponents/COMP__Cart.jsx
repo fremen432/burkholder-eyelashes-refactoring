@@ -84,6 +84,9 @@ function CartItems(props) {
 
 export default function Cart__COMP(props) {
   const { cartItems, onAdd, onRemove } = props;
+
+  const onCheckout = () => alert('checkout complete');
+
   return (
     <div id="Cart" className="COMPONENT__Cart">
             <>
@@ -144,7 +147,8 @@ export default function Cart__COMP(props) {
 
               <div className="mt-6">
                 <button
-                  type="submit"
+                  onClick={onCheckout}
+                  // type="submit"
                   className="w-full px-4 py-3 text-base font-medium text-white bg-indigo-600 border border-transparent rounded-md shadow-sm hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-50 focus:ring-indigo-500"
                 >
                   Checkout
