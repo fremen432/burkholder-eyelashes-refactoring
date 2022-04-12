@@ -7,7 +7,7 @@ function CartItems(props) {
     
 
     return(
-        <div className="COMPONENT__cartItems">
+        <div className="COMPONENT__CartItems box">
           <ul role="list" className="border-t border-b border-gray-200 divide-y divide-gray-200">
             {cartItems.map((product, productIdx) => (
               <li key={product.id} className="flex py-6 sm:py-10">
@@ -46,7 +46,7 @@ function CartItems(props) {
                         name={`quantity-${productIdx}`}
                         className="max-w-full rounded-md border border-gray-300 py-1.5 text-base leading-5 font-medium text-gray-700 text-left shadow-sm focus:outline-none focus:ring-1 focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
                       >
-                        <option value={1}>1</option>
+                        <option value={1} >1</option>
                         <option value={2}>2</option>
                         <option value={3}>3</option>
                         <option value={4}>4</option>
@@ -54,6 +54,8 @@ function CartItems(props) {
                         <option value={6}>6</option>
                         <option value={7}>7</option>
                         <option value={8}>8</option>
+                        <option value={8}>9</option>
+                        <option value={8}>10</option>
                       </select>
   
                       <div className="absolute top-0 right-0">
@@ -88,8 +90,7 @@ export default function Cart__COMP(props) {
   const onCheckout = () => alert('checkout complete');
 
   return (
-    <div id="Cart" className="COMPONENT__Cart">
-            <>
+    <div id="Cart" className="COMPONENT__Cart_Body SECTION__SinglePage box">
       <div className="bg-white">
         <div className="max-w-2xl px-4 pt-16 pb-24 mx-auto sm:px-6 lg:max-w-7xl lg:px-8">
           <h1 className="text-3xl font-extrabold tracking-tight text-gray-900 sm:text-4xl">Shopping Cart</h1>
@@ -97,19 +98,15 @@ export default function Cart__COMP(props) {
 
 
             {/* CartItems List */}
-            <div aria-labeledby="cart-heading" className="cartItems__SECTION lg:col-span-7">
+            <section className="SECTION__CartItems lg:col-span-7">
               <h2 id="cart-heading" className="sr-only">
                 Items in your shopping cart
               </h2>
               <CartItems cartItems={cartItems} onAdd={onAdd} onRemove={onRemove} />
-
-            </div>
+            </section>
 
             {/* Order summary */}
-            <section
-              aria-labelledby="summary-heading"
-              className="px-4 py-6 mt-16 rounded-lg bg-gray-50 sm:p-6 lg:p-8 lg:mt-0 lg:col-span-5"
-            >
+            <section className="SECTION__OrderSummary px-4 py-6 mt-16 rounded-lg bg-gray-50 sm:p-6 lg:p-8 lg:mt-0 lg:col-span-5" >
               <h2 id="summary-heading" className="text-lg font-medium text-gray-900">
                 Order summary
               </h2>
@@ -159,8 +156,6 @@ export default function Cart__COMP(props) {
           </form>
         </div>
       </div>
-    </>
-
     </div>
   )
 }

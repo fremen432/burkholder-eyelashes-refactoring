@@ -1,0 +1,154 @@
+.fadeIN_full{
+    animation-name: fadeIN_Full;
+    animation-duration: 200ms;
+    animation-fill-mode: forwards;
+    animation-timing-function: ease-in-out;
+}
+
+.fadeOUT_full{
+    animation-name: fadeOUT_Full;
+    animation-duration: 200ms;
+    animation-fill-mode: forwards;
+    animation-timing-function: ease-in-out;
+}
+
+.rotate45_IN{
+    animation-name: rotate45_IN;
+    animation-duration: 200ms;
+    animation-fill-mode: forwards;
+    animation-timing-function: ease-in-out;
+}
+
+.rotate45_OUT{
+    animation-name: rotate45_OUT;
+    animation-duration: 200ms;
+    animation-fill-mode: forwards;
+    animation-timing-function: ease-in-out;
+}
+
+.rotate_IN_Line1{
+    animation-name: 
+        rotate45_IN, 
+        marginToggle_IN;
+        
+    
+    animation-duration: 200ms;
+    animation-fill-mode: forwards;
+    animation-timing-function: ease-in-out;
+}
+.rotate_OUT_Line1{
+    animation-name: 
+        rotate45_OUT, 
+        marginToggle_OUT;
+        
+    
+    animation-duration: 200ms;
+    animation-fill-mode: forwards;
+    animation-timing-function: ease-in-out;
+}
+
+.rotate_IN_Line2{
+    animation-name: 
+        rotate180_IN, 
+        marginToggle_IN, 
+        fadeOUT_Full;
+    
+    
+    animation-duration: 200ms;
+    animation-fill-mode: forwards;
+    animation-timing-function: ease-in-out;
+}
+.rotate_OUT_Line2{
+    animation-name: 
+        rotate180_OUT, 
+        marginToggle_OUT, 
+        fadeIN_Full;
+    
+    
+    animation-duration: 200ms;
+    animation-fill-mode: forwards;
+    animation-timing-function: ease-in-out;
+}
+
+.rotate_IN_Line3{
+    animation-name: 
+        rotate135_IN, 
+        marginToggle_IN;
+        
+    
+    animation-duration: 200ms;
+    animation-fill-mode: forwards;
+    animation-timing-function: ease-in-out;
+}
+.rotate_OUT_Line3{
+    animation-name: 
+        rotate135_OUT, 
+        marginToggle_OUT;
+        
+    
+    animation-duration: 200ms;
+    animation-fill-mode: forwards;
+    animation-timing-function: ease-in-out;
+}
+
+/* Fade */
+@keyframes fadeIN_Full {
+    0%   { opacity: 0%; }
+    100% { opacity: 100%; }
+}
+@keyframes fadeOUT_Full {
+    0%   { opacity: 100%; }
+    100% { opacity: 0%; }
+}
+
+/* Rotate 45 deg */
+@keyframes rotate45_IN {
+    0%   { transform: rotate(0deg); }
+    100% { transform: rotate(45deg); }
+}
+@keyframes rotate45_OUT {
+    0%   { transform: rotate(45deg); }
+    100% { transform: rotate(0deg); }
+}
+
+/* Rotate 135 deg */
+@keyframes rotate135_IN {
+    0%   { transform: rotate(0deg); }
+    100% { transform: rotate(135deg); }
+}
+@keyframes rotate135_OUT {
+    0%   { transform: rotate(135deg); }
+    100% { transform: rotate(0deg); }
+}
+
+/* Rotate 180 deg */
+@keyframes rotate180_IN {
+    0%   { transform: rotate(0deg); }
+    100% { transform: rotate(180deg); }
+}
+@keyframes rotate180_OUT {
+    0%   { transform: rotate(180deg); }
+    100% { transform: rotate(0deg); }
+}
+
+/* Margin top/bottom toggle */
+@keyframes marginToggle_IN {
+    0%   { 
+        margin-top: 2.5px; 
+        margin-bottom: 2.5px; 
+    }
+    100% { 
+        margin-top: -1px; 
+        margin-bottom: -1px; 
+    }
+}
+@keyframes marginToggle_OUT {
+    0%   { 
+        margin-top: -1px; 
+        margin-bottom: -1px; 
+    }
+    100% { 
+        margin-top: 2.5px; 
+        margin-bottom: 2.5px; 
+    }
+}

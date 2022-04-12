@@ -8,9 +8,11 @@ const logout = (event) => {
 
 const adminRoutes = { name: 'Admin', ref: 'admin', }
 
-const basicClasses = ` nav-el inline-flex  items-center p-2 px-3 mx-2  text-sm  font-medium  border-b-2 `
-const nonFocusedClasses = ` text-gray-500 border-transparent hover:border-gray-300 hover:text-gray-700`
-const focusedClasses = ` text-gray-900 border-indigo-500 `
+const basicClasses = `NavLink  `
+const nonFocusedClasses = ` `
+const focusedClasses = `  `
+// const nonFocusedClasses = ` text-gray-500 border-transparent hover:border-gray-300 hover:text-gray-700`
+// const focusedClasses = ` text-gray-900 border-indigo-500 `
 
 const ternaryExpression = route =>
   route.map((el, index) =>
@@ -53,7 +55,7 @@ export default function NavEl(props){
     <div className="loggedOutNavRoutes"> { ternaryExpression(loggedOutNavElements) } </div>
 
   return (
-    <div className="navBar-full hidden lg:px-2 lg:flex justify-center items-center ">
+    <div className="COMPONENT__NavElements ">
 
       <BasicNavRoutes page={page} setPageMethods={setPageMethods} />
 

@@ -1,0 +1,55 @@
+/* Based from Google Chrome screen widths */
+
+/* Mobile S */
+@media screen and (min-width: 320px){
+
+}
+
+/* Mobile M */
+@media screen and (min-width: 375px){
+
+}
+
+/* Mobile L */
+@media screen and (min-width: 425px){
+
+}
+
+/* Mobile XL */
+@media screen and (min-width: 596px){
+    .COMPONENT__NavElements{
+        display: flex;
+    }
+    .HamburgerIcon{
+        display: none;
+    }
+    .COMPONENT__HeaderCartIcon_Container{
+        display: block;
+    }
+}
+
+/* Tablet */
+@media screen and (min-width: 768px){
+    .COMPONENT__NavElements{
+        font-size: 13px;
+    }
+
+}
+
+/* Laptop */
+@media screen and (min-width: 1024px){
+    .COMPONENT__Header{
+        justify-content: space-around;
+    }
+
+}
+
+/* Laptop L */
+@media screen and (min-width: 1440px){
+
+}
+
+/* 4K */
+@media screen and (min-width: 2560px){
+
+}

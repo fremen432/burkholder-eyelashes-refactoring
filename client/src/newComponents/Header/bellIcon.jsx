@@ -1,7 +1,6 @@
 import { BellIcon } from '@heroicons/react/outline'
 
-
-function BellIconBtn() {
+export default function BellIconBtn() {
     return(
         <>
             <button
@@ -14,5 +13,3 @@ function BellIconBtn() {
         </>
     )
 }
-
-export default BellIconBtn;
