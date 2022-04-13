@@ -1,6 +1,15 @@
+*{
+    --duration1: 200ms;
+    --slideStart1: -5px;
+    --slideStart2: -15px;
+    --slideEnd1: 0px;
+    --slideEnd2: 1px;
+}
+
 .fadeIN_full{
     animation-name: fadeIN_Full;
-    animation-duration: 200ms;
+    /* animation-duration: 200ms; */
+    animation-duration: var(--duration1);
     animation-fill-mode: forwards;
     animation-timing-function: ease-in-out;
 }
@@ -92,7 +101,7 @@
 .MobileNav_Open {
     animation-name: 
         roll_DOWN,
-        marginToggle_OUT, 
+        marginToggle_IN_MobileNav, 
         fadeIN_Full;
     
     animation-duration: 200ms;
@@ -102,7 +111,7 @@
 .MobileNav_Closed {
     animation-name: 
         roll_UP,
-        marginToggle_IN, 
+        marginToggle_OUT_MobileNav, 
         fadeOUT_Full;
     
     animation-duration: 200ms;
@@ -172,19 +181,33 @@
     }
 }
 
-@keyframes roll_DOWN {
+/* Margin top/bottom toggle Mobile Nav*/
+@keyframes marginToggle_IN_MobileNav {
     0%   { 
-        max-height: 0px; 
+        margin-top: var(--slideStart1); 
+        margin-bottom: var(--slideStart1); 
     }
     100% { 
-        max-height: 275px; 
+        margin-top: var(--slideEnd1); 
+        margin-bottom: var(--slideEnd1); 
     }
 }
-@keyframes roll_UP {
+@keyframes marginToggle_OUT_MobileNav {
     0%   { 
-        max-height: 275px; 
+        margin-top: var(--slideEnd1); 
+        margin-bottom: var(--slideEnd1); 
     }
     100% { 
-        max-height: 0px; 
+        margin-top: var(--slideStart1); 
+        margin-bottom: var(--slideStart1); 
     }
+}
+
+@keyframes roll_DOWN {
+    0%   { max-height: 0px; }
+    100% { max-height: 300px; }
+}
+@keyframes roll_UP {
+    0%   { max-height: 300px; }
+    100% { max-height: 0px; }
 }

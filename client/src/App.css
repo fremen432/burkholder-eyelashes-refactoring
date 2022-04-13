@@ -2,7 +2,9 @@
 
 * {
   --light-border: rgb(234, 221, 255);
-  --light-gray: rgb(241, 241, 241);
+  --gray1: rgb(241, 241, 241);
+  --gray2:rgb(218, 218, 218);
+  --gray3:rgb(148, 148, 148);
   --text-gray: gray;
   --text-gray-hover: rgb(204, 204, 204);
 
@@ -26,6 +28,7 @@
   justify-content: space-between;
   align-items: center;
   flex-direction: column;
+  border-bottom: 1px solid var(--gray2);
   /* height: 800px; */
 }
 .Header__Main{
@@ -34,6 +37,8 @@
   align-items: center;
   width: 100%;
   min-height: var(--header_height);
+  border-bottom: 1px solid var(--gray2);
+
 }
 .Header_Left, .Header_Right{
   display: flex;
@@ -66,7 +71,17 @@
 
   height: 50px;
   width: 50px;
+  cursor: pointer;
+  /* border: 1px solid var(--text-gray-hover); */
+  border-radius: 10px;
 }
+.HamburgerIcon:hover{
+  border: 1px solid var(--text-gray-hover);
+}
+.HamburgerIcon:focus{
+  background-color: var(--text-gray-hover);
+}
+
 .HamburgerLine{
   position: relative;
   display: block;
@@ -138,19 +153,22 @@
   overflow-y: hidden;
 
   width: 100%;
+  /* border-top: 1px solid var(--gray2); */
 } 
 .MobileNavLink{
   width: 100%;
   padding-top: 8px;
   padding-bottom: 8px;
 
-  background-color: violet;
+  background-color: white;
+  border-bottom: 1px solid var(--gray2);
 }
 .MobileNavLink span{
   margin-left: 30px;
 }
 .MobileNavLink:hover{
-  background-color: rgb(255, 213, 255);
+  /* background-color: rgb(255, 213, 255); */
+  background-color: var(--text-gray-hover);
 }
 .COMPONENT__DesktopNavElements{
   justify-content: center;

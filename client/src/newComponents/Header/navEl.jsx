@@ -7,29 +7,26 @@ const logout = (event) => {
 };
 
 export default function NavEl(props){
-  const { page, setPageMethods, mobileNavOpen, isMobileNav, mobileNavToggle } = props; 
+  const { page, setPageMethods, isMobileNav, mobileNavOpen, mobileNavToggle } = props; 
 
-  const basicClasses = 'box ' + (
-    isMobileNav == true ?
-    'MobileNavLink ' :
-    'DesktopNavLink '
-  )
+  const basicClasses = 'box ' + ( isMobileNav == true ? 'MobileNavLink ' : 'DesktopNavLink ' )
   const nonFocusedClasses = ` `
   const focusedClasses = `  `
   // const nonFocusedClasses = ` text-gray-500 border-transparent hover:border-gray-300 hover:text-gray-700`
   // const focusedClasses = ` text-gray-900 border-indigo-500 `
 
-    const basicNavRoutes = [
-    { name: 'About',    ref: '/#AboutUs',   onClick: () => { setPageMethods.home(); mobileNavToggle(); } },
-    { name: 'Featured', ref: '/#Featured',  onClick: () => { setPageMethods.home(); mobileNavToggle(); } },
-    { name: 'Contact',  ref: '/#ContactUs', onClick: () => { setPageMethods.home(); mobileNavToggle(); } },
-    { name: 'Products', ref: '/#Products',  onClick: () => { setPageMethods.allProducts(); mobileNavToggle(); } },
-    { name: 'Cart',     ref: '/#Cart',      onClick: () => { setPageMethods.cart(); mobileNavToggle(); } },
+  const basicNavRoutes = [
+    { name: 'Home',    ref: '/#Home',       onClick: () => { setPageMethods.home(); clickMobileNavToggle(); } },
+    { name: 'About',    ref: '/#AboutUs',   onClick: () => { setPageMethods.home(); clickMobileNavToggle(); } },
+    { name: 'Featured', ref: '/#Featured',  onClick: () => { setPageMethods.home(); clickMobileNavToggle(); } },
+    { name: 'Contact',  ref: '/#ContactUs', onClick: () => { setPageMethods.home(); clickMobileNavToggle(); } },
+    { name: 'Products', ref: '/#Products',  onClick: () => { setPageMethods.allProducts(); clickMobileNavToggle(); } },
+    { name: 'Cart',     ref: '/#Cart',      onClick: () => { setPageMethods.cart(); clickMobileNavToggle(); } },
   ]
   
   const loggedOutNavElements =  [
-    { name: 'Log In',  ref: '/#Login', onClick: () => { setPageMethods.login(); mobileNavToggle(); } },
-    { name: 'Sign Up', ref: '/#SignUp', onClick: () => { setPageMethods.signUp(); mobileNavToggle(); } },
+    { name: 'Log In',  ref: '/#Login',  onClick: () => { setPageMethods.login(); clickMobileNavToggle(); } },
+    { name: 'Sign Up', ref: '/#SignUp', onClick: () => { setPageMethods.signUp(); clickMobileNavToggle(); } },
   ]
 
   const loggedInNavElements = [
@@ -38,48 +35,41 @@ export default function NavEl(props){
 
   const adminRoutes = { name: 'Admin', ref: 'admin', }
 
+  function clickMobileNavToggle(){
+    mobileNavToggle();
+  }
+
   const makeNavElements = route =>
-    route.map((el, index) =>
+    route.map( el =>
       <a
       key={ el.name + ( isMobileNav == true ? '_mobile' : '_desktop' ) } 
-      // index={ index }
       href={ el.ref } 
       onClick={ el.onClick }
       className={ basicClasses + nonFocusedClasses } 
       >
         <span>{ el.name }</span>
-      </a> 
+      </a>
     )
+  
+  const desktopBasicNavRoutes = basicNavRoutes.filter(route => route.name != 'Home')
 
-  const BasicNavRoutes = () => makeNavElements(basicNavRoutes);
   const LoggedInNavRoutes = () => makeNavElements(loggedInNavElements);
   const LoggedOutNavRoutes = () => makeNavElements(loggedOutNavElements);
+  const BasicNavRoutes = () => 
+    isMobileNav == true ? makeNavElements(basicNavRoutes) :
+    isMobileNav == false ? makeNavElements(desktopBasicNavRoutes) : ''
 
-  const getClasses = () => {
-    if (isMobileNav == true) {
+  const openOrClosed = 
+    mobileNavOpen == false ? 'MobileNav_Open ' :
+    mobileNavOpen == true ? 'MobileNav_Closed ' : ''
 
-      if (mobileNavOpen == false) return 'COMPONENT__MobileNavElements MobileNav_Open '
-      else if (mobileNavOpen == true) return 'COMPONENT__MobileNavElements MobileNav_Closed '
-      else return 'COMPONENT__MobileNavElements '
-
-    } else if (isMobileNav == false) return "COMPONENT__DesktopNavElements "
-
-     else return ''
-  }
+  const getClasses = () => 
+    isMobileNav == true ? ('COMPONENT__MobileNavElements ' + openOrClosed ) :
+    isMobileNav == false ? 'COMPONENT__DesktopNavElements ' : ''
 
   return (
     <div id='NavElements' className={ getClasses() }>
-
-    {/* <div className={"box " + 
-    (isMobileNav == true ? 'COMPONENT__MobileNavElements ' : "COMPONENT__DesktopNavElements ") +
-    (
-      mobileNavOpen == false ?
-      'MobileNav_Open' :
-      mobileNavOpen == true ?
-      'MobileNav_Closed' :
-      ''
-    )
-    }> */}
+      {console.log(desktopBasicNavRoutes)}
 
       <BasicNavRoutes page={page} setPageMethods={setPageMethods} />
 
