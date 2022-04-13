@@ -1,4 +1,4 @@
-.box{ border: 1px solid black;}
+/* .box{ border: 1px solid black;} */
 
 * {
   --light-border: rgb(234, 221, 255);
@@ -15,30 +15,25 @@
 }
 
 .App {
-  /* background: #000; */
-
   display: flex;
   flex-direction: column;
 
   height: 100vh;
   overflow: hidden;
-  /* height:; */
-  /* text-align: center; */
 }
-
-/* .App-logo {
-  height: 40vmin;
-  pointer-events: none;
-} */
-
 .COMPONENT__Header{
   display: flex;
   justify-content: space-between;
   align-items: center;
-
+  flex-direction: column;
+  /* height: 800px; */
+}
+.Header__Main{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
   min-height: var(--header_height);
-  /* height: var(--header_height); */
-
 }
 .Header_Left, .Header_Right{
   display: flex;
@@ -46,13 +41,127 @@
   align-items: center;
 
   height: 100%;
-
 }
 .Header_Left{
   margin-left: 25px;
 }
 .Header_Right{
   margin-right: 25px;
+}
+.COMPONENT__MobileNav{
+  display: flex;
+  position: absolute;
+  z-index: 1;
+  background-color: violet;
+  height: 300px;
+  width: 100%;
+
+  top: var(--header_height);
+}
+.HamburgerIcon{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+
+  height: 50px;
+  width: 50px;
+}
+.HamburgerLine{
+  position: relative;
+  display: block;
+  width: 20px;
+  height: 2px;
+
+  background-color: var(--text-gray);
+
+  margin-top: 2.5px;
+  margin-bottom: 2.5px;
+  /* padding: 1px; */
+}
+.Line1{
+  /* z-index: 1; */
+}
+.Line2{
+  /* z-index: 2; */
+}
+.Line3{
+  /* z-index: 3; */
+}
+.HamburgerIcon:focus .HamburgerLine{
+  background-color: var(--text-gray-hover);
+}
+.COMPONENT__HeaderCartIcon_Container{
+  display: none;
+}
+.LogoAnchor{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  height: 50px;
+  width: 50px;
+}
+.LogoImg{
+  min-width: 50px;
+}
+
+.COMPONENT__HeaderCartIcon_Container{
+  /* display: flex; */
+  display: none;
+  /* flex-direction: column; */
+  justify-content: center;
+  align-items: center;
+}
+
+.COMPONENT__HeaderCart{
+  border: 2px solid chartreuse;
+  display: absolute;
+
+  z-index: 1;
+}
+
+.COMPONENT__MobileNavElements, .COMPONENT__DesktopNavElements{
+  font-size: 12px;
+}
+
+.COMPONENT__MobileNavElements{
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  flex-direction: column;
+
+  position: absolute;
+  z-index: 1;
+  top: var(--header_height);
+  max-height: 0px;
+  overflow-y: hidden;
+
+  width: 100%;
+} 
+.MobileNavLink{
+  width: 100%;
+  padding-top: 8px;
+  padding-bottom: 8px;
+
+  background-color: violet;
+}
+.MobileNavLink span{
+  margin-left: 30px;
+}
+.MobileNavLink:hover{
+  background-color: rgb(255, 213, 255);
+}
+.COMPONENT__DesktopNavElements{
+  justify-content: center;
+  align-items: center;
+
+  display: none;
+}
+.DesktopNavLink{
+  /* display: flex; */
+  padding: 5px;
+  margin-left: 2vw;
 }
 
 .COMPONENT__Login , .COMPONENT__SignUp{
@@ -86,19 +195,6 @@
   min-height: calc(100vh - var(--header_height) - var(--footer_height));
 }
 
-
-/* .App-header {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-
-  background-color: #282c34;
-
-  min-height: 100vh;
-  font-size: calc(10px + 2vmin);
-  color: white;
-} */
 .Body_Content{
   position: relative;
 
@@ -150,7 +246,6 @@
 }
 .signUpHere:hover, .loginHere:hover{
   color: var(--bgColor_indigo_Hover)
-
 }
 
 .App-link {
@@ -172,93 +267,7 @@
 .COMP_Hero{
 
 }
-.COMPONENT__HeaderCartIcon_Container{
-  display: flex;
 
-  /* flex-direction: column; */
-  justify-content: center;
-  align-items: center;
-
-
-}
-
-.COMPONENT__HeaderCart{
-  border: 2px solid chartreuse;
-  display: absolute;
-
-  z-index: 1;
-}
-
-.COMPONENT__NavElements{
-  display: none;
-
-
-  /* display: flex; */
-  justify-content: center;
-  align-items: center;
-
-  font-size: 12px;
-}
-.NavLink{
-
-  /* display: flex; */
-  padding: 5px;
-  margin-left: 2vw;
-}
-.HamburgerIcon{
-  display: flex;
-  align-items: center;
-  /* justify-content: space-between; */
-  justify-content: center;
-  flex-direction: column;
-
-
-  height: 50px;
-  width: 50px;
-}
-.HamburgerLine{
-  position: relative;
-  display: block;
-  width: 20px;
-  height: 2px;
-
-  background-color: var(--text-gray);
-
-  margin-top: 2.5px;
-  margin-bottom: 2.5px;
-  /* padding: 1px; */
-}
-.Line1{
-  /* z-index: 1; */
-}
-.Line2{
-  /* z-index: 2; */
-}
-.Line3{
-  /* z-index: 3; */
-
-}
-.HamburgerIcon:focus .HamburgerLine{
-  background-color: var(--text-gray-hover);
-
-}
-.COMPONENT__HeaderCartIcon_Container{
-  display: none;
-}
-
-
-.LogoAnchor{
-  display: flex;
-  justify-content: center;
-  align-items: center;
-
-  height: 50px;
-  width: 50px;
-}
-
-.LogoImg{
-  min-width: 50px;
-}
 
 @keyframes App-logo-spin {
   from {

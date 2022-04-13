@@ -4,7 +4,6 @@
     animation-fill-mode: forwards;
     animation-timing-function: ease-in-out;
 }
-
 .fadeOUT_full{
     animation-name: fadeOUT_Full;
     animation-duration: 200ms;
@@ -18,7 +17,6 @@
     animation-fill-mode: forwards;
     animation-timing-function: ease-in-out;
 }
-
 .rotate45_OUT{
     animation-name: rotate45_OUT;
     animation-duration: 200ms;
@@ -91,6 +89,27 @@
     animation-timing-function: ease-in-out;
 }
 
+.MobileNav_Open {
+    animation-name: 
+        roll_DOWN,
+        marginToggle_OUT, 
+        fadeIN_Full;
+    
+    animation-duration: 200ms;
+    animation-fill-mode: forwards;
+    animation-timing-function: ease-in-out;
+}
+.MobileNav_Closed {
+    animation-name: 
+        roll_UP,
+        marginToggle_IN, 
+        fadeOUT_Full;
+    
+    animation-duration: 200ms;
+    animation-fill-mode: forwards;
+    animation-timing-function: ease-in-out;
+}
+
 /* Fade */
 @keyframes fadeIN_Full {
     0%   { opacity: 0%; }
@@ -150,5 +169,22 @@
     100% { 
         margin-top: 2.5px; 
         margin-bottom: 2.5px; 
+    }
+}
+
+@keyframes roll_DOWN {
+    0%   { 
+        max-height: 0px; 
+    }
+    100% { 
+        max-height: 275px; 
+    }
+}
+@keyframes roll_UP {
+    0%   { 
+        max-height: 275px; 
+    }
+    100% { 
+        max-height: 0px; 
     }
 }
