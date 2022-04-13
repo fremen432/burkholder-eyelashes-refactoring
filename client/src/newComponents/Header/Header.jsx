@@ -4,7 +4,7 @@ import { SearchIcon } from '@heroicons/react/solid'
 import { BellIcon, MenuIcon, XIcon } from '@heroicons/react/outline'
 
 // Importing components
-import NavEl from './NavEl'
+import NavEl from './navEl'
 import Logo from './logo'
 import HamburgerIcon from './HamburugerIcon'
 

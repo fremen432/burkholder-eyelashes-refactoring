@@ -69,8 +69,6 @@ export default function NavEl(props){
 
   return (
     <div id='NavElements' className={ getClasses() }>
-      {console.log(desktopBasicNavRoutes)}
-
       <BasicNavRoutes page={page} setPageMethods={setPageMethods} />
 
       {Auth.loggedIn() ?
