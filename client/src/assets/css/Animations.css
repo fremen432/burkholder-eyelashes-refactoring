@@ -4,6 +4,7 @@
     --slideStart2: -15px;
     --slideEnd1: 0px;
     --slideEnd2: 1px;
+    --roll_MaxHeight: 350px
 }
 
 .fadeIN_full{
@@ -205,9 +206,9 @@
 
 @keyframes roll_DOWN {
     0%   { max-height: 0px; }
-    100% { max-height: 300px; }
+    100% { max-height: var(--roll_MaxHeight); }
 }
 @keyframes roll_UP {
-    0%   { max-height: 300px; }
+    0%   { max-height: var(--roll_MaxHeight); }
     100% { max-height: 0px; }
 }

@@ -137,7 +137,8 @@
 }
 
 .COMPONENT__MobileNavElements, .COMPONENT__DesktopNavElements{
-  font-size: 12px;
+  color: var(--text-gray);
+  font-size: 14px;
 }
 
 .COMPONENT__MobileNavElements{
