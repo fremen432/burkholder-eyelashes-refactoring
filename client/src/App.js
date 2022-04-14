@@ -2,10 +2,10 @@
 import React, { useState } from "react";
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 // import { BrowserRouter as Router, Routes, Route, Switch, BrowserRouter } from 'react-router-dom@next';
-import { 
-  ApolloClient, 
-  InMemoryCache, 
-  ApolloProvider, 
+import {
+  ApolloClient,
+  InMemoryCache,
+  ApolloProvider,
   createHttpLink
 } from '@apollo/client'
 import { setContext } from '@apollo/client/link/context'
@@ -43,12 +43,12 @@ const authLink = setContext((_, { headers }) => {
     }
   }
 });
- 
+
 const client = new ApolloClient({
   link: httpLink,
   cache: new InMemoryCache()
 })
- 
+
 export default function App() {
   const [page, setPage] = useState('home')
   const [cartItems, setCartItems] = useState([])
@@ -67,11 +67,11 @@ export default function App() {
     // else, add newItem to cartItems.
 
     console.log(cartItems);
-    const exist = cartItems.find( item => item.id === newItem.id);
+    const exist = cartItems.find(item => item.id === newItem.id);
 
     exist ?
-    setCartItems( cartItems.map( item => item.id === newItem.id ? { ...exist, qty: exist.qty + 1 } : item )) :
-    setCartItems([...cartItems, { ...newItem, qty: 1 }]);
+      setCartItems(cartItems.map(item => item.id === newItem.id ? { ...exist, qty: exist.qty + 1 } : item)) :
+      setCartItems([...cartItems, { ...newItem, qty: 1 }]);
 
   };
 
@@ -81,38 +81,38 @@ export default function App() {
     // else, return a new array excluding newItem.
 
     console.log(cartItems);
-    const exist = cartItems.find( item => item.id === newItem.id );
+    const exist = cartItems.find(item => item.id === newItem.id);
 
     exist.qty > 1 ?
-    setCartItems(cartItems.map( item => item.id === newItem.id ? { ...exist, qty: exist.qty - 1 } : item )) :
-    setCartItems(cartItems.filter( item => item.id !== newItem.id )) ;
+      setCartItems(cartItems.map(item => item.id === newItem.id ? { ...exist, qty: exist.qty - 1 } : item)) :
+      setCartItems(cartItems.filter(item => item.id !== newItem.id));
 
   };
 
   return (
-      <div className="App ">
-        <Header page={page} setPageMethods={setPageMethods} cartItems={cartItems} onAdd={onAdd} onRemove={onRemove} />
-        <div className="Body_Content box " >
-          {
-            page == 'home' ? 
-              <HomePage page={page} setPageMethods={setPageMethods} /> :
+    <div className="App ">
+      <Header page={page} setPageMethods={setPageMethods} cartItems={cartItems} onAdd={onAdd} onRemove={onRemove} />
+      <div className="Body_Content box " >
+        {
+          page == 'home' ?
+            <HomePage page={page} setPageMethods={setPageMethods} /> :
 
-            page == 'allProducts' ? 
+            page == 'allProducts' ?
               <AllProducts page={page} setPageMethods={setPageMethods} onAdd={onAdd} onRemove={onRemove} /> :
 
-            page == 'cart' ? 
-              <Cart page={page} setPageMethods={setPageMethods} cartItems={cartItems} onAdd={onAdd} onRemove={onRemove} /> :
+              page == 'cart' ?
+                <Cart page={page} setPageMethods={setPageMethods} cartItems={cartItems} onAdd={onAdd} onRemove={onRemove} /> :
 
-            page == 'login' ? 
-              <Login__COMP page={page} setPageMethods={setPageMethods} /> :
+                page == 'login' ?
+                  <Login__COMP page={page} setPageMethods={setPageMethods} /> :
 
-            page == 'signUp' ? 
-              <SignUp__COMP page={page} setPageMethods={setPageMethods} /> :
+                  page == 'signUp' ?
+                    <SignUp__COMP page={page} setPageMethods={setPageMethods} /> :
 
-            <HomePage page={page} setPageMethods={setPageMethods} />
-          }
-          <Footer />
-        </div>
+                    <HomePage page={page} setPageMethods={setPageMethods} />
+        }
+        <Footer />
       </div>
+    </div>
   );
 }
