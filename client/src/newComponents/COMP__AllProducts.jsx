@@ -46,7 +46,7 @@ function ProductCards(props) {
                 </div>
               </div>
             )
-})}  
+          })}
       </>
     )
   }

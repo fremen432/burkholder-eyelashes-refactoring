@@ -1,7 +1,5 @@
 // Node Module imports
 import React, { useState } from "react";
-import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
-// import { BrowserRouter as Router, Routes, Route, Switch, BrowserRouter } from 'react-router-dom@next';
 import { 
   ApolloClient, 
   InMemoryCache, 
