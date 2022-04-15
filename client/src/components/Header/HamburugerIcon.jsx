@@ -9,7 +9,7 @@ export default function HamburgerIcon(props) {
     const [isRotatedLine3, setIsRotatedLine3] = useState('start')
 
     useEffect(() => {
-        if (mobileNavOpen == 'start') return console.log('big chungus')
+        if (mobileNavOpen == 'start') return console.log("mobileNavOpen = 'start'")
         if (mobileNavOpen == true) return rotateToggle();
         if (mobileNavOpen == false) return rotateToggle();
     }, [mobileNavOpen]) 
@@ -44,9 +44,9 @@ export default function HamburgerIcon(props) {
 
     return (
         <a className={"HamburgerIcon box " } onClick={mobileNavToggle}>
-            <span className={"HamburgerLine Line1 " + (isRotatedLine1)} ></span>
-            <span className={"HamburgerLine Line2 " + (isRotatedLine2)} ></span>
-            <span className={"HamburgerLine Line3 " + (isRotatedLine3)} ></span>
+            <span className={ `HamburgerLine Line1 ${isRotatedLine1}` } ></span>
+            <span className={ `HamburgerLine Line2 ${isRotatedLine2}` } ></span>
+            <span className={ `HamburgerLine Line3 ${isRotatedLine3}` } ></span>
         </a>
     )
 }

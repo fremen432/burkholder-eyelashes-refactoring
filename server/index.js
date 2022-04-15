@@ -7,12 +7,13 @@ import productRoutes from './routes/products.js';
 
 const app = express();
 
-// localhost:5000/products
-app.use('/products', productRoutes);
 
 app.use(bodyParser.json({ limit: '30mb', extended: true }));
 app.use(bodyParser.urlencoded({ limit: '30mb', extended: true }));
 app.use(cors());
+
+// localhost:5000/products
+app.use('/products', productRoutes);
 
 const MongoDB_UserName = 'burkholder_eyelashes_user1'
 const MongoDB_Password = '1iQsMDRr4dk3BGhe'

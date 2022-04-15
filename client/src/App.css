@@ -23,276 +23,274 @@
   height: 100vh;
   overflow: hidden;
 }
-.COMPONENT__Header{
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  flex-direction: column;
-  border-bottom: 1px solid var(--gray2);
-  /* height: 800px; */
-}
-.Header__Main{
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  width: 100%;
-  min-height: var(--header_height);
-  border-bottom: 1px solid var(--gray2);
 
-}
-.Header_Left, .Header_Right{
-  display: flex;
-  justify-content: center;
-  align-items: center;
+/* HEADER */
 
-  height: 100%;
-}
-.Header_Left{
-  margin-left: 25px;
-}
-.Header_Right{
-  margin-right: 25px;
-}
-.COMPONENT__MobileNav{
-  display: flex;
-  position: absolute;
-  z-index: 1;
-  background-color: violet;
-  height: 300px;
-  width: 100%;
-
-  top: var(--header_height);
-}
-.HamburgerIcon{
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-direction: column;
-
-  height: 50px;
-  width: 50px;
-  cursor: pointer;
-  /* border: 1px solid var(--text-gray-hover); */
-  border-radius: 10px;
-}
-.HamburgerIcon:hover{
-  border: 1px solid var(--text-gray-hover);
-}
-.HamburgerIcon:focus{
-  background-color: var(--text-gray-hover);
-}
-
-.HamburgerLine{
-  position: relative;
-  display: block;
-  width: 20px;
-  height: 2px;
-
-  background-color: var(--text-gray);
-
-  margin-top: 2.5px;
-  margin-bottom: 2.5px;
-  /* padding: 1px; */
-}
-.Line1{
-  /* z-index: 1; */
-}
-.Line2{
-  /* z-index: 2; */
-}
-.Line3{
-  /* z-index: 3; */
-}
-.HamburgerIcon:focus .HamburgerLine{
-  background-color: var(--text-gray-hover);
-}
-.COMPONENT__HeaderCartIcon_Container{
-  display: none;
-}
-.LogoAnchor{
-  display: flex;
-  justify-content: center;
-  align-items: center;
-
-  height: 50px;
-  width: 50px;
-}
-.LogoImg{
-  min-width: 50px;
-}
-
-.COMPONENT__HeaderCartIcon_Container{
-  /* display: flex; */
-  display: none;
-  /* flex-direction: column; */
-  justify-content: center;
-  align-items: center;
-}
-
-.COMPONENT__HeaderCart{
-  border: 2px solid chartreuse;
-  display: absolute;
-
-  z-index: 1;
-}
-
-.COMPONENT__MobileNavElements, .COMPONENT__DesktopNavElements{
-  color: var(--text-gray);
-  font-size: 14px;
-}
-
-.COMPONENT__MobileNavElements{
-  display: flex;
-  justify-content: flex-start;
-  align-items: center;
-  flex-direction: column;
-
-  position: absolute;
-  z-index: 1;
-  top: var(--header_height);
-  max-height: 0px;
-  overflow-y: hidden;
-
-  width: 100%;
-  /* border-top: 1px solid var(--gray2); */
-} 
-.MobileNavLink{
-  width: 100%;
-  padding-top: 8px;
-  padding-bottom: 8px;
-
-  background-color: white;
-  border-bottom: 1px solid var(--gray2);
-}
-.MobileNavLink span{
-  margin-left: 30px;
-}
-.MobileNavLink:hover{
-  /* background-color: rgb(255, 213, 255); */
-  background-color: var(--text-gray-hover);
-}
-.COMPONENT__DesktopNavElements{
-  justify-content: center;
-  align-items: center;
-
-  display: none;
-}
-.DesktopNavLink{
-  /* display: flex; */
-  padding: 5px;
-  margin-left: 2vw;
-}
-
-.COMPONENT__Login , .COMPONENT__SignUp{
-  display: flex;
-  justify-content: center;
-  align-items: center;
-
-  min-height: calc(100vh - var(--header_height) - var(--footer_height));
-}
-
-.COMPONENT__AllProducts{
-
-}
-.section{
-  width: 100%;
-  min-height: calc(100vh - var(--header_height));
-}
-
-.SECTION__SinglePage{
-  min-height: calc(100vh - var(--header_height) - var(--footer_height));
-  overflow-y: scroll;
-}
-
-.COMPONENT__Cart_Body{
-}
-.COMPONENT__CartItems{
-
-}
-.bottomSection{
-  width: 100%;
-  min-height: calc(100vh - var(--header_height) - var(--footer_height));
-}
-
-.Body_Content{
-  position: relative;
-
-  display: flex;
-  flex-direction: column;
-
-  /* max-height: calc( 100vh - var(--headerFooter_height)); */
-
-  /* height: calc( 100vh - var(--headerFooter_height)); */
-  overflow-y: scroll;
-}
-
-.PAGE__HomePage{
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-
-  /* height: 100%; */
-  /* overflow-y: scroll; */
-}
-
-.SECTION__AboutUs{
-  display: flex;
-  flex-direction: column;
-
-  /* height: calc(100vh - var(--header_height) - var(--footer_height)); */
-  /* height: 500px; */
-  /* overflow-y: scroll; */
-}
-
-.section{
-  /* min-height: 100vh; */
-}
-.topBottom_section{
-  /* min-height: calc(100vh - var(--headerFooter_height)); */
-}
-.COMPONENT__Footer{
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  /* flex-direction: column; */
-
-  min-height: var(--footer_height);
-}
-.signUpHere, .loginHere{
-  font-weight: bold;
-  color: var(--bgColor_indigo)
-}
-.signUpHere:hover, .loginHere:hover{
-  color: var(--bgColor_indigo_Hover)
-}
-
-.App-link {
-  color: #61dafb;
-}
-
-.productCard-checkoutBtn{
- background-color: var(--bgColor_indigo);
- color: rgba(255, 255, 255, 0.884);
-}
-.productCard-checkoutBtn:hover{
-  background-color: var(--bgColor_indigo_Hover);
-}
-
-.cbm-border-bottom {  
-  border-bottom: 1px solid var(--light-gray)
-}
-
-.COMP_Hero{
-
-}
-
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+  .COMPONENT__Header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: column;
+    border-bottom: 1px solid var(--gray2);
+    /* height: 800px; */
   }
-  to {
-    transform: rotate(360deg);
+  .Header__Main{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    min-height: var(--header_height);
+    border-bottom: 1px solid var(--gray2);
+
   }
-}
+  .Header_Left, .Header_Right{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    height: 100%;
+  }
+  .Header_Left{
+    margin-left: 25px;
+  }
+  .Header_Right{
+    margin-right: 25px;
+  }
+  .COMPONENT__MobileNav{
+    display: flex;
+    position: absolute;
+    z-index: 1;
+    background-color: violet;
+    height: 300px;
+    width: 100%;
+
+    top: var(--header_height);
+  }
+  .HamburgerIcon{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+
+    height: 50px;
+    width: 50px;
+    cursor: pointer;
+    /* border: 1px solid var(--text-gray-hover); */
+    border-radius: 10px;
+  }
+  .HamburgerIcon:hover{
+    border: 1px solid var(--text-gray-hover);
+  }
+  .HamburgerIcon:focus{
+    background-color: var(--text-gray-hover);
+  }
+  .HamburgerLine{
+    position: relative;
+    display: block;
+    width: 20px;
+    height: 2px;
+
+    background-color: var(--text-gray);
+
+    margin-top: 2.5px;
+    margin-bottom: 2.5px;
+    /* padding: 1px; */
+  }
+  .HamburgerIcon:focus .HamburgerLine{
+    background-color: var(--text-gray-hover);
+  }
+  .COMPONENT__HeaderCartIcon_Container{
+    display: none;
+  }
+  .LogoAnchor{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    height: 50px;
+    width: 50px;
+  }
+  .LogoImg{
+    min-width: 50px;
+  }
+
+  .COMPONENT__HeaderCartIcon_Container{
+    /* display: flex; */
+    display: none;
+    /* flex-direction: column; */
+    justify-content: center;
+    align-items: center;
+  }
+
+  .COMPONENT__HeaderCart{
+    border: 2px solid chartreuse;
+    display: absolute;
+
+    z-index: 1;
+  }
+
+  .COMPONENT__MobileNavElements, .COMPONENT__DesktopNavElements{
+    color: var(--text-gray);
+    font-size: 14px;
+  }
+
+  .COMPONENT__MobileNavElements{
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    flex-direction: column;
+
+    position: absolute;
+    z-index: 1;
+    top: var(--header_height);
+    max-height: 0px;
+    overflow-y: hidden;
+
+    width: 100%;
+    /* border-top: 1px solid var(--gray2); */
+  } 
+  .MobileNavLink{
+    width: 100%;
+    padding-top: 8px;
+    padding-bottom: 8px;
+
+    background-color: white;
+    border-bottom: 1px solid var(--gray2);
+  }
+  .MobileNavLink span{
+    margin-left: 30px;
+  }
+  .MobileNavLink:hover{
+    /* background-color: rgb(255, 213, 255); */
+    background-color: var(--text-gray-hover);
+  }
+  .COMPONENT__DesktopNavElements{
+    justify-content: center;
+    align-items: center;
+
+    display: none;
+  }
+  .DesktopNavLink{
+    /* display: flex; */
+    padding: 5px;
+    margin-left: 2vw;
+  }
+
+/* BODY AND FOOTER COMPONENTS */
+
+  .COMPONENT__Login , .COMPONENT__SignUp{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    min-height: calc(100vh - var(--header_height) - var(--footer_height));
+  }
+
+  .COMPONENT__AllProducts{
+
+  }
+  .section{
+    width: 100%;
+    min-height: calc(100vh - var(--header_height));
+  }
+
+  .SECTION__SinglePage{
+    min-height: calc(100vh - var(--header_height) - var(--footer_height));
+    overflow-y: scroll;
+  }
+
+  .COMPONENT__Cart_Body{
+  }
+  .COMPONENT__CartItems{
+
+  }
+  .bottomSection{
+    width: 100%;
+    min-height: calc(100vh - var(--header_height) - var(--footer_height));
+  }
+
+  .Body_Content{
+    position: relative;
+
+    display: flex;
+    flex-direction: column;
+
+    /* max-height: calc( 100vh - var(--headerFooter_height)); */
+
+    /* height: calc( 100vh - var(--headerFooter_height)); */
+    overflow-y: scroll;
+  }
+
+  .PAGE__HomePage{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+
+    /* height: 100%; */
+    /* overflow-y: scroll; */
+  }
+
+  .SECTION__AboutUs{
+    display: flex;
+    flex-direction: column;
+
+    /* height: calc(100vh - var(--header_height) - var(--footer_height)); */
+    /* height: 500px; */
+    /* overflow-y: scroll; */
+  }
+
+  .section{
+    /* min-height: 100vh; */
+  }
+  .topBottom_section{
+    /* min-height: calc(100vh - var(--headerFooter_height)); */
+  }
+
+  .COMPONENT__Footer{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* flex-direction: column; */
+
+    min-height: var(--footer_height);
+  }
+  .signUpHere, .loginHere{
+    font-weight: bold;
+    color: var(--bgColor_indigo)
+  }
+  .signUpHere:hover, .loginHere:hover{
+    color: var(--bgColor_indigo_Hover)
+  }
+
+  .App-link {
+    color: #61dafb;
+  }
+
+  .productCard-checkoutBtn{
+  background-color: var(--bgColor_indigo);
+  color: rgba(255, 255, 255, 0.884);
+  }
+  .productCard-checkoutBtn:hover{
+    background-color: var(--bgColor_indigo_Hover);
+  }
+
+  .cbm-border-bottom {  
+    border-bottom: 1px solid var(--light-gray)
+  }
+
+  .COMP_Hero{
+
+  }
+
+
+  @keyframes App-logo-spin {
+    from {
+      transform: rotate(0deg);
+    }
+    to {
+      transform: rotate(360deg);
+    }
+  }
+  
+/* BODY AND FOOTER COMPONENTS */

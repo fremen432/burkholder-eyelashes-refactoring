@@ -1,5 +1,5 @@
 // Node Module imports
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { 
   ApolloClient, 
   InMemoryCache, 
@@ -8,17 +8,22 @@ import {
 } from '@apollo/client'
 import { setContext } from '@apollo/client/link/context'
 
+// use this to dispatch an action
+import { useDispatch } from 'react-redux';
+
+import { getProducts } from './actions/products'
+
 // Page imports
-import HomePage from "./newPages/PAGE__HomePage";
+import HomePage from "./pages/PAGE__HomePage";
 
 // Component Imports
-import Login__COMP from "./newComponents/COMP__Login";
-import SignUp__COMP from "./newComponents/COMP__SignUp";
-import AllProducts from './newComponents/COMP__AllProducts'
-import Cart from "./newComponents/COMP__Cart";
+import Login__COMP from "./components/COMP__Login";
+import SignUp__COMP from "./components/COMP__SignUp";
+import AllProducts from './components/COMP__AllProducts'
+import Cart from "./components/COMP__Cart";
 
-import Header from "./newComponents/Header/Header";
-import Footer from "./newComponents/Footer";
+import Header from "./components/Header/Header";
+import Footer from "./components/Footer";
 
 // CSS imports
 import './App.css';
@@ -48,6 +53,12 @@ const client = new ApolloClient({
 })
 
 export default function App() {
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+    dispatch(getProducts());
+  }, [dispatch])
+
   const [page, setPage] = useState('home')
   const [cartItems, setCartItems] = useState([])
 
