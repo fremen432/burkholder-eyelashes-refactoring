@@ -7,7 +7,8 @@
 </h1>
 <div align="center">
     <!-- <img src="./client/src/images/screenshot.gif" width="600px"> -->
-    <img src="./client/src/assets/images/screenshot.gif" width="600px">
+    <!-- <img src="./client/src/assets/images/screenshot.gif" min-width="300px" max-width="400px"> -->
+    <img src="./client/src/assets/images/screenshot.gif" >
 </div>
 
 <!-- ## Table of Contents
