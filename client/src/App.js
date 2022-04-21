@@ -21,6 +21,7 @@ import Login__COMP from "./components/COMP__Login";
 import SignUp__COMP from "./components/COMP__SignUp";
 import AllProducts from './components/COMP__AllProducts'
 import Cart from "./components/COMP__Cart";
+import AddProduct from "./components/COMP__AddProductForm";
 
 import Header from "./components/Header/Header";
 import Footer from "./components/Footer";
@@ -66,6 +67,7 @@ export default function App() {
     home: () => setPage('home'),
     allProducts: () => setPage('allProducts'),
     cart: () => setPage('cart'),
+    addProduct: () => setPage('addProduct'),
     login: () => setPage('login'),
     signUp: () => setPage('signUp')
   }
@@ -102,23 +104,26 @@ export default function App() {
     <div className="App ">
       <Header page={page} setPageMethods={setPageMethods} cartItems={cartItems} onAdd={onAdd} onRemove={onRemove} />
       <div className="Body_Content box " >
-        {
+        { 
           page == 'home' ?
-            <HomePage page={page} setPageMethods={setPageMethods} /> :
+          <HomePage page={page} setPageMethods={setPageMethods} /> :
 
-            page == 'allProducts' ?
-              <AllProducts page={page} setPageMethods={setPageMethods} onAdd={onAdd} onRemove={onRemove} /> :
+          page == 'allProducts' ?
+            <AllProducts page={page} setPageMethods={setPageMethods} onAdd={onAdd} onRemove={onRemove} /> :
 
-              page == 'cart' ?
-                <Cart page={page} setPageMethods={setPageMethods} cartItems={cartItems} onAdd={onAdd} onRemove={onRemove} /> :
+          page == 'cart' ?
+            <Cart page={page} setPageMethods={setPageMethods} cartItems={cartItems} onAdd={onAdd} onRemove={onRemove} /> :
 
-                page == 'login' ?
-                  <Login__COMP page={page} setPageMethods={setPageMethods} /> :
+          page == 'addProduct' ?
+            <AddProduct page={page} setPageMethods={setPageMethods} cartItems={cartItems} onAdd={onAdd} onRemove={onRemove} /> :
 
-                  page == 'signUp' ?
-                    <SignUp__COMP page={page} setPageMethods={setPageMethods} /> :
+          page == 'login' ?
+            <Login__COMP page={page} setPageMethods={setPageMethods} /> :
 
-                    <HomePage page={page} setPageMethods={setPageMethods} />
+          page == 'signUp' ?
+            <SignUp__COMP page={page} setPageMethods={setPageMethods} /> :
+
+            <HomePage page={page} setPageMethods={setPageMethods} />
         }
         <Footer />
       </div>

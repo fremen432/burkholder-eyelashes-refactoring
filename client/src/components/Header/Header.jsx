@@ -29,9 +29,6 @@ export default function Header(props) {
     if (mobileNavOpen == false) return setMobileNavOpen(true)
   }
 
-
-
-  // set isMobileView to true if window width <= { someWidth }.
   return (
     <div className="COMPONENT__Header cbm-border-bottom">
       <div className="Header__Main ">

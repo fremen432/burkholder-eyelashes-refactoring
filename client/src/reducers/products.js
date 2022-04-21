@@ -11,7 +11,7 @@ export default (products = [], action) => {
             return action.payload;    
         
         case "CREATE":    
-            return products;    
+            return [...products, action.payload];    
         
         default:
             return products;

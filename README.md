@@ -1,4 +1,4 @@
-# Module 23-24 - Group Project 3 - Burkholder Eyelashes
+# Burkholder Eyelashes
 
 <h1 align="center">
     <a href="" target="_blank">
@@ -6,21 +6,22 @@
     </a>
 </h1>
 <div align="center">
-    <img src="./client/src/images/screenshot.gif" width="600px">
+    <!-- <img src="./client/src/images/screenshot.gif" width="600px"> -->
+    <img src="./client/src/assets/images/screenshot.gif" width="600px">
 </div>
 
-## Table of Contents
+<!-- ## Table of Contents
 
 + [About](#about)
 + [Getting Started](#getting_started)
 + [Contributing](./CONTRIBUTING.md)
 + [License](./LICENSE)
-+ [Code of Conduct](./CODE_OF_CONDUCT.md)
++ [Code of Conduct](./CODE_OF_CONDUCT.md) -->
 
 ## About <a name = "about"></a>
-Single page e-commerce website based around selling custom eyelash extension kits.
+Single page e-commerce website built with React.js based around selling custom eyelash extension kits.
 
-### Project Requirements
+<!-- ### Project Requirements
 ```
 Your group will use everything you’ve learned throughout this course to create a MERN stack single-page application that works with real-world data to solve a real-world challenge, with a focus on user demand. The user story and acceptance criteria will depend on the project that you create, but your project must fulfill some specific requirements.
 Your project should fulfill the following requirements:
@@ -37,25 +38,25 @@ Your project should fulfill the following requirements:
 - Have a clean repository that meets quality coding standards (file structure, naming conventions, best practices for class and id naming conventions, indentation, quality comments, etc.).
 - Have a high-quality README (with unique name, description, technologies used, screenshot, and link to deployed application).
 - Finally, you must add your project to the portfolio that you created in Module 20.
-```
+``` -->
 
-## Getting Started <a name = "getting_started"></a>
-These instructions will get you a copy of the project up and running on your local machine for development and testing purposes.
+<!-- ## Getting Started <a name = "getting_started"></a>
+These instructions will get you a copy of the project up and running on your local machine for development and testing purposes. -->
 
-### Prerequisites
+<!-- ### Prerequisites
 
-What things you need to install the software and how to install them.
+What things you need to install the software and how to install them. -->
 
 
-### Installing
+<!-- ### Installing
 
 1. Clone this repo.
 2. Navigate to repo folder.
 3. Run `npm install` to install the packages listed above.
 4. Run `node server.js`
-5. Open a new tab in your browser and navigate to http://localhost:3000
+5. Open a new tab in your browser and navigate to http://localhost:3000 -->
 
-## Contact <a name = "contact"></a>
+<!-- ## Contact <a name = "contact"></a>
 
 - [Clayton](https://github.com/fremen432)
 
@@ -63,4 +64,4 @@ What things you need to install the software and how to install them.
 
 - [Mickey](https://github.com/MickeyPhillips)
 
-- [William](https://github.com/nguyen-william93)
+- [William](https://github.com/nguyen-william93) -->

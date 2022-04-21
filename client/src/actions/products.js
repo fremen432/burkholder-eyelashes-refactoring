@@ -1,6 +1,7 @@
 // Action Creators are functions that return an 'action' which is an object that has the 'type' ex:) 'FETCH_ALL' and a 'payload'.
 
 import * as api from '../api';
+import { products } from '../data';
 
 // Action Creators
 
@@ -17,5 +18,16 @@ export const getProducts = () => async (dispatch) => {
         dispatch({ type: 'FETCH_ALL', payload: data });
     } catch (error) {
        console.log(error.message);
+    }
+}
+
+export const createProduct = (product) => async (dispatch) => {
+    try {
+        const { data } = await api.createProduct(product);
+
+        // dispatch the 'action'
+        dispatch({ type: 'CREATE', payload: data });
+    } catch (error) {
+        console.log(error);
     }
 }

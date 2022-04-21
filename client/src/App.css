@@ -10,9 +10,17 @@
 
   --bgColor_indigo: rgb(79,70,229);
   --bgColor_indigo_Hover: rgb(165, 160, 255);
+  
+  --bgColor_clear: rgb(229, 70, 70);
+  --bgColor_clear_Hover: rgb(255, 160, 160);
+
   --headerFooter_height: 65px;
   --header_height: 70px;
   --footer_height: 70px;
+
+  --margin-topBottom: 5px;
+  --pixel_Y_1: 5px;
+  --marginX-1: 50px;
 
 }
 
@@ -23,6 +31,24 @@
   height: 100vh;
   overflow: hidden;
 }
+
+.titleBasic{
+  text-align: center;
+  padding: 5px;
+
+}
+
+.btnStyle_clear, .btnStyle{
+  color: white;
+  padding: var(--pixel_Y_1) ;
+  border-radius: 5px;
+}
+
+.btnStyle{ background-color: var(--bgColor_indigo); }
+.btnStyle:hover{ background-color: var(--bgColor_indigo_Hover); }
+
+.btnStyle_clear{ background-color: var(--bgColor_clear);}
+.btnStyle_clear:hover{ background-color: var(--bgColor_clear_Hover);}
 
 /* HEADER */
 
@@ -282,15 +308,23 @@
   .COMP_Hero{
 
   }
+  .inputProduct-form{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
 
-
-  @keyframes App-logo-spin {
-    from {
-      transform: rotate(0deg);
-    }
-    to {
-      transform: rotate(360deg);
-    }
+    padding-left: var(--marginX-1);
+    padding-right: var(--marginX-1);
   }
-  
-/* BODY AND FOOTER COMPONENTS */
+  .form-pair{
+    display: grid;
+    align-items: center;
+    grid-template-columns: 50% 50%;
+
+    margin-top: var(--margin-topBottom);
+    margin-bottom: var(--margin-topBottom);
+
+  }
+  .input-label{
+    /* width: 100%; */
+  }

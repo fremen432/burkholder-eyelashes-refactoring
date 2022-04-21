@@ -1,48 +1,6 @@
 import React from 'react'
 import { products } from "../data"
-
-const addToCart = () => alert('added to cart')
-
-function ProductCards(props) {
-    const { page } = props;
-
-    return (
-        <>
-          {/* Create a product card for each featured product in products array */}
-          {products.map((product, index) => (
-            product.featured ?
-            <div key={product.id} className="productCard box">
-              {/* Product Image */}
-                <img
-                  src={product.imageSrc}
-                  alt={product.imageAlt}
-                  className="w-full h-full object-center object-cover bg-gray-200 rounded-md overflow-hidden lg:h-72 xl:h-80"
-                />
-                {/* Product Description */}
-              <div className=" flex justify-between flex-col ">
-
-                <div className="productCard-innerWrapper  ">
-                  <h3 className="mt-2 text-sm text-gray-700 box h-12">
-                    <a href={product.href}>
-                      <span className="absolute " />
-                      {product.name}
-                    </a>
-                  </h3>
-                  <p className="mt-1 text-sm text-gray-500">{product.color}</p>
-                </div>
-                
-                <div className={"grid mt-1 " + (page == 'products' ? 'grid-cols-2 ' : 'grid-cols-1 ')}>
-                  <button onClick={addToCart} className={"productCard-checkoutBtn p-1 text-sm font-medium text-gray-900 box rounded-lg" + (page == 'products' ? ' ' : ' hidden')}>Add to Cart</button>
-                  <p className=" flex justify-end items-center text-sm font-medium text-gray-900 text-right box">{product.price}</p>
-                </div>
-                
-              </div>
-            </div> :
-            <></>
-          ))}  
-      </>
-    )
-  }
+import ProductCard from './COMP_ProductCard';
 
 export default function FeaturedProducts(props) {
   const { page } = props;
@@ -54,7 +12,20 @@ export default function FeaturedProducts(props) {
 
         {/* Products container */}
         <div className="mt-6 grid grid-cols-1 gap-x-4 gap-y-10 sm:gap-x-6 sm:grid-cols-2 lg:grid-cols-4  lg:gap-y-0 lg:gap-x-8">
-          <ProductCards page={page} />
+
+          {/* Create a product card for each featured product in products array */}
+          { products.filter( product => product.featured )
+            .map((product, index) => (
+            <ProductCard
+             key={index} 
+             index={index} 
+             product={product}
+             page={page} 
+             />
+          ))}  
+
+
+          {/* <ProductCards page={page} /> */}
         </div>
 
         <div className="mt-8 text-sm md:hidden">

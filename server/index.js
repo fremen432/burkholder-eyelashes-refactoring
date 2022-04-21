@@ -18,7 +18,8 @@ app.use('/products', productRoutes);
 const MongoDB_UserName = 'burkholder_eyelashes_user1'
 const MongoDB_Password = '1iQsMDRr4dk3BGhe'
 
-const CONNECTION_URL = `mongodb+srv://burkholder_eyelashes_user1:${MongoDB_Password}@cluster0.kqcsg.mongodb.net/myFirstDatabase?retryWrites=true&w=majority`
+// const CONNECTION_URL = `mongodb+srv://burkholder_eyelashes_user1:${MongoDB_Password}@cluster0.kqcsg.mongodb.net/myFirstDatabase?retryWrites=true&w=majority`
+const CONNECTION_URL = `mongodb+srv://burkholder_eyelashes_user1:${MongoDB_Password}@cluster0.kqcsg.mongodb.net/myFirstDatabase`
 
 const PORT = process.env.PORT || 5000;
 

@@ -22,6 +22,7 @@ export default function NavEl(props){
     { name: 'Contact',  ref: '/#ContactUs', onClick: () => { setPageMethods.home(); clickMobileNavToggle(); } },
     { name: 'Products', ref: '/#Products',  onClick: () => { setPageMethods.allProducts(); clickMobileNavToggle(); } },
     { name: 'Cart',     ref: '/#Cart',      onClick: () => { setPageMethods.cart(); clickMobileNavToggle(); } },
+    { name: 'Add Product', ref: '/#Add-Product', onClick: () => { setPageMethods.addProduct(); clickMobileNavToggle(); } },
   ]
   
   const loggedOutNavElements =  [

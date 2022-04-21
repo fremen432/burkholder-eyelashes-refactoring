@@ -3,6 +3,9 @@ import man2 from './assets/images/profilePictures/podpros.jpeg'
 import woman1 from './assets/images/profilePictures/christina-wocintechchat.jpeg'
 import woman2 from './assets/images/profilePictures/vince-veras.jpeg'
 
+const productDescription = `Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.`
+
+
 const products = [
   {
     name: 'Volume Adhesive',
@@ -13,7 +16,8 @@ const products = [
     size: 'Small',
     imageSrc: 'https://cdn.shopify.com/s/files/1/0539/7102/6115/products/Adhesives_BLAV5_Volume5ml_Thumbnail_x190.jpg?v=1614031666',
     imageAlt: "",
-    featured: true
+    featured: true,
+    description: productDescription
   },
   {
     name: 'Diamond Adhesive',
@@ -25,7 +29,8 @@ const products = [
     size: 'Large',
     imageSrc: 'https://cdn.shopify.com/s/files/1/0539/7102/6115/products/Adhesives_BLDA5_Diamond5ml_Thumbnail_360x.jpg?v=1614015061',
     imageAlt: "",
-    featured: true
+    featured: true,
+    description: productDescription
   },
   {
     name: 'Onyx Adhesive',
@@ -35,7 +40,8 @@ const products = [
     inStock: true,
     imageSrc: 'https://cdn.shopify.com/s/files/1/0539/7102/6115/products/Adhesives_BLOA05_Onyx5ml_Thumbnail_360x.jpg?v=1614030217',
     imageAlt: '',
-    featured: true
+    featured: true,
+    description: productDescription
   },
   {
     name: 'Volume Adhesive',
@@ -46,7 +52,8 @@ const products = [
     size: 'Small',
     imageSrc: 'https://cdn.shopify.com/s/files/1/0539/7102/6115/products/Adhesives_BLAV5_Volume5ml_Thumbnail_x190.jpg?v=1614031666',
     imageAlt: "",
-    featured: false
+    featured: false,
+    description: productDescription
   },
   {
     name: 'Diamond Adhesive',
@@ -58,7 +65,8 @@ const products = [
     size: 'Large',
     imageSrc: 'https://cdn.shopify.com/s/files/1/0539/7102/6115/products/Adhesives_BLDA5_Diamond5ml_Thumbnail_360x.jpg?v=1614015061',
     imageAlt: "",
-    featured: false
+    featured: false,
+    description: productDescription
   },
   {
     //   id: 3,
@@ -69,7 +77,8 @@ const products = [
     inStock: true,
     imageSrc: 'https://cdn.shopify.com/s/files/1/0539/7102/6115/products/Adhesives_BLOA05_Onyx5ml_Thumbnail_360x.jpg?v=1614030217',
     imageAlt: '',
-    featured: false
+    featured: false,
+    description: productDescription
   },
   {
     id: 1,
@@ -81,7 +90,8 @@ const products = [
     size: 'Small',
     imageSrc: 'https://cdn.shopify.com/s/files/1/0539/7102/6115/products/Adhesives_BLAV5_Volume5ml_Thumbnail_x190.jpg?v=1614031666',
     imageAlt: "",
-    featured: false
+    featured: false,
+    description: productDescription
   },
   {
     //   id: 2,
@@ -94,7 +104,8 @@ const products = [
     size: 'Large',
     imageSrc: 'https://cdn.shopify.com/s/files/1/0539/7102/6115/products/Adhesives_BLDA5_Diamond5ml_Thumbnail_360x.jpg?v=1614015061',
     imageAlt: "",
-    featured: false
+    featured: false,
+    description: productDescription
   },
   {
     //   id: 3,
@@ -105,7 +116,8 @@ const products = [
     inStock: true,
     imageSrc: 'https://cdn.shopify.com/s/files/1/0539/7102/6115/products/Adhesives_BLOA05_Onyx5ml_Thumbnail_360x.jpg?v=1614030217',
     imageAlt: '',
-    featured: false
+    featured: false,
+    description: productDescription
   },
 ]
 
