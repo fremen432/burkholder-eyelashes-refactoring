@@ -6,13 +6,11 @@ import App from './App';
 // import { BrowserRouter } from 'react-router-dom';
 
 
-// redux will handle all of our actions toward our back-end
-
+// Redux and react-redux will handle all of our actions toward our back-end
 // Provider keeps track of 'store' which is a global state 
-import { Provider } from 'react-redux';
 
 import { createStore, applyMiddleware, compose } from 'redux';
-
+import { Provider } from 'react-redux';
 import thunk from 'redux-thunk';
 
 import reducers from './reducers';

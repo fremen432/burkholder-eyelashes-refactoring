@@ -9,7 +9,8 @@ export default function HamburgerIcon(props) {
     const [isRotatedLine3, setIsRotatedLine3] = useState('start')
 
     useEffect(() => {
-        if (mobileNavOpen == 'start') return console.log("mobileNavOpen = 'start'")
+        // if (mobileNavOpen == 'start') return console.log("mobileNavOpen = 'start'")
+        if (mobileNavOpen == 'start') return;
         if (mobileNavOpen == true) return rotateToggle();
         if (mobileNavOpen == false) return rotateToggle();
     }, [mobileNavOpen]) 

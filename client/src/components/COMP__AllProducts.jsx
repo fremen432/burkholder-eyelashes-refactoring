@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 // import { products } from "../data"
 
+// this is to keep track of the state
 import { useSelector } from 'react-redux';
 
 import ProductCard from './COMP_ProductCard';
@@ -9,8 +10,11 @@ import ProductCard from './COMP_ProductCard';
 export default function AllProducts(props) {
   const { page, onAdd, onRemove } = props;
 
+    // the 'state' parameter comes from the global react-redux 'store' property we defined in the application's index.js
     // the state.products comes from reducers index.js
-    const products = useSelector((state) => state.products)
+    const products = useSelector( state => state.products)
+
+    // this only returns { name, price, id } in browser console
     console.log(products);
 
     return (

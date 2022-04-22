@@ -1,6 +1,7 @@
-import React, { useState } from 'react'
-import FileBase from 'react-file-base64'
-import { useDispatch } from 'react-redux'
+import React, { useState } from 'react';
+// import FileBase from 'react-file-base64';
+import FileBase from 'react-file-base64';
+import { useDispatch } from 'react-redux';
 
 import { createProduct } from '../actions/products';
 
@@ -10,23 +11,18 @@ export default function Form() {
         {
             name: '',
             description: '',
-            price: ''
+            price: '',
+            selectedFile: ''
         }
     )
     const dispatch = useDispatch();
 
-    const uploadImage = () => {};
-
     const handleSubmit = (e) => {
         e.preventDefault();
-        
+
         dispatch(createProduct(productData));
 
-
-
-
-
-
+        // product data object is looking correct in browser console
         console.log(productData);
     };
     const clear = (e) => {        
@@ -34,9 +30,11 @@ export default function Form() {
         console.log('clear')
     };
 
+    // const getFiles = (files) => this.setState
+
   return (
     <div id="Add-Product" >
-        <form className="inputProduct-form" onSubmit={e => handleSubmit(e)}>
+        <form className="inputProduct-form" onSubmit={ e => handleSubmit(e) }>
             
             <h1 className="titleBasic box">Insert a Product!</h1>
 
@@ -75,10 +73,7 @@ export default function Form() {
                 id='product-image' 
                 type="file" 
                 multiple={false}
-                onDone={(base64) => setProductData({ ...productData, selectedFile: base64 })}
-
-                // value={productData.price}
-                // onChange={e => setProductData({ ...productData, price: e.target.value })}
+                onDone={({base64}) => setProductData({ ...productData, selectedFile: base64 })}
                 />
             </div>
 
