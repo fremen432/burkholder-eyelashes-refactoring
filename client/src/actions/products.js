@@ -2,13 +2,11 @@
 // example ->  { type: 'FETCH_ALL', payload: data }
 
 import * as api from '../api';
-// import { products } from '../data';
 
 // Action Creators
 
 // we will export this action to App.js
 // the 'async (dispatch) =>' syntax comes from redux-thunk
-
 // this getProducts() is imported from app.js to be dispatched by react-redux
 export const getProducts = () => async (dispatch) => {
     try {

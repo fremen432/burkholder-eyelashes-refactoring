@@ -1,6 +1,7 @@
 import React from 'react'
 
-export default function Hero() {
+export default function Hero(props) {
+    const { setPageMethods } = props;
     return (
         <div id="Hero" className="section SECTION_Hero topBottom_section relative bg-gray-900">
             {/* Hero Image */}
@@ -22,8 +23,9 @@ export default function Hero() {
                 We make lashes your clients love. Stock up on lash essentials you can trust.
             </p>
             <a
-                href="/products"
-                className="mt-8 inline-block bg-white border border-transparent rounded-md py-3 px-8 text-base font-medium text-gray-900 hover:bg-gray-100 uppercase"
+                href="/#Products"
+                onClick={setPageMethods.allProducts}
+                className="mt-8 inline-block bg-white hover:bg-gray-100 border border-transparent rounded-md py-3 px-8 text-base font-medium text-gray-900 uppercase"
             >
                 Start Shopping
             </a>

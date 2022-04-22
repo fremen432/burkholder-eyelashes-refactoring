@@ -1,15 +1,17 @@
 import mongoose from "mongoose";
 
 const productSchema = mongoose.Schema({
-    name: String,
+    // name: String,
+    creatorName: String,
+    productName: String,
     // href: String,
     price: String,
     description: String,
     color: String,
     inStock: Boolean,
     size: String,
+    // selectedFile: String,
     imageSrc: String,
-    selectedFile: String,
     imageAlt: String,
     featured: Boolean
 })

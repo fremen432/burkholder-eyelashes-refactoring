@@ -1,5 +1,8 @@
+.vscode
 .DS_Store
 node_modules
 package-lock.json
+
 README.txt
-.vscode
+# README.md
+yarn.lock

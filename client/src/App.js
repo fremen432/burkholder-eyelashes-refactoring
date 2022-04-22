@@ -64,6 +64,7 @@ export default function App() {
 
   const [page, setPage] = useState('home')
   const [cartItems, setCartItems] = useState([])
+  // const []
 
   const setPageMethods = {
     home:         () => setPage('home'),

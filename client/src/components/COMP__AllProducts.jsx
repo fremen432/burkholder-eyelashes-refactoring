@@ -14,7 +14,7 @@ export default function AllProducts(props) {
     // the state.products comes from reducers index.js
     const products = useSelector( state => state.products)
 
-    // this only returns { name, price, id } in browser console
+    // this only returns { name, price, id } in browser
     console.log(products);
 
     return (

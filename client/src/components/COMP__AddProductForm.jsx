@@ -5,14 +5,19 @@ import { useDispatch } from 'react-redux';
 
 import { createProduct } from '../actions/products';
 
+import toggleSwitch from './toggle-switch/toggle-switch';
+
 export default function Form() {
 
     const [productData, setProductData] = useState(
         {
-            name: '',
+            creatorName: '',
+            productName: '',
             description: '',
             price: '',
-            selectedFile: ''
+            selectedFile: '',
+            featured: false,
+            // inStock: true
         }
     )
     const dispatch = useDispatch();
@@ -49,6 +54,16 @@ export default function Form() {
             </div>
 
             <div className="form-pair" >
+                <p className="input-label">Product Name</p>
+                <input 
+                id='product-Name' 
+                type="text" 
+                value={productData.name}
+                onChange={e => setProductData({ ...productData, name: e.target.value })}
+                />
+            </div>
+
+            <div className="form-pair" >
                 <p className="input-label">Product Description</p>
                 <input 
                 id='product-description' 
@@ -67,13 +82,24 @@ export default function Form() {
                 onChange={e => setProductData({ ...productData, price: e.target.value })}
                 />
             </div>
+
+            <div className="form-pair" >
+                <p className="input-label">Is product currently in-stock?</p>
+                <input 
+                id='product-price' 
+                type="checkbox" 
+                value={productData.inStock}
+                onChange={e => setProductData({ ...productData, inStock: e.target.value })}
+                />
+            </div>
+
             <div className="form-pair" >
                 <p className="input-label">Product Image</p>
                 <FileBase 
                 id='product-image' 
                 type="file" 
                 multiple={false}
-                onDone={({base64}) => setProductData({ ...productData, selectedFile: base64 })}
+                onDone={({base64}) => setProductData({ ...productData, imageSrc: base64 })}
                 />
             </div>
 
