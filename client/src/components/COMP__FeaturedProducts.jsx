@@ -1,6 +1,6 @@
 import React from 'react'
-import { products } from "../data"
-import ProductCard from './COMP_ProductCard';
+import { products } from "../assets/js/data"
+import ProductCard from './ProductCard';
 
 export default function FeaturedProducts(props) {
   const { page } = props;

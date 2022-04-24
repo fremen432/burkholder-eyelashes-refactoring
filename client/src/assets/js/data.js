@@ -1,7 +1,7 @@
-import man1 from './assets/images/profilePictures/ben-parker.jpeg'
-import man2 from './assets/images/profilePictures/podpros.jpeg'
-import woman1 from './assets/images/profilePictures/christina-wocintechchat.jpeg'
-import woman2 from './assets/images/profilePictures/vince-veras.jpeg'
+import man1 from '../images/profilePictures/ben-parker.jpeg'
+import man2 from '../images/profilePictures/podpros.jpeg'
+import woman1 from '../images/profilePictures/christina-wocintechchat.jpeg'
+import woman2 from '../images/profilePictures/vince-veras.jpeg'
 
 const productDescription = `Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.`
 

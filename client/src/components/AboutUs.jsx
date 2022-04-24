@@ -1,4 +1,4 @@
-import { people } from "../data"
+import { people } from "../assets/js/data"
 
 export default function AboutUs() {
     return (

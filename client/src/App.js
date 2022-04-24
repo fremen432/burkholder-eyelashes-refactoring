@@ -20,16 +20,16 @@ import HomePage from "./pages/PAGE__HomePage";
 import Login__COMP from "./components/COMP__Login";
 import SignUp__COMP from "./components/COMP__SignUp";
 import AllProducts from './components/COMP__AllProducts'
-import Cart from "./components/COMP__Cart";
+import Cart from "./components/Cart/Cart";
 import AddProduct from "./components/COMP__AddProductForm";
 
 import Header from "./components/Header/Header";
 import Footer from "./components/Footer";
 
 // CSS imports
-import './App.css';
-import './assets/css/MediaQueries.css'
-import './assets/css/Animations.css'
+import './assets/css/main/App.css'
+import './assets/css/utils/MediaQueries.css'
+import './assets/css/utils/Animations.css'
 // import { Switch } from "@headlessui/react";
 
 // sends http requests to server at this link

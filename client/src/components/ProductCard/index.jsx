@@ -1,3 +1,5 @@
+import './style/style.scss'
+
 export default function ProductCard(props){
   const { product, page, onAdd, index } = props;
   
@@ -16,10 +18,11 @@ export default function ProductCard(props){
         <img
           src={product.imageSrc}
           alt={`Product ${product.name}`}
-          className="productCard-image bg-gray-200 shadow-lg box"
+          className="productCard-image shadow-lg box"
         />
 
-        <div className="flex items-stretch flex-col box w-full">
+        {/* <div className="flex items-stretch flex-col box"> */}
+        <div className=" box">
 
           <div className="productCard-innerWrapper ">
             <h3 className="mt-2 text-sm text-gray-700 box text-center ">
