@@ -11,13 +11,13 @@ export default function Form() {
 
     const [productData, setProductData] = useState(
         {
-            creatorName: '',
+            creatorName: 'Clayton',
             productName: '',
             description: '',
             price: '',
             selectedFile: '',
             featured: false,
-            // inStock: true
+            inStock: true
         }
     )
     const dispatch = useDispatch();
@@ -44,12 +44,12 @@ export default function Form() {
             <h1 className="titleBasic box">Insert a Product!</h1>
 
             <div className="form-pair" >
-                <p className="input-label">Product Name</p>
+                <p className="input-label">Creator Name</p>
                 <input 
                 id='product-Name' 
                 type="text" 
-                value={productData.name}
-                onChange={e => setProductData({ ...productData, name: e.target.value })}
+                value={productData.creatorName}
+                onChange={e => setProductData({ ...productData, creatorName: e.target.value })}
                 />
             </div>
 
@@ -58,8 +58,8 @@ export default function Form() {
                 <input 
                 id='product-Name' 
                 type="text" 
-                value={productData.name}
-                onChange={e => setProductData({ ...productData, name: e.target.value })}
+                value={productData.productName}
+                onChange={e => setProductData({ ...productData, productName: e.target.value })}
                 />
             </div>
 
@@ -88,6 +88,7 @@ export default function Form() {
                 <input 
                 id='product-price' 
                 type="checkbox" 
+                checked
                 value={productData.inStock}
                 onChange={e => setProductData({ ...productData, inStock: e.target.value })}
                 />

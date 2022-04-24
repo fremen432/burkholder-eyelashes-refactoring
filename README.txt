@@ -5,10 +5,18 @@ What needs to be fixed?
     - Sign-up/login functionality
     - Ability for Admin to add products to site
     - 
+    - When logged in, Seller can add, updatate and delete products to site from their profile.
+
 
     follow this tutorial: 
     Full Stack MERN Project - Build and Deploy an App | React + Redux, Node, Express, MongoDB [Part 1/2]
     https://www.youtube.com/watch?v=ngc9gnGgUdA
+
+
+
+
+
+
 
 
 What is redux and react-redux used for?

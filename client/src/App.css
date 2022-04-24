@@ -14,6 +14,12 @@
   --bgColor_clear: rgb(229, 70, 70);
   --bgColor_clear_Hover: rgb(255, 160, 160);
 
+  --bgColor_btn_update: orange;
+  --bgColor_btn_update_Hover: rgb(255, 221, 158);
+
+  --bgColor_ProductCard: rgb(255, 236, 212);
+
+
   --headerFooter_height: 65px;
   --header_height: 70px;
   --footer_height: 70px;
@@ -293,14 +299,58 @@
     color: #61dafb;
   }
 
-  .productCard-checkoutBtn{
-  background-color: var(--bgColor_indigo);
-  color: rgba(255, 255, 255, 0.884);
+  .productCard{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+
+    background-color: var(--bgColor_ProductCard);
+
+    min-height: 250px;
+    min-width: 250px;
+
+    padding: 10px;
+
+    border-radius: 10px;
   }
-  .productCard-checkoutBtn:hover{
-    background-color: var(--bgColor_indigo_Hover);
+  .productCard-checkoutBtn, .update-button, .delete-button{
+    
+    color: rgba(255, 255, 255, 0.884);
+
+    padding-top: 2px;
+    padding-bottom: 2px;
+
+    border-radius: 5px;
   }
 
+  .productCard-checkoutBtn{ background-color: var(--bgColor_indigo); }
+  .productCard-checkoutBtn:hover{ background-color: var(--bgColor_indigo_Hover); }
+
+  .update-button{ background-color: var(--bgColor_btn_update); }
+  .update-button:hover{ background-color: var(--bgColor_btn_update_Hover); }
+
+  .delete-button{ background-color: var(--bgColor_clear); }
+  .delete-button:hover{ background-color: var(--bgColor_clear_Hover); }
+
+  .productCard-image{
+    /* object-position: center; */
+    /* object-fit: cover; */
+
+    overflow-y: hidden;
+    overflow-x: hidden;
+
+    border-radius: 5px;
+
+    width: 100%;
+    height: 100%;
+
+    /* margin: 15px; */
+
+    /* height: 100px; */
+    /* width: 100px; */
+
+  }
   .cbm-border-bottom {  
     border-bottom: 1px solid var(--light-gray)
   }

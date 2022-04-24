@@ -1,3 +1,5 @@
+import mongoose from "mongoose";
+// import { products } from "../../client/src/data.js";
 import Product from "../models/product.js"
 
 export const getProducts = async (req, res) => {
@@ -27,4 +29,15 @@ export const createProduct = async (req, res) => {
         // 409 means client-side "Conflict"
         res.status(409).json({ message: error.message });
     }
+}
+
+export const updateProduct = async (req, res) => {
+    const { id: _id } = req.params;
+    const product = req.body;
+
+    if (!mongoose.Types.ObjectId.isValid(_id)) return res.status(404).send('No product with that id');
+
+    const updatedProduct = await ProductMessage.findByIdAndUpdate(_id, product, { new: true });
+
+    res.json(updatedProduct);
 }
