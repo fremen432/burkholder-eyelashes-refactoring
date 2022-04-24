@@ -1,7 +1,7 @@
 import BellIconBtn from './bellIcon';
 import ProfileIcon from './profileIcon';
 
-import Auth from '../../utils/auth';
+import Auth from '../../../assets/js/utils/auth';
 
 function UserIconAndNotificationBell() {
    const loggedIn = Auth.loggedIn();

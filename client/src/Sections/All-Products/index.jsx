@@ -4,7 +4,7 @@ import React, { useState } from 'react'
 // this is to keep track of the state
 import { useSelector } from 'react-redux';
 
-import ProductCard from './ProductCard';
+import ProductCard from '../../components/ProductCard';
 
 
 export default function AllProducts(props) {

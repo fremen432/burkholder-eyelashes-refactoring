@@ -4,14 +4,14 @@ import { SearchIcon } from '@heroicons/react/solid'
 import { BellIcon, MenuIcon, XIcon } from '@heroicons/react/outline'
 
 // Importing components
-import NavEl from './navEl'
-import Logo from './logo'
-import HamburgerIcon from './HamburugerIcon'
+import NavEl from './sub-comopnents/navEl'
+import Logo from './sub-comopnents/logo'
+import HamburgerIcon from './sub-comopnents/HamburugerIcon'
 
 
-import SearchBar from './searchBar'
-import UserIconAndNotificationBell from './userProfile'
-import CartIcon from './cartIcon'
+import SearchBar from './sub-comopnents/searchBar'
+import UserIconAndNotificationBell from './sub-comopnents/userProfile'
+import CartIcon from './sub-comopnents/cartIcon'
 
 // import MobileNavEl from './mobileNavEl'
 

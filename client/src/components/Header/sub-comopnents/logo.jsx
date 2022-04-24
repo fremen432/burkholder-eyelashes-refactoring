@@ -1,4 +1,4 @@
-import logoSmall from '../../assets/images/workflow-logo-small.png'
+import logoSmall from '../../../assets/images/workflow-logo-small.png'
 
 export default function Logo(props) {
   const { setPageMethods } = props;

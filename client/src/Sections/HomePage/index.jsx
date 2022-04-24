@@ -1,7 +1,7 @@
-import Hero from '../components/Hero'
-import AboutUs from '../components/AboutUs'
-import ContactUs from '../components/ContactUs'
-import FeaturedProducts from '../components/COMP__FeaturedProducts'
+import Hero from '../Hero'
+import AboutUs from '../About-Us'
+import ContactUs from '../Contact-Us'
+import FeaturedProducts from '../Featured-Products'
 
 export default function HomePage(props) {
     const { page, setPageMethods } = props;

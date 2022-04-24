@@ -1,4 +1,4 @@
-import Auth from '../../utils/auth'
+import Auth from '../../../assets/js/utils/auth'
 
 const logout = (event) => {
   event.preventDefault();

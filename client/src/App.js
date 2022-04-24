@@ -14,16 +14,16 @@ import { useDispatch } from 'react-redux';
 import { getProducts } from './actions/products'
 
 // Page imports
-import HomePage from "./pages/PAGE__HomePage";
+import HomePage from "./Sections/HomePage";
 
 // Component Imports
-import Login__COMP from "./components/COMP__Login";
-import SignUp__COMP from "./components/COMP__SignUp";
-import AllProducts from './components/COMP__AllProducts'
-import Cart from "./components/Cart/Cart";
-import AddProduct from "./components/COMP__AddProductForm";
+import Login__COMP from "./Sections/Login/COMP__Login";
+import SignUp__COMP from "./Sections/SignUp/COMP__SignUp";
+import AllProducts from './Sections/All-Products'
+import Cart from "./Sections/Cart";
+import AddProduct from "./Sections/Add-Product";
 
-import Header from "./components/Header/Header";
+import Header from "./components/Header";
 import Footer from "./components/Footer";
 
 // CSS imports

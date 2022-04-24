@@ -3,9 +3,9 @@ import React, { useState } from 'react';
 import FileBase from 'react-file-base64';
 import { useDispatch } from 'react-redux';
 
-import { createProduct } from '../actions/products';
+import { createProduct } from '../../actions/products';
 
-import toggleSwitch from './toggle-switch/toggle-switch';
+import toggleSwitch from '../../components/toggle-switch/toggle-switch';
 
 export default function Form() {
 
