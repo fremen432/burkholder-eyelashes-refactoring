@@ -8,7 +8,7 @@ import ProductCard from '../../components/ProductCard';
 
 
 export default function AllProducts(props) {
-  const { page, onAdd, onRemove } = props;
+  const { page } = props;
 
     // the 'state' parameter comes from the global react-redux 'store' property we defined in the application's index.js
     // the state.products comes from reducers index.js
@@ -28,7 +28,7 @@ export default function AllProducts(props) {
 
               {products.map((product, index) => 
                 product.inStock ?
-                <ProductCard key={index} product={product} page={page} onAdd={onAdd} index={index} /> :
+                <ProductCard key={index} product={product} page={page} index={index} /> :
                 <></>
               )}
 

@@ -1,9 +1,14 @@
 import './style/style.scss'
 
-export default function ProductCard(props){
-  const { product, page, onAdd, index } = props;
+import { useSelector, useDispatch } from 'react-redux';
+import { addCartItem, removeCartItem } from '../../actions/cartItems.js';
+
+export default function ProductCard({ product, page, index }){
+
+  const dispatch = useDispatch();
+  const cartItems = useSelector(state => state.cartItems);
   
-  const handleAddToCart = (product) => () => onAdd(product);
+  const handleAddToCart = (newItem) => () => dispatch(addCartItem(cartItems, newItem));
 
   const handleUpdateProduct = (product) => {}
   const handleDeleteProduct = (product) => {}

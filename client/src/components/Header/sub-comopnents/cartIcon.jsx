@@ -1,8 +1,10 @@
+
 import { ShoppingCartIcon } from '@heroicons/react/outline'
+import { useSelector } from 'react-redux';
 
 export default function CartIcon(props) {
-    const { cartItems, setPageMethods, onAdd, onRemove } = props;
-
+    const { setPageMethods } = props;
+    const cartItems = useSelector(state => state.cartItems);
     return (
         <div className="COMPONENT__HeaderCartIcon_Container" >
             <a 

@@ -1,3 +1,5 @@
+import { CREATE, UPDATE, DELETE, FETCH_ALL, LIKE } from "../assets/constants/actionTypes";
+
 /*
     All of the following is necessary for react-redux
 
@@ -27,10 +29,14 @@ export default (products = [], action) => {
 
     switch (action.type) {
 
-        case "FETCH_ALL":    
+
+        case FETCH_ALL:    
+            // action.payload is the argument
+            // this return statement is our updated state  
+            // same as setProducts
             return action.payload;    
         
-        case "CREATE":    
+        case CREATE:    
             return [...products, action.payload];    
         
         default:
@@ -39,3 +45,6 @@ export default (products = [], action) => {
 }
 
 // this function is exported to ./index.js
+
+// We get the action.type from 
+// We get the action.payload from 

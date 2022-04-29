@@ -20,7 +20,13 @@ const focusedMobileNav = `text-indigo-700 border-indigo-500 bg-indigo-50`
 const UnFocusedMobileNav = `text-gray-600 border-transparent hover:bg-gray-50 hover:border-gray-300 hover:text-gray-800`
 
 export default function Header(props) {
-  const { page, setPageMethods, cartItems, onAdd, onRemove } = props; 
+  const { 
+    page, 
+    setPageMethods, 
+    // cartItems,
+    // onAdd,
+    // onRemove
+   } = props; 
   const [mobileNavOpen, setMobileNavOpen] = useState('start');
 
   const mobileNavToggle = () => {
@@ -51,11 +57,10 @@ export default function Header(props) {
           {/* <UserIconAndNotificationBell /> */}
 
           <CartIcon 
-          cartItems={cartItems} 
           setPageMethods={setPageMethods} 
-          cartItems={cartItems} 
-          onAdd={onAdd} 
-          onRemove={onRemove} 
+          // cartItems={cartItems} 
+          // onAdd={onAdd} 
+          // onRemove={onRemove} 
           />
 
           <HamburgerIcon 

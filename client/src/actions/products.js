@@ -2,6 +2,7 @@
 // example ->  { type: 'FETCH_ALL', payload: data }
 
 import * as api from '../api';
+import { CREATE, UPDATE, DELETE, FETCH_ALL, LIKE } from "../assets/constants/actionTypes";
 
 // Action Creators
 
@@ -14,11 +15,12 @@ export const getProducts = () => async (dispatch) => {
         const { data } = await api.fetchProducts();
 
         // instead of returning the object, we will 'dispatch' it to our reducer function
-        dispatch({ type: 'FETCH_ALL', payload: data });
+        dispatch({ type: FETCH_ALL, payload: data });
     } catch (error) {
        console.log(error.message);
     }
 }
+// getProducts() will be exported to Add-Products form and App.js to be dispatched by react-redux
 
 export const createProduct = (product) => async (dispatch) => {
     try {
@@ -26,7 +28,7 @@ export const createProduct = (product) => async (dispatch) => {
         const data = await api.createProduct(product);
 
         // dispatch the 'action'
-        dispatch({ type: 'CREATE', payload: data });
+        dispatch({ type: CREATE, payload: data });
     } catch (error) {
         console.log(error);
     }

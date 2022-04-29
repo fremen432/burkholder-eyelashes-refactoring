@@ -1,8 +1,16 @@
 import { CheckIcon, ClockIcon, QuestionMarkCircleIcon, XIcon } from '@heroicons/react/solid'
 import { products } from '../../assets/js/data'
 
-export function CartItems(props) {
-    const { page, setPage, cartItems, onAdd, onRemove } = props;
+import { useSelector, useDispatch } from 'react-redux';
+import { addCartItem, removeCartItem } from '../../actions/cartItems.js';
+
+export function CartItems({ page, setPage }) {
+
+    const dispatch = useDispatch();
+    const cartItems = useSelector(state => state.cartItems);
+
+    const handleRemove = (item) => () => dispatch(removeCartItem(cartItems, item)) 
+
     const me = () => console.log(cartItems)
 
     return(
@@ -60,7 +68,7 @@ export function CartItems(props) {
                       </select>
   
                       <div className="absolute top-0 right-0">
-                        <button onClick={() => onRemove(product)} type="button" className="inline-flex p-2 -m-2 text-gray-400 hover:text-gray-500">
+                        <button onClick={handleRemove(product)} type="button" className="inline-flex p-2 -m-2 text-gray-400 hover:text-gray-500">
                           <span className="sr-only">Remove</span>
                           <XIcon className="w-5 h-5" aria-hidden="true" />
                         </button>
