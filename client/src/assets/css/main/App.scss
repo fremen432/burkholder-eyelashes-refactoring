@@ -1,4 +1,4 @@
-// .box{ border: 1px solid black;}
+.box{ border: 1px solid black;}
 
 * {
   --light-border: rgb(234, 221, 255);
@@ -27,6 +27,15 @@
   --margin-topBottom: 5px;
   --pixel_Y_1: 5px;
   --marginX-1: 50px;
+
+  // colors from tailwindCSS
+  --text-gray-400: #cbd5e0;    // color
+  --text-gray-500: #a0aec0;    // color
+  --text-gray-600: #718096;     // color
+  --text-gray-900: #1a202c;     // color
+
+  --border-gray-200: #edf2f7;   // border-color
+
 
 }
 

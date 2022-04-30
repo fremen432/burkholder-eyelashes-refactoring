@@ -1,0 +1,18 @@
+.style_1 {
+    background-color: #fff;
+}
+.Subtotal {
+    color: var(--text-gray-600);
+    // color: blue;
+}
+.PlusMinus{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    background-color: aqua;
+}
+
+.Plus, .Minus, .Quantity {
+    background-color: aquamarine;
+}
