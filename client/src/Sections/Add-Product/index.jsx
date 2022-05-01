@@ -23,12 +23,12 @@ export default function Form() {
     const dispatch = useDispatch();
 
     const handleSubmit = (e) => {
-        e.preventDefault();
+        // e.preventDefault();
 
         dispatch(createProduct(productData));
 
         // product data object is looking correct in browser console
-        console.log(productData);
+        // console.log(productData);
     };
     const clear = (e) => {        
         e.preventDefault();

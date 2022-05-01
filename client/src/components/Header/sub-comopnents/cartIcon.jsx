@@ -1,4 +1,3 @@
-
 import { ShoppingCartIcon } from '@heroicons/react/outline'
 import { useSelector } from 'react-redux';
 
