@@ -1,21 +1,26 @@
+import * as React from 'react';
 import { CheckIcon, ClockIcon, QuestionMarkCircleIcon, XIcon } from '@heroicons/react/solid'
 import { useDispatch } from 'react-redux';
 import { addCartItem, removeCartItem } from '../../actions/cartItems.js';
-// import { Button, FormControl, InputLabel, NativeSelect } from '@material-ui/core/Button'
-import Box from '@material-ui/core/Box';
-import InputLabel from '@material-ui/core/InputLabel';
-import FormControl from '@material-ui/core/FormControl';
-import NativeSelect from '@material-ui/core/NativeSelect';
 
+import Box from '@mui/material/Box';
+import InputLabel from '@mui/material/InputLabel';
+import MenuItem from '@mui/material/MenuItem';
+import FormControl from '@mui/material/FormControl';
+import NativeSelect, { SelectChangeEvent } from '@mui/material/Select';
 
 export function CartItem({ cartItems, product }) {
 
   const dispatch = useDispatch();
   const handleAddOne = (item) => () => dispatch(addCartItem(cartItems, item))
   const handleRemoveOne = (item) => () => dispatch(removeCartItem(cartItems, item))
-  const doSomething = () => { }
+  const handleChange = () => { }
+  const doSomething = (e) => {
+    // e.preventDefault();
+    // console.log('hey')
+    
+   }
   const handleTenPlus = () => { console.log('10+ function works') }
-
 
   return (
     <div className="box flex py-6 sm:py-10">
@@ -61,16 +66,16 @@ export function CartItem({ cartItems, product }) {
                     id: 'uncontrolled-native',
                   }}
                 >
-                  <option value={1} >1</option>
-                  <option value={2}>2</option>
-                  <option value={3}>3</option>
-                  <option value={4}>4</option>
-                  <option value={5}>5</option>
-                  <option value={6}>6</option>
-                  <option value={7}>7</option>
-                  <option value={8}>8</option>
-                  <option value={9}>9</option>
-                  <option value={10}>10+</option>
+                  <MenuItem value={1} >1</MenuItem>
+                  <MenuItem value={2}>2</MenuItem>
+                  <MenuItem value={3}>3</MenuItem>
+                  <MenuItem value={4}>4</MenuItem>
+                  <MenuItem value={5}>5</MenuItem>
+                  <MenuItem value={6}>6</MenuItem>
+                  <MenuItem value={7}>7</MenuItem>
+                  <MenuItem value={8}>8</MenuItem>
+                  <MenuItem value={9}>9</MenuItem>
+                  <MenuItem value={10}>10+</MenuItem>
                 </NativeSelect>
               </FormControl>
             </Box>
@@ -98,51 +103,3 @@ export function CartItem({ cartItems, product }) {
     </div>
   )
 }
-
-
-{/* <select
-      id={`quantity-${productIdx}`}
-      name={`quantity-${productIdx}`}
-      className="max-w-full rounded-md border border-gray-300 py-1.5 text-base leading-5 font-medium text-gray-700 text-left shadow-sm focus:outline-none focus:ring-1 focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
-    >
-      <option value={1} >1</option>
-      <option value={2}>2</option>
-      <option value={3}>3</option>
-      <option value={4}>4</option>
-      <option value={5}>5</option>
-      <option value={6}>6</option>
-      <option value={7}>7</option>
-      <option value={8}>8</option>
-      <option value={8}>9</option>
-      <option value={8}>10</option>
-    </select> */}
-
-    // import * as React from 'react';
-    // import Box from '@mui/material/Box';
-    // import InputLabel from '@mui/material/InputLabel';
-    // import FormControl from '@mui/material/FormControl';
-    // import NativeSelect from '@mui/material/NativeSelect';
-    
-    // export default function NativeSelectDemo() {
-    //   return (
-    //     <Box sx={{ minWidth: 120 }}>
-    //       <FormControl fullWidth>
-    //         <InputLabel variant="standard" htmlFor="uncontrolled-native">
-    //           Age
-    //         </InputLabel>
-    //         <NativeSelect
-    //           defaultValue={30}
-    //           inputProps={{
-    //             name: 'age',
-    //             id: 'uncontrolled-native',
-    //           }}
-    //         >
-    //           <option value={10}>Ten</option>
-    //           <option value={20}>Twenty</option>
-    //           <option value={30}>Thirty</option>
-    //         </NativeSelect>
-    //       </FormControl>
-    //     </Box>
-    //   );
-    // }
-    
