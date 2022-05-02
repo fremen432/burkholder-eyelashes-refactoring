@@ -4,6 +4,7 @@ import { onAdd, onRemove } from "./assets/js/utils/onAdd-onRemove";
 
 // use this to dispatch an action
 import { useDispatch } from 'react-redux';
+import { useSelector } from 'react-redux'
 import { getProducts } from './actions/products'
 // import { addCartItem, removeCartItem } from './actions/cartItems'
 
@@ -26,6 +27,8 @@ import './assets/css/utils/Animations.css'
 
 export default function App() {
 
+  const page = useSelector( state => state.pageMethods );
+
   const dispatch = useDispatch();
 
   // every time the 'dispatch' state is changed, it will call () => dispatch(getProducts()) to get all products
@@ -33,65 +36,64 @@ export default function App() {
     dispatch(getProducts());
   }, [dispatch])
 
-  const [page, setPage] = useState('home')
-  // const [cartItems, setCartItems] = useState([])
+  // const [page, setPage] = useState('home')
 
-  const setPageMethods = {
-    home:         () => setPage('home'),
-    allProducts:  () => setPage('allProducts'),
-    cart:         () => setPage('cart'),
-    addProduct:   () => setPage('addProduct'),
-    login:        () => setPage('login'),
-    signUp:       () => setPage('signUp')
-  }
+  // const setPageMethods = {
+  //   home:         () => setPage('home'),
+  //   allProducts:  () => setPage('allProducts'),
+  //   cart:         () => setPage('cart'),
+  //   addProduct:   () => setPage('addProduct'),
+  //   login:        () => setPage('login'),
+  //   signUp:       () => setPage('signUp')
+  // }
 
   return (
     <div className="App ">
       <Header 
         page={page} 
-        setPageMethods={setPageMethods} 
+        // setPageMethods={setPageMethods} 
       />
       <div className="Body_Content box " >
         { 
           page == 'home' ?
           <HomePage 
           page={page} 
-          setPageMethods={setPageMethods} 
+          // setPageMethods={setPageMethods} 
           /> :
 
           page == 'allProducts' ?
             <AllProducts 
             page={page} 
-            setPageMethods={setPageMethods} 
+            // setPageMethods={setPageMethods} 
             /> :
 
           page == 'cart' ?
             <Cart 
             page={page} 
-            setPageMethods={setPageMethods} 
+            // setPageMethods={setPageMethods} 
             /> :
 
           page == 'addProduct' ?
             <AddProduct 
             page={page} 
-            setPageMethods={setPageMethods} 
+            // setPageMethods={setPageMethods} 
             /> :
 
           page == 'login' ?
             <Login__COMP 
             page={page} 
-            setPageMethods={setPageMethods} 
+            // setPageMethods={setPageMethods} 
             /> :
 
           page == 'signUp' ?
             <SignUp__COMP 
             page={page} 
-            setPageMethods={setPageMethods} 
+            // setPageMethods={setPageMethods} 
             /> :
 
             <HomePage 
             page={page} 
-            setPageMethods={setPageMethods} 
+            // setPageMethods={setPageMethods} 
             />
         }
         <Footer />

@@ -4,15 +4,15 @@ export default (cartItems = [], action) => {
     switch (action.type) {
 
         case ADD_TO_CART:   
-            console.log('this is the ADD_TO_CART case');
+            // console.log('this is the ADD_TO_CART case');
             return action.payload;
         
         case REMOVE_FROM_CART:
-            console.log('this is the REMOVE_FROM_CART case');
+            // console.log('this is the REMOVE_FROM_CART case');
             return action.payload;    
         
         default:
-            console.log('this is the default');
+            // console.log('this is the default');
             return cartItems;
     }
 }

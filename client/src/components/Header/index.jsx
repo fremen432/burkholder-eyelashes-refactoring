@@ -1,23 +1,12 @@
 import React, { Fragment, useState } from 'react'
-import { Disclosure, Menu, Transition } from '@headlessui/react'
-import { SearchIcon } from '@heroicons/react/solid'
-import { BellIcon, MenuIcon, XIcon } from '@heroicons/react/outline'
 
 // Importing components
 import NavEl from './sub-comopnents/navEl'
 import Logo from './sub-comopnents/logo'
 import HamburgerIcon from './sub-comopnents/HamburugerIcon'
+import CartIcon from './sub-comopnents/CartIcon'
 
-
-import SearchBar from './sub-comopnents/searchBar'
-import UserIconAndNotificationBell from './sub-comopnents/userProfile'
-import CartIcon from './sub-comopnents/cartIcon'
-
-// import MobileNavEl from './mobileNavEl'
-
-const mobileNavClasses = `block py-2 pl-3 pr-4 text-base font-medium border-l-4`
-const focusedMobileNav = `text-indigo-700 border-indigo-500 bg-indigo-50`
-const UnFocusedMobileNav = `text-gray-600 border-transparent hover:bg-gray-50 hover:border-gray-300 hover:text-gray-800`
+// import { useDispatch } from 'react-redux'
 
 export default function Header(props) {
   const { 
@@ -30,9 +19,19 @@ export default function Header(props) {
   const [mobileNavOpen, setMobileNavOpen] = useState('start');
 
   const mobileNavToggle = () => {
-    if (mobileNavOpen == 'start') return setMobileNavOpen(false)
-    if (mobileNavOpen == true) return setMobileNavOpen(false)
-    if (mobileNavOpen == false) return setMobileNavOpen(true)
+    switch (mobileNavOpen) {
+      case 'start':
+        return setMobileNavOpen(false);
+      case true:
+        return setMobileNavOpen(false);
+      case false:
+        return setMobileNavOpen(true);
+      default:
+        break;
+    }
+    // if (mobileNavOpen == 'start') return setMobileNavOpen(false)
+    // if (mobileNavOpen == true) return setMobileNavOpen(false)
+    // if (mobileNavOpen == false) return setMobileNavOpen(true)
   }
 
   return (
@@ -40,7 +39,8 @@ export default function Header(props) {
       <div className="Header__Main ">
         <div id="nav" className="Header_Left flex px-2 lg:px-0 ">
 
-          <Logo setPageMethods={setPageMethods} />
+          {/* <Logo setPageMethods={setPageMethods} /> */}
+          <Logo />
 
           <NavEl 
           page={page} 
@@ -58,6 +58,7 @@ export default function Header(props) {
 
           <CartIcon 
           setPageMethods={setPageMethods} 
+          // isMobileNav={false} 
           // cartItems={cartItems} 
           // onAdd={onAdd} 
           // onRemove={onRemove} 

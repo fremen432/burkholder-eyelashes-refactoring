@@ -1,14 +1,17 @@
 import { ShoppingCartIcon } from '@heroicons/react/outline'
-import { useSelector } from 'react-redux';
+import { useSelector, useDispatch } from 'react-redux';
+import { setPageMethods } from '../../../actions/pageMethods';
+// import { setPage_cart } from '../../../actions/pageMethods';
 
-export default function CartIcon(props) {
-    const { setPageMethods } = props;
+export default function CartIcon() {
+    const dispatch = useDispatch();
     const cartItems = useSelector(state => state.cartItems);
+
     return (
         <div className="COMPONENT__HeaderCartIcon_Container" >
             <a 
             href="/#Cart" 
-            onClick={setPageMethods.cart} 
+            onClick={() => dispatch(setPageMethods.cart())} 
             className="flex text-sm bg-white rounded-full focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
             >
                 <ShoppingCartIcon className="w-5 h-5 text-gray-400" aria-hidden="true" />

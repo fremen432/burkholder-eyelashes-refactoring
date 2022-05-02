@@ -4,5 +4,6 @@ node_modules
 package-lock.json
 
 README.txt
+Notes.txt
 # README.md
 yarn.lock

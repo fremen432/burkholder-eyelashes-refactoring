@@ -21,7 +21,6 @@
         display: flex;
     }
     .HamburgerIcon{
-        /* visibility: hidden; */
         display: none;
     }
     .COMPONENT__HeaderCartIcon_Container{

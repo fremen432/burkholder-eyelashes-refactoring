@@ -26,6 +26,7 @@ export default function Form() {
         // e.preventDefault();
 
         dispatch(createProduct(productData));
+        window.location.href="/Add-Product";
 
         // product data object is looking correct in browser console
         // console.log(productData);

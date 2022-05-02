@@ -1,6 +1,5 @@
 import { ADD_TO_CART, REMOVE_FROM_CART } from '../assets/constants/actionTypes';
 
-// -- NEW FUNCTIONS --
 export const addCartItem = (cartItems, newItem) => async (dispatch) => {
 
     // First, check if newItem exists in cartItems array.
@@ -9,6 +8,7 @@ export const addCartItem = (cartItems, newItem) => async (dispatch) => {
 
     try {
         console.log(cartItems);
+        
         // determines if newItem already exists in cartItems array. 
         // If so, then returns value of first element to pass the test.
         const exist = cartItems.find(item => item.id === newItem.id);
@@ -38,8 +38,8 @@ export const removeCartItem = (cartItems, newItem) => async (dispatch) => {
     // else, return a new array excluding newItem.
 
     try {
-
         console.log(cartItems);
+
         const exist = cartItems.find(item => item.id === newItem.id);
         const decrementOne = cartItems.map(item => item.id === newItem.id ? { ...exist, qty: exist.qty - 1 } : item);
         const removeItem = cartItems.filter(item => item.id !== newItem.id);

@@ -4,10 +4,11 @@ import ContactUs from '../Contact-Us'
 import FeaturedProducts from '../Featured-Products'
 
 export default function HomePage(props) {
-    const { page, setPageMethods } = props;
+    // const { page, setPageMethods } = props;
     return (
         <div id="Home" className="PAGE__HomePage">
-            <Hero setPageMethods={setPageMethods} />
+            {/* <Hero setPageMethods={setPageMethods} /> */}
+            <Hero />
             <AboutUs />
             <FeaturedProducts />
             <ContactUs />

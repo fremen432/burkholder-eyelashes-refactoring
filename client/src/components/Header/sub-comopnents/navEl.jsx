@@ -1,4 +1,17 @@
-import Auth from '../../../assets/js/utils/auth'
+import Auth from '../../../assets/js/utils/auth';
+import { useSelector } from 'react-redux';
+import { useDispatch } from 'react-redux';
+
+import { setPageMethods } from '../../../actions/pageMethods';
+
+// import { 
+//   setPage_home,
+//   setPage_allProducts,
+//   setPage_cart,
+//   setPage_addProduct,
+//   setPage_login,
+//   setPage_signUp
+// } from '../../../actions/pageMethods';
 
 const logout = (event) => {
   event.preventDefault();
@@ -7,27 +20,52 @@ const logout = (event) => {
 };
 
 export default function NavEl(props){
-  const { page, setPageMethods, isMobileNav, mobileNavOpen, mobileNavToggle } = props; 
+  const { isMobileNav, mobileNavOpen, mobileNavToggle } = props; 
+
+  const dispatch = useDispatch();
+
+  const page = useSelector(state => state.page);
 
   const basicClasses = 'box ' + ( isMobileNav == true ? 'MobileNavLink ' : 'DesktopNavLink ' )
-  const nonFocusedClasses = ` `
-  const focusedClasses = `  `
-  // const nonFocusedClasses = ` text-gray-500 border-transparent hover:border-gray-300 hover:text-gray-700`
-  // const focusedClasses = ` text-gray-900 border-indigo-500 `
+
+  const navOnClicks = {
+    home:         () => { dispatch(setPageMethods.home()); clickMobileNavToggle(); },
+    about:        () => { dispatch(setPageMethods.home()); clickMobileNavToggle(); },
+    featured:     () => { dispatch(setPageMethods.home()); clickMobileNavToggle(); },
+    contact:      () => { dispatch(setPageMethods.home()); clickMobileNavToggle(); },
+
+    products:     () => { dispatch(setPageMethods.allProducts()); clickMobileNavToggle(); },
+    cart:         () => { dispatch(setPageMethods.cart()); clickMobileNavToggle(); },
+    addProducts:  () => { dispatch(setPageMethods.addProduct()); clickMobileNavToggle(); },
+    login:        () => { dispatch(setPageMethods.login()); clickMobileNavToggle(); },
+    signUp:       () => { dispatch(setPageMethods.signUp()); clickMobileNavToggle(); },
+  }
+  // const navOnClicks = {
+  //   home:         () => { dispatch(setPage_home()); clickMobileNavToggle(); },
+  //   about:        () => { dispatch(setPage_home()); clickMobileNavToggle(); },
+  //   featured:     () => { dispatch(setPage_home()); clickMobileNavToggle(); },
+  //   contact:      () => { dispatch(setPage_home()); clickMobileNavToggle(); },
+
+  //   products:     () => { dispatch(setPage_allProducts()); clickMobileNavToggle(); },
+  //   cart:         () => { dispatch(setPage_cart()); clickMobileNavToggle(); },
+  //   addProducts:  () => { dispatch(setPage_addProduct()); clickMobileNavToggle(); },
+  //   login:        () => { dispatch(setPage_login()); clickMobileNavToggle(); },
+  //   signUp:       () => { dispatch(setPage_signUp()); clickMobileNavToggle(); },
+  // }
 
   const basicNavRoutes = [
-    { name: 'Home',    ref: '/#Home',       onClick: () => { setPageMethods.home(); clickMobileNavToggle(); } },
-    { name: 'About',    ref: '/#AboutUs',   onClick: () => { setPageMethods.home(); clickMobileNavToggle(); } },
-    { name: 'Featured', ref: '/#Featured',  onClick: () => { setPageMethods.home(); clickMobileNavToggle(); } },
-    { name: 'Contact',  ref: '/#ContactUs', onClick: () => { setPageMethods.home(); clickMobileNavToggle(); } },
-    { name: 'Products', ref: '/#Products',  onClick: () => { setPageMethods.allProducts(); clickMobileNavToggle(); } },
-    { name: 'Cart',     ref: '/#Cart',      onClick: () => { setPageMethods.cart(); clickMobileNavToggle(); } },
-    { name: 'Add Product', ref: '/#Add-Product', onClick: () => { setPageMethods.addProduct(); clickMobileNavToggle(); } },
+    { name: 'Home',         ref: '/#Home',        onClick: navOnClicks.home},
+    { name: 'About',        ref: '/#AboutUs',     onClick: navOnClicks.about},
+    { name: 'Featured',     ref: '/#Featured',    onClick: navOnClicks.featured},
+    { name: 'Contact',      ref: '/#ContactUs',   onClick: navOnClicks.contact},
+    { name: 'Products',     ref: '/#Products',    onClick: navOnClicks.products},
+    { name: 'Cart',         ref: '/#Cart',        onClick: navOnClicks.cart},
+    { name: 'Add Product',  ref: '/#Add-Product', onClick: navOnClicks.addProducts},
   ]
   
   const loggedOutNavElements =  [
-    { name: 'Log In',  ref: '/#Login',  onClick: () => { setPageMethods.login(); clickMobileNavToggle(); } },
-    { name: 'Sign Up', ref: '/#SignUp', onClick: () => { setPageMethods.signUp(); clickMobileNavToggle(); } },
+    { name: 'Log In',  ref: '/#Login',  onClick: () => { navOnClicks.login(); } },
+    { name: 'Sign Up', ref: '/#SignUp', onClick: () => { navOnClicks.signUp(); } },
   ]
 
   const loggedInNavElements = [
@@ -46,7 +84,7 @@ export default function NavEl(props){
       key={ el.name + ( isMobileNav == true ? '_mobile' : '_desktop' ) } 
       href={ el.ref } 
       onClick={ el.onClick }
-      className={ basicClasses + nonFocusedClasses } 
+      className={ basicClasses } 
       >
         <span>{ el.name }</span>
       </a>
@@ -70,11 +108,14 @@ export default function NavEl(props){
 
   return (
     <div id='NavElements' className={ getClasses() }>
-      <BasicNavRoutes page={page} setPageMethods={setPageMethods} />
+      {/* <BasicNavRoutes page={page} setPageMethods={setPageMethods} /> */}
+      <BasicNavRoutes page={page} />
 
       {Auth.loggedIn() ?
-        <LoggedInNavRoutes page={page} setPageMethods={setPageMethods} /> :
-        <LoggedOutNavRoutes page={page} setPageMethods={setPageMethods} />
+        <LoggedInNavRoutes page={page} /> :
+        <LoggedOutNavRoutes page={page} />
+        // <LoggedInNavRoutes page={page} setPageMethods={setPageMethods} /> :
+        // <LoggedOutNavRoutes page={page} setPageMethods={setPageMethods} />
       }
     </div>
   )

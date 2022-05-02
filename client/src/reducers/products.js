@@ -29,7 +29,6 @@ export default (products = [], action) => {
 
     switch (action.type) {
 
-
         case FETCH_ALL:    
             // action.payload is the argument
             // this return statement is our updated state  
