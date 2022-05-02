@@ -15,7 +15,7 @@ export default function AllProducts(props) {
     const products = useSelector( state => state.products)
 
     // this only returns { name, price, id } in browser
-    console.log(products);
+    // console.log(products);
 
     return (
         <div id="Products" className="COMPONENT__AllProducts max-w-2xl mx-auto py-16 px-4 sm:py-24 sm:px-6 lg:max-w-7xl lg:px-8">

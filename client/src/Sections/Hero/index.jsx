@@ -1,11 +1,12 @@
 import React from 'react'
 import { useSelector, useDispatch } from 'react-redux'
 import { setPageMethods } from '../../actions/pageMethods'
-// import { setPage_allProducts } from '../../actions/pageMethods'
 
 export default function Hero(props) {
-    // const { setPageMethods } = props;
-    // const setPageMethods = useSelector(setPageMethods)
+
+    const dispatch = useDispatch();
+    const handleClick = () => dispatch(setPageMethods.allProducts());
+
     return (
         <div id="Hero" className="section SECTION_Hero topBottom_section relative bg-gray-900">
             {/* Hero Image */}
@@ -28,7 +29,7 @@ export default function Hero(props) {
             </p>
             <a
                 href="/#Products"
-                onClick={useDispatch(setPageMethods.allProducts)}
+                onClick={ handleClick }
                 className="mt-8 inline-block bg-white hover:bg-gray-100 border border-transparent rounded-md py-3 px-8 text-base font-medium text-gray-900 uppercase"
             >
                 Start Shopping
