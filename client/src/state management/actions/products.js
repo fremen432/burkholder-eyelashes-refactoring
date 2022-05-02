@@ -2,7 +2,7 @@
 // example ->  { type: 'FETCH_ALL', payload: data }
 
 import * as api from '../api';
-import { CREATE, UPDATE, DELETE, FETCH_ALL, LIKE } from "../assets/constants/actionTypes";
+import { CREATE, UPDATE, DELETE, FETCH_ALL, LIKE } from "../constants/actionTypes";
 
 // Action Creators
 

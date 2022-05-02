@@ -1,4 +1,4 @@
-import { CREATE, UPDATE, DELETE, FETCH_ALL, LIKE } from "../assets/constants/actionTypes";
+import { CREATE, UPDATE, DELETE, FETCH_ALL, LIKE } from "../constants/actionTypes";
 
 /*
     All of the following is necessary for react-redux

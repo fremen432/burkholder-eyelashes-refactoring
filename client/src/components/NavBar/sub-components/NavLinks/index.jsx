@@ -1,17 +1,6 @@
-import Auth from '../../../assets/js/utils/auth';
-import { useSelector } from 'react-redux';
-import { useDispatch } from 'react-redux';
-
-import { setPageMethods } from '../../../actions/pageMethods';
-
-// import { 
-//   setPage_home,
-//   setPage_allProducts,
-//   setPage_cart,
-//   setPage_addProduct,
-//   setPage_login,
-//   setPage_signUp
-// } from '../../../actions/pageMethods';
+import Auth from '../../../../assets/js/utils/auth';
+import { useSelector, useDispatch } from 'react-redux';
+import { setPageMethods } from '../../../../state management/actions/pageMethods';
 
 const logout = (event) => {
   event.preventDefault();
@@ -29,29 +18,17 @@ export default function NavEl(props){
   const basicClasses = 'box ' + ( isMobileNav == true ? 'MobileNavLink ' : 'DesktopNavLink ' )
 
   const navOnClicks = {
-    home:         () => { dispatch(setPageMethods.home()); clickMobileNavToggle(); },
-    about:        () => { dispatch(setPageMethods.home()); clickMobileNavToggle(); },
-    featured:     () => { dispatch(setPageMethods.home()); clickMobileNavToggle(); },
-    contact:      () => { dispatch(setPageMethods.home()); clickMobileNavToggle(); },
+    home:         () => { dispatch(setPageMethods.home()); mobileNavToggle(); },
+    about:        () => { dispatch(setPageMethods.home()); mobileNavToggle(); },
+    featured:     () => { dispatch(setPageMethods.home()); mobileNavToggle(); },
+    contact:      () => { dispatch(setPageMethods.home()); mobileNavToggle(); },
 
-    products:     () => { dispatch(setPageMethods.allProducts()); clickMobileNavToggle(); },
-    cart:         () => { dispatch(setPageMethods.cart()); clickMobileNavToggle(); },
-    addProducts:  () => { dispatch(setPageMethods.addProduct()); clickMobileNavToggle(); },
-    login:        () => { dispatch(setPageMethods.login()); clickMobileNavToggle(); },
-    signUp:       () => { dispatch(setPageMethods.signUp()); clickMobileNavToggle(); },
+    products:     () => { dispatch(setPageMethods.allProducts()); mobileNavToggle(); },
+    cart:         () => { dispatch(setPageMethods.cart()); mobileNavToggle(); },
+    addProducts:  () => { dispatch(setPageMethods.addProduct()); mobileNavToggle(); },
+    login:        () => { dispatch(setPageMethods.login()); mobileNavToggle(); },
+    signUp:       () => { dispatch(setPageMethods.signUp()); mobileNavToggle(); },
   }
-  // const navOnClicks = {
-  //   home:         () => { dispatch(setPage_home()); clickMobileNavToggle(); },
-  //   about:        () => { dispatch(setPage_home()); clickMobileNavToggle(); },
-  //   featured:     () => { dispatch(setPage_home()); clickMobileNavToggle(); },
-  //   contact:      () => { dispatch(setPage_home()); clickMobileNavToggle(); },
-
-  //   products:     () => { dispatch(setPage_allProducts()); clickMobileNavToggle(); },
-  //   cart:         () => { dispatch(setPage_cart()); clickMobileNavToggle(); },
-  //   addProducts:  () => { dispatch(setPage_addProduct()); clickMobileNavToggle(); },
-  //   login:        () => { dispatch(setPage_login()); clickMobileNavToggle(); },
-  //   signUp:       () => { dispatch(setPage_signUp()); clickMobileNavToggle(); },
-  // }
 
   const basicNavRoutes = [
     { name: 'Home',         ref: '/#Home',        onClick: navOnClicks.home},
@@ -74,9 +51,9 @@ export default function NavEl(props){
 
   const adminRoutes = { name: 'Admin', ref: 'admin', }
 
-  function clickMobileNavToggle(){
-    mobileNavToggle();
-  }
+  // function clickMobileNavToggle(){
+  //   mobileNavToggle();
+  // }
 
   const makeNavElements = route =>
     route.map( el =>
@@ -94,6 +71,7 @@ export default function NavEl(props){
 
   const LoggedInNavRoutes = () => makeNavElements(loggedInNavElements);
   const LoggedOutNavRoutes = () => makeNavElements(loggedOutNavElements);
+
   const BasicNavRoutes = () => 
     isMobileNav == true ? makeNavElements(basicNavRoutes) :
     isMobileNav == false ? makeNavElements(desktopBasicNavRoutes) : ''
@@ -108,14 +86,11 @@ export default function NavEl(props){
 
   return (
     <div id='NavElements' className={ getClasses() }>
-      {/* <BasicNavRoutes page={page} setPageMethods={setPageMethods} /> */}
       <BasicNavRoutes page={page} />
 
       {Auth.loggedIn() ?
         <LoggedInNavRoutes page={page} /> :
         <LoggedOutNavRoutes page={page} />
-        // <LoggedInNavRoutes page={page} setPageMethods={setPageMethods} /> :
-        // <LoggedOutNavRoutes page={page} setPageMethods={setPageMethods} />
       }
     </div>
   )

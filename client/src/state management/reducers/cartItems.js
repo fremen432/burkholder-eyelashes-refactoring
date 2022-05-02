@@ -1,4 +1,4 @@
-import { ADD_TO_CART, REMOVE_FROM_CART } from "../assets/constants/actionTypes";
+import { ADD_TO_CART, REMOVE_FROM_CART } from "../constants/actionTypes";
 export default (cartItems = [], action) => {
 
     switch (action.type) {

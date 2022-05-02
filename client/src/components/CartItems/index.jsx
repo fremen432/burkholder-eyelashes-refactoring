@@ -1,7 +1,7 @@
 import * as React from 'react';
 import { CheckIcon, ClockIcon, QuestionMarkCircleIcon, XIcon } from '@heroicons/react/solid'
 import { useDispatch } from 'react-redux';
-import { addCartItem, removeCartItem } from '../../actions/cartItems.js';
+import { addCartItem, removeCartItem } from '../../state management/actions/cartItems.js';
 
 import Box from '@mui/material/Box';
 import InputLabel from '@mui/material/InputLabel';

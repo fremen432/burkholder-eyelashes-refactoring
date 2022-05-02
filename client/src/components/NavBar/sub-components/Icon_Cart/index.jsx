@@ -1,6 +1,6 @@
 import { ShoppingCartIcon } from '@heroicons/react/outline'
 import { useSelector, useDispatch } from 'react-redux';
-import { setPageMethods } from '../../../actions/pageMethods';
+import { setPageMethods } from '../../../../state management/actions/pageMethods';
 // import { setPage_cart } from '../../../actions/pageMethods';
 
 export default function CartIcon() {

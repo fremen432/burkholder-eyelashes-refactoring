@@ -1,7 +1,7 @@
 import './style/style.scss'
 
 import { useSelector, useDispatch } from 'react-redux';
-import { addCartItem, removeCartItem } from '../../actions/cartItems.js';
+import { addCartItem, removeCartItem } from '../../state management/actions/cartItems.js';
 
 import * as React from 'react';
 import Card from '@mui/material/Card';

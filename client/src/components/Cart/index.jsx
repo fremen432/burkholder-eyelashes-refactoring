@@ -1,6 +1,6 @@
 import './styles/style.css'
 import { CheckIcon, ClockIcon, QuestionMarkCircleIcon, XIcon } from '@heroicons/react/solid'
-import { CartItem } from './CartItem';
+import { CartItem } from '../CartItems';
 import { useSelector } from 'react-redux';
 
 export default function Cart() {

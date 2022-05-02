@@ -1,10 +1,10 @@
 import React, { Fragment, useState } from 'react'
 
 // Importing components
-import NavEl from './sub-comopnents/navEl'
-import Logo from './sub-comopnents/logo'
-import HamburgerIcon from './sub-comopnents/HamburugerIcon'
-import CartIcon from './sub-comopnents/CartIcon'
+import NavEl from './sub-components/NavLinks'
+import Logo from './sub-components/Logo'
+import HamburgerIcon from './sub-components/Icon_Hamburger'
+import CartIcon from './sub-components/Icon_Cart'
 
 // import { useDispatch } from 'react-redux'
 

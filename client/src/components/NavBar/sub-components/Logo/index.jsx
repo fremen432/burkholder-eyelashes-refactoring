@@ -1,6 +1,6 @@
-import logoSmall from '../../../assets/images/workflow-logo-small.png'
+import logoSmall from '../../../../assets/images/workflow-logo-small.png'
 import { useDispatch } from 'react-redux';
-import { setPageMethods } from '../../../actions/pageMethods'
+import { setPageMethods } from '../../../../state management/actions/pageMethods'
 
 export default function Logo() {
   const dispatch = useDispatch();

@@ -1,4 +1,4 @@
-import { ADD_TO_CART, REMOVE_FROM_CART } from '../assets/constants/actionTypes';
+import { ADD_TO_CART, REMOVE_FROM_CART } from '../constants/actionTypes';
 
 export const addCartItem = (cartItems, newItem) => async (dispatch) => {
 
@@ -7,8 +7,7 @@ export const addCartItem = (cartItems, newItem) => async (dispatch) => {
     // else, add newItem to cartItems.
 
     try {
-        console.log(cartItems);
-        
+
         // determines if newItem already exists in cartItems array. 
         // If so, then returns value of first element to pass the test.
         const exist = cartItems.find(item => item.id === newItem.id);
@@ -19,7 +18,7 @@ export const addCartItem = (cartItems, newItem) => async (dispatch) => {
         // add new item to cartItems array. returns a new array.
         const addNewItem = [...cartItems, { ...newItem, qty: 1 }];
 
-        console.log('this is coming from actions/cartItems')
+        // console.log('this is coming from actions/cartItems')
 
         exist ?
             dispatch({ type: ADD_TO_CART, payload: incrementOne }) :
@@ -28,6 +27,8 @@ export const addCartItem = (cartItems, newItem) => async (dispatch) => {
     } catch (error) {
         console.log(error.message)
     }
+
+    // console.log(cartItems);
 
 };
 
@@ -38,7 +39,6 @@ export const removeCartItem = (cartItems, newItem) => async (dispatch) => {
     // else, return a new array excluding newItem.
 
     try {
-        console.log(cartItems);
 
         const exist = cartItems.find(item => item.id === newItem.id);
         const decrementOne = cartItems.map(item => item.id === newItem.id ? { ...exist, qty: exist.qty - 1 } : item);
@@ -51,5 +51,7 @@ export const removeCartItem = (cartItems, newItem) => async (dispatch) => {
     } catch (error) {
         console.log(error.message)
     }
+
+    // console.log(cartItems);
 
 };

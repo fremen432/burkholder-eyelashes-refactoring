@@ -5,7 +5,7 @@ import {
     SET_PAGE__addProduct,
     SET_PAGE__login,
     SET_PAGE__signUp,
-} from "../assets/constants/actionTypes";
+} from "../constants/actionTypes";
 
 // export const setPageMethods1 = {
 //     // home:         () => (dispatch) => dispatch({ type: SET_PAGE__home, payload: 'home' }),
