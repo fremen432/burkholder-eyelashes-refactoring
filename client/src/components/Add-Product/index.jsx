@@ -1,125 +1,154 @@
-import React, { useState } from 'react';
+import React, { useState } from "react";
 // import FileBase from 'react-file-base64';
-import FileBase from 'react-file-base64';
-import { useDispatch } from 'react-redux';
+import FileBase from "react-file-base64";
+import { useDispatch } from "react-redux";
 
-import { createProduct } from '../../state management/actions/products';
+import { createProduct } from "../../state management/actions/products";
 
-import toggleSwitch from '../toggle-switch';
+import toggleSwitch from "../toggle-switch";
 
 export default function Form() {
+	const [productData, setProductData] = useState({
+		creatorName: "Clayton",
+		productName: "",
+		description: "",
+		price: "",
+		selectedFile: "",
+		featured: false,
+		inStock: true,
+	});
+	const dispatch = useDispatch();
 
-    const [productData, setProductData] = useState(
-        {
-            creatorName: 'Clayton',
-            productName: '',
-            description: '',
-            price: '',
-            selectedFile: '',
-            featured: false,
-            inStock: true
-        }
-    )
-    const dispatch = useDispatch();
+	const handleSubmit = (e) => {
+		// e.preventDefault();
 
-    const handleSubmit = (e) => {
-        // e.preventDefault();
+		dispatch(createProduct(productData));
+		window.location.href = "/Add-Product";
 
-        dispatch(createProduct(productData));
-        window.location.href="/Add-Product";
+		// product data object is looking correct in browser console
+		// console.log(productData);
+	};
+	const clear = (e) => {
+		e.preventDefault();
+		console.log("clear");
+	};
 
-        // product data object is looking correct in browser console
-        // console.log(productData);
-    };
-    const clear = (e) => {        
-        e.preventDefault();
-        console.log('clear')
-    };
+	// const getFiles = (files) => this.setState
 
-    // const getFiles = (files) => this.setState
+	return (
+		<div id="Add-Product" className="COMPONENT__AddProduct ">
+			<form
+				className="inputProduct-form box"
+				onSubmit={(e) => handleSubmit(e)}
+			>
+				<h1 className="titleBasic">Insert a Product!</h1>
 
-  return (
-    <div id="Add-Product" className="COMPONENT__AddProduct ">
-        <form className="inputProduct-form box" onSubmit={ e => handleSubmit(e) }>
-            
-            <h1 className="titleBasic">Insert a Product!</h1>
+				<div className="form-pair">
+					<p className="input-label">Creator Name</p>
+					<input
+						id="product-Name"
+						type="text"
+						value={productData.creatorName}
+						onChange={(e) =>
+							setProductData({
+								...productData,
+								creatorName: e.target.value,
+							})
+						}
+					/>
+				</div>
 
-            <div className="form-pair" >
-                <p className="input-label">Creator Name</p>
-                <input 
-                id='product-Name' 
-                type="text" 
-                value={productData.creatorName}
-                onChange={e => setProductData({ ...productData, creatorName: e.target.value })}
-                />
-            </div>
+				<div className="form-pair">
+					<p className="input-label">Product Name</p>
+					<input
+						id="product-Name"
+						type="text"
+						value={productData.productName}
+						onChange={(e) =>
+							setProductData({
+								...productData,
+								productName: e.target.value,
+							})
+						}
+					/>
+				</div>
 
-            <div className="form-pair" >
-                <p className="input-label">Product Name</p>
-                <input 
-                id='product-Name' 
-                type="text" 
-                value={productData.productName}
-                onChange={e => setProductData({ ...productData, productName: e.target.value })}
-                />
-            </div>
+				<div className="form-pair">
+					<p className="input-label">Product Description</p>
+					<input
+						id="product-description"
+						type="text"
+						value={productData.description}
+						onChange={(e) =>
+							setProductData({
+								...productData,
+								description: e.target.value,
+							})
+						}
+					/>
+				</div>
 
-            <div className="form-pair" >
-                <p className="input-label">Product Description</p>
-                <input 
-                id='product-description' 
-                type="text" 
-                value={productData.description}
-                onChange={e => setProductData({ ...productData, description: e.target.value })}
-                />
-            </div>
+				<div className="form-pair">
+					<p className="input-label">Product Price</p>
+					<input
+						id="product-price"
+						type="text"
+						value={productData.price}
+						onChange={(e) =>
+							setProductData({
+								...productData,
+								price: e.target.value,
+							})
+						}
+					/>
+				</div>
 
-            <div className="form-pair" >
-                <p className="input-label">Product Price</p>
-                <input 
-                id='product-price' 
-                type="text" 
-                value={productData.price}
-                onChange={e => setProductData({ ...productData, price: e.target.value })}
-                />
-            </div>
+				<div className="form-pair">
+					<p className="input-label">
+						Is product currently in-stock?
+					</p>
+					<input
+						id="product-price"
+						type="checkbox"
+						checked
+						value={productData.inStock}
+						onChange={(e) =>
+							setProductData({
+								...productData,
+								inStock: e.target.value,
+							})
+						}
+					/>
+				</div>
 
-            <div className="form-pair" >
-                <p className="input-label">Is product currently in-stock?</p>
-                <input 
-                id='product-price' 
-                type="checkbox" 
-                checked
-                value={productData.inStock}
-                onChange={e => setProductData({ ...productData, inStock: e.target.value })}
-                />
-            </div>
+				<div className="form-pair">
+					<p className="input-label">Product Image</p>
+					<FileBase
+						id="product-image"
+						type="file"
+						multiple={false}
+						onDone={({ base64 }) =>
+							setProductData({ ...productData, imageSrc: base64 })
+						}
+					/>
+				</div>
 
-            <div className="form-pair" >
-                <p className="input-label">Product Image</p>
-                <FileBase 
-                id='product-image' 
-                type="file" 
-                multiple={false}
-                onDone={({base64}) => setProductData({ ...productData, imageSrc: base64 })}
-                />
-            </div>
+				<br />
+				<button className="BTN__Indigo" type="submit">
+					SUBMIT
+				</button>
 
-            <br />
-            <button className="BTN__Indigo" type="submit">SUBMIT</button>
-            
-            <br />
-            <button className="BTN__Clear" onClick={e => clear(e)}>CLEAR</button>
-
-        </form>
-    </div>
-  )
+				<br />
+				<button className="BTN__Clear" onClick={(e) => clear(e)}>
+					CLEAR
+				</button>
+			</form>
+		</div>
+	);
 }
 
-
-
 {
-    /*
+	/*
     
     simple form 
 
@@ -155,10 +184,10 @@ export default function Form() {
         </form>
     </div>
 
-    */ 
+    */
 }
 {
-    /*
+	/*
 
         full form
 
@@ -219,5 +248,5 @@ export default function Form() {
                 <input className="btnStyle" type="submit" />
             </form>
         </div>
-    */ 
+    */
 }

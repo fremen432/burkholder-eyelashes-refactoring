@@ -1,8 +1,8 @@
-import { combineReducers } from 'redux';
+import { combineReducers } from "redux";
 
-import products from './products';
-import cartItems from './cartItems';
-import pageMethods from './pageMethods'
+import products from "./products";
+import cartItems from "./cartItems";
+import pageMethods from "./pageMethods";
 
 // since both key and value = products, { products: products }
 // we just say { products }

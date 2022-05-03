@@ -82,7 +82,8 @@
   min-width: 50px;
 }
 
-.NavBar .Header_Left, .NavBar .Header_Right {
+.NavBar .Header_Left,
+.NavBar .Header_Right {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -96,7 +97,8 @@
   margin-right: 25px;
 }
 
-.NavBar .MobileView, .NavBar .DesktopView {
+.NavBar .MobileView,
+.NavBar .DesktopView {
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;

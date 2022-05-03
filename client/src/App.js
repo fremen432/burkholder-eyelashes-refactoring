@@ -3,8 +3,8 @@ import React, { useState, useEffect } from "react";
 import { onAdd, onRemove } from "./assets/js/utils/onAdd-onRemove";
 
 // use this to dispatch an action
-import { useDispatch, useSelector } from 'react-redux'
-import { getProducts } from './state management/actions/products'
+import { useDispatch, useSelector } from "react-redux";
+import { getProducts } from "./state management/actions/products";
 // import { addCartItem, removeCartItem } from './actions/cartItems'
 
 // Component Imports
@@ -14,49 +14,47 @@ import Footer from "./components/Footer";
 import HomePage from "./components/HomePage";
 import Login__COMP from "./components/Login";
 import SignUp__COMP from "./components/SignUp";
-import AllProducts from './components/All-Products'
+import AllProducts from "./components/All-Products";
 import Cart from "./components/Cart";
 import AddProduct from "./components/Add-Product";
 
 // CSS imports
-import './assets/css/main/App.css'
-import './assets/css/utils/MediaQueries.css'
-import './assets/css/utils/Animations.css'
+import "./assets/css/main/App.css";
+import "./assets/css/utils/MediaQueries.css";
+import "./assets/css/utils/Animations.css";
 
 export default function App() {
+	const page = useSelector((state) => state.pageMethods);
 
-    const page = useSelector( state => state.pageMethods );
+	const dispatch = useDispatch();
 
-    const dispatch = useDispatch();
+	// every time the 'dispatch' state is changed, it will call () => dispatch(getProducts()) to get all products
+	useEffect(() => {
+		dispatch(getProducts());
+	}, [dispatch]);
 
-    // every time the 'dispatch' state is changed, it will call () => dispatch(getProducts()) to get all products
-    useEffect(() => {
-        dispatch(getProducts());
-    }, [dispatch])
+	return (
+		<div className="App ">
+			<NavBar page={page} />
 
-    return (
-        <div className="App ">
-
-            <NavBar page={page} />
-
-            <div className="Body_Content box " >
-                { 
-                    page == 'home' ?          <HomePage /> :
-
-                    page == 'allProducts' ?   <AllProducts /> :
-
-                    page == 'cart' ?          <Cart /> :
-
-                    page == 'addProduct' ?    <AddProduct /> :
-
-                    page == 'login' ?         <Login__COMP /> :
-
-                    page == 'signUp' ?        <SignUp__COMP /> :
-
-                    <HomePage />
-                }
-                <Footer />
-            </div>
-        </div>
-    );
+			<div className="Body_Content box ">
+				{page == "home" ? (
+					<HomePage />
+				) : page == "allProducts" ? (
+					<AllProducts />
+				) : page == "cart" ? (
+					<Cart />
+				) : page == "addProduct" ? (
+					<AddProduct />
+				) : page == "login" ? (
+					<Login__COMP />
+				) : page == "signUp" ? (
+					<SignUp__COMP />
+				) : (
+					<HomePage />
+				)}
+				<Footer />
+			</div>
+		</div>
+	);
 }

@@ -2,9 +2,9 @@
 @tailwind components;
 @tailwind utilities;
 
-html{
-    height: 100vh;
-    margin: 0px;
+html {
+	height: 100vh;
+	margin: 0px;
 }
 
 /* body {

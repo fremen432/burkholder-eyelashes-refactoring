@@ -1,18 +1,13 @@
 import { ADD_TO_CART, REMOVE_FROM_CART } from "../constants/actionTypes";
 export default (cartItems = [], action) => {
+	switch (action.type) {
+		case ADD_TO_CART:
+			return action.payload;
 
-    switch (action.type) {
+		case REMOVE_FROM_CART:
+			return action.payload;
 
-        case ADD_TO_CART:   
-            // console.log('this is the ADD_TO_CART case');
-            return action.payload;
-        
-        case REMOVE_FROM_CART:
-            // console.log('this is the REMOVE_FROM_CART case');
-            return action.payload;    
-        
-        default:
-            // console.log('this is the default');
-            return cartItems;
-    }
-}
+		default:
+			return cartItems;
+	}
+};
