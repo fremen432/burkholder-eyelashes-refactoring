@@ -106,10 +106,10 @@ export default function Form() {
             </div>
 
             <br />
-            <button className="btnStyle" type="submit">SUBMIT</button>
+            <button className="BTN__Indigo" type="submit">SUBMIT</button>
             
             <br />
-            <button className="btnStyle_clear" onClick={e => clear(e)}>Clear</button>
+            <button className="BTN__Clear" onClick={e => clear(e)}>CLEAR</button>
 
         </form>
     </div>

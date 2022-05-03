@@ -54,7 +54,16 @@
   min-height: calc(100vh - var(--header_height) - var(--footer_height));
 }
 
-.App .section, .App .COMPONENT__Hero, .App .COMPONENT__FeaturedProducts {
+.App .COMPONENT__Login .signUpHere, .App .COMPONENT__Login .loginHere, .App .COMPONENT__SignUp .signUpHere, .App .COMPONENT__SignUp .loginHere, .App .COMPONENT__AddProduct .signUpHere, .App .COMPONENT__AddProduct .loginHere {
+  font-weight: bold;
+  color: var(--bgColor_indigo);
+}
+
+.App .COMPONENT__Login .signUpHere:hover, .App .COMPONENT__Login .loginHere:hover, .App .COMPONENT__SignUp .signUpHere:hover, .App .COMPONENT__SignUp .loginHere:hover, .App .COMPONENT__AddProduct .signUpHere:hover, .App .COMPONENT__AddProduct .loginHere:hover {
+  color: var(--bgColor_indigo_Hover);
+}
+
+.App .COMPONENT__Hero, .App .COMPONENT__FeaturedProducts {
   width: 100%;
   min-height: calc(100vh - var(--header_height));
 }
@@ -63,12 +72,24 @@
   min-height: calc(100vh - var(--header_height) - var(--footer_height));
 }
 
-.App .COMPONENT__Hero {
+.App .Body_Content {
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  overflow-y: scroll;
+}
+
+.App .Body_Content .PAGE__HomePage .COMPONENT__Hero {
   background-color: var(--text-gray-900);
   position: relative;
 }
 
-.App .COMPONENT__AboutUs {
+.App .Body_Content .PAGE__HomePage .COMPONENT__AboutUs {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -78,12 +99,12 @@
           flex-direction: column;
 }
 
-.App .COMPONENT__ContactUs {
+.App .Body_Content .PAGE__HomePage .COMPONENT__ContactUs {
   width: 100%;
   min-height: calc(100vh - var(--header_height) - var(--footer_height));
 }
 
-.App .COMPONENT__AddProduct .inputProduct-form {
+.App .Body_Content .COMPONENT__AddProduct .inputProduct-form {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -98,12 +119,12 @@
   padding: var(--marginX-1);
 }
 
-.App .COMPONENT__AddProduct .inputProduct-form .form-pair {
+.App .Body_Content .COMPONENT__AddProduct .inputProduct-form .form-pair {
   -ms-grid-columns: 50% 50%;
       grid-template-columns: 50% 50%;
 }
 
-.App .COMPONENT__AddProduct .inputProduct-form h1, .App .COMPONENT__AddProduct .inputProduct-form div, .App .COMPONENT__AddProduct .inputProduct-form button {
+.App .Body_Content .COMPONENT__AddProduct .inputProduct-form h1, .App .Body_Content .COMPONENT__AddProduct .inputProduct-form div, .App .Body_Content .COMPONENT__AddProduct .inputProduct-form button {
   display: -ms-grid;
   display: grid;
   -webkit-box-align: center;
@@ -114,7 +135,7 @@
   margin-bottom: var(--margin-topBottom);
 }
 
-.App .COMPONENT__Footer {
+.App .Body_Content .COMPONENT__Footer {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -128,76 +149,34 @@
   min-height: var(--footer_height);
 }
 
-.App .Body_Content {
-  position: relative;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  /* max-height: calc( 100vh - var(--headerFooter_height)); */
-  /* height: calc( 100vh - var(--headerFooter_height)); */
-  overflow-y: scroll;
-}
-
-.App .PAGE__HomePage {
-  /* height: 100%; */
-  /* overflow-y: scroll; */
-}
-
-.App .section {
-  /* min-height: 100vh; */
-}
-
-.App .topBottom_section {
-  /* min-height: calc(100vh - var(--headerFooter_height)); */
-}
-
-.App .signUpHere, .App .loginHere {
-  font-weight: bold;
-  color: var(--bgColor_indigo);
-}
-
-.App .signUpHere:hover, .App .loginHere:hover {
-  color: var(--bgColor_indigo_Hover);
-}
-
-.App .App-link {
-  color: #61dafb;
-}
-
 .App .cbm-border-bottom {
   border-bottom: 1px solid var(--light-gray);
 }
 
-.titleBasic {
-  text-align: center;
-  padding: 5px;
-}
-
-.btnStyle_clear, .btnStyle {
+.App .BTN__Clear, .App .BTN__Indigo {
   color: white;
   padding: var(--pixel_Y_1);
   border-radius: 5px;
 }
 
-.btnStyle {
+.App .BTN__Indigo {
   background-color: var(--bgColor_indigo);
 }
 
-.btnStyle:hover {
+.App .BTN__Indigo:hover {
   background-color: var(--bgColor_indigo_Hover);
 }
 
-.btnStyle_clear {
+.App .BTN__Clear {
   background-color: var(--bgColor_clear);
 }
 
-.btnStyle_clear:hover {
+.App .BTN__Clear:hover {
   background-color: var(--bgColor_clear_Hover);
 }
 
-/* HEADER */
+.App .titleBasic {
+  text-align: center;
+  padding: 5px;
+}
 /*# sourceMappingURL=App.css.map */
