@@ -13,43 +13,43 @@ import Typography from '@mui/material/Typography';
 
 
 
-export default function ProductCard({ product, page, index }){
+export default function ProductCard({ product, index }){
 
-  const dispatch = useDispatch();
-  const cartItems = useSelector(state => state.cartItems);
-  
-  const handleAddToCart = (product) => () => dispatch(addCartItem(cartItems, product));
-  const handleDeleteProduct = (product) => () => dispatch(removeCartItem(cartItems, product));
+    const dispatch = useDispatch();
+    const cartItems = useSelector(state => state.cartItems);
+    
+    const handleAddToCart = (product) => () => dispatch(addCartItem(cartItems, product));
+    const handleDeleteProduct = (product) => () => dispatch(removeCartItem(cartItems, product));
 
-  const handleUpdateProduct = (product) => {}
+    const handleUpdateProduct = (product) => {}
 
-  // product comes from the database!
-  product.id = index;
+    // product comes from the database!
+    product.id = index;
 
-  return (
-    <Card sx={{ maxWidth: 345 }}>
-      <CardMedia
-        component="img"
-        height="140"
-        // image="/static/images/cards/contemplative-reptile.jpg"
-        image={product.imageSrc}
-        alt={`Product ${product.name}`}
-      />
-      <CardContent>
-        <Typography gutterBottom variant="h5" component="div">
-          {product.productName}
-        </Typography>
-        <Typography variant="body2" color="text.secondary">
-          {product.description}
-        </Typography>
-      </CardContent>
-      <CardActions>
-        <Button id="addToCart" onClick={handleAddToCart(product)} size="small" >Add To Cart</Button>
-        <Button id="updateCartItem" onClick={handleUpdateProduct(product)} size="small">Update</Button>
-        <Button id="deleteCartItem" onClick={handleDeleteProduct(product)} size="small">Delete</Button>
-      </CardActions>
-    </Card>
-  );
+    return (
+        <Card sx={{ maxWidth: 345 }}>
+            <CardMedia
+                component="img"
+                height="140"
+                // image="/static/images/cards/contemplative-reptile.jpg"
+                image={product.imageSrc}
+                alt={`Product ${product.name}`}
+            />
+            <CardContent>
+                <Typography gutterBottom variant="h5" component="div">
+                    {product.productName}
+                </Typography>
+                <Typography variant="body2" color="text.secondary">
+                    {product.description}
+                </Typography>
+            </CardContent>
+            <CardActions>
+                <Button id="addToCart" onClick={handleAddToCart(product)} size="small" >Add To Cart</Button>
+                <Button id="updateCartItem" onClick={handleUpdateProduct(product)} size="small">Update</Button>
+                <Button id="deleteCartItem" onClick={handleDeleteProduct(product)} size="small">Delete</Button>
+            </CardActions>
+        </Card>
+    );
 
 }
 

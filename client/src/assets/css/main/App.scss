@@ -1,4 +1,4 @@
-.box{ border: 1px solid black;}
+// .box{ border: 1px solid black;}
 
 * {
     --light-border: rgb(234, 221, 255);
@@ -37,14 +37,15 @@
 }
 
 .App {
+
     display: flex;
     flex-direction: column;
 
     height: 100vh;
     overflow: hidden;
 
-
     .COMPONENT__Login , .COMPONENT__SignUp, .COMPONENT__AddProduct {
+
         display: flex;
         justify-content: center;
         align-items: center;
@@ -109,7 +110,9 @@
             }
         }
         .COMPONENT__AddProduct {
+
             .inputProduct-form{
+
                 display: flex;
                 justify-content: center;
                 flex-direction: column;
@@ -122,6 +125,7 @@
                 }
 
                 h1, div, button {
+                    
                     display: grid;
                     align-items: center;
                     

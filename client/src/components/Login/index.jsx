@@ -14,86 +14,86 @@ const formSubmitBtnStyles = `group relative w-full flex justify-center py-2 px-4
 
 export default function Login__COMP(props) {
 
-  const dispatch = useDispatch();
-  const handleClickHere = () => dispatch(setPageMethods.signUp());
+    const dispatch = useDispatch();
+    const handleClickHere = () => dispatch(setPageMethods.signUp());
 
-  // keeps track of when the username, email and password is updated
-  const [formState, setFormState] = useState({
-    email: '',
-    password: '',
-  });
-
-  // this comes from @apollo/client node module
-//   const [login, { error }] = useMutation(LOGIN_USER);
-
-  // update state based on form input changes
-  const handleChange = (event) => {
-    // whenever the event is changed, we're taking the 'name' property from the input in the form and it's corresponding value.
-    const { name, value } = event.target;
-    // once we've 'targeted' the property that's been changed, we update the form state with the new value
-    setFormState({
-      ...formState,
-      [name]: value,
+    // keeps track of when the username, email and password is updated
+    const [formState, setFormState] = useState({
+        email: '',
+        password: '',
     });
-  };
 
-  // ---- SUBMIT FORM ----
-  const handleFormSubmit = async (event) => {
-      console.log(event)
-    // event.preventDefault();
+    // this comes from @apollo/client node module
+    //   const [login, { error }] = useMutation(LOGIN_USER);
 
-    // try {
-    //   const { data } = await login({
-    //     variables: { ...formState },
-    //   });
-    //   Auth.login(data.login.token);
-    // } catch (e) {
-    //   console.error(e);
-    // }
-  };
-  
+    // update state based on form input changes
+    const handleChange = (event) => {
+        // whenever the event is changed, we're taking the 'name' property from the input in the form and it's corresponding value.
+        const { name, value } = event.target;
+        // once we've 'targeted' the property that's been changed, we update the form state with the new value
+        setFormState({
+            ...formState,
+            [name]: value,
+        });
+    };
 
-  return (
-    <>
-      <div id='Login' className="COMPONENT__Login ">
-        <div className="max-w-md w-full space-y-8">
-        <h4 className="card-header">Log In</h4>
+    // ---- SUBMIT FORM ----
+    const handleFormSubmit = async (event) => {
+            console.log(event)
+        // event.preventDefault();
 
-            {/* Logo */}
-            {/* <img
-                className="mx-auto h-12 w-auto"
-                src="https://tailwindui.com/img/logos/workflow-mark-indigo-600.svg"
-                alt="Workflow"
-            /> */}
+        // try {
+        //   const { data } = await login({
+        //     variables: { ...formState },
+        //   });
+        //   Auth.login(data.login.token);
+        // } catch (e) {
+        //   console.error(e);
+        // }
+    };
+    
 
-          {/* New Sign In form */}
-            <form className=" rounded-md shadow-sm space-y-px mt-8 space-y-6" action="#" onSubmit={handleFormSubmit} >  
-              <input
-                className={formInputStyles}
-                placeholder="Your email"
-                name="email"
-                type="email"
-                id="email"
-                value={formState.email}
-                onChange={handleChange}
-              />
-              <input
-                className={formInputStyles} 
-                placeholder="******"
-                name="password"
-                type="password"
-                id="password"
-                value={formState.password}
-                onChange={handleChange}
-              />
-              <button className={formSubmitBtnStyles} type="submit">
-                Submit
-              </button>
-          </form>              
-          <p className=" text-sm " >Don't have an account? Click <a className="signUpHere" href='#SignUp' onClick={handleClickHere} >here</a> to sign up.</p>
+    return (
+        <>
+            <div id='Login' className="COMPONENT__Login ">
+                <div className="max-w-md w-full space-y-8">
+                <h4 className="card-header">Log In</h4>
 
-        </div>
-      </div>
-    </>
-  )
+                    {/* Logo */}
+                    {/* <img
+                        className="mx-auto h-12 w-auto"
+                        src="https://tailwindui.com/img/logos/workflow-mark-indigo-600.svg"
+                        alt="Workflow"
+                    /> */}
+
+                    {/* New Sign In form */}
+                        <form className=" rounded-md shadow-sm space-y-px mt-8 space-y-6" action="#" onSubmit={handleFormSubmit} >  
+                            <input
+                                className={formInputStyles}
+                                placeholder="Your email"
+                                name="email"
+                                type="email"
+                                id="email"
+                                value={formState.email}
+                                onChange={handleChange}
+                            />
+                            <input
+                                className={formInputStyles} 
+                                placeholder="******"
+                                name="password"
+                                type="password"
+                                id="password"
+                                value={formState.password}
+                                onChange={handleChange}
+                            />
+                            <button className={formSubmitBtnStyles} type="submit">
+                                Submit
+                            </button>
+                    </form>              
+                    <p className=" text-sm " >Don't have an account? Click <a className="signUpHere" href='#SignUp' onClick={handleClickHere} >here</a> to sign up.</p>
+
+                </div>
+            </div>
+        </>
+    )
 }

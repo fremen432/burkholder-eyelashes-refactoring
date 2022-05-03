@@ -25,11 +25,11 @@ export default function AllProducts() {
             {/* Products container */}
             <div className="mt-6 grid grid-cols-1 gap-x-4 gap-y-10 sm:gap-x-6 sm:grid-cols-2 lg:grid-cols-4  lg:gap-y-0 lg:gap-x-8">
 
-              {products.map((product, index) => 
-                product.inStock ?
-                <ProductCard key={index} product={product} page={page} index={index} /> :
-                <></>
-              )}
+                {products.map((product, index) => 
+                    product.inStock ?
+                    <ProductCard key={index} product={product} index={index} /> :
+                    <></>
+                )}
 
             </div>
 
