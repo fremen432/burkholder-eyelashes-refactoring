@@ -20,32 +20,39 @@
     .COMPONENT__DesktopNavElements{
         display: flex;
     }
-    .HamburgerIcon{
+    
+    .NavBar .MobileView {
         display: none;
     }
-    .COMPONENT__HeaderCartIcon_Container{
-        display: block;
-    }
-    .COMPONENT__MobileNavElements{
-        display: none;
-    }
-    .COMPONENT__HeaderCartIcon_Container{
+
+    .NavBar .DesktopView {
         display: flex;
     }
 }
 
 /* Tablet */
 @media screen and (min-width: 768px){
-    .COMPONENT__DesktopNavElements{
+    .NavBar .DesktopView .NavLinks {
+
+    }
+    .DesktopNavElements{
         /* font-size: 13px; */
     }
+    .NavBar .DesktopView {
+        /* display: flex; */
+    }
+
 
 }
 
 /* Laptop */
 @media screen and (min-width: 1024px){
-    .COMPONENT__Header{
+    /* .COMPONENT__Header{ */
+    .NavBar{
         justify-content: space-around;
+    }
+    .DesktopView {
+        /* background-color: aqua; */
     }
 
 }

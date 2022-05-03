@@ -1,31 +1,30 @@
 import React, { Fragment, useState } from 'react'
 
+import './styles/styles.css'
+
 // Importing components
-import NavEl from './sub-components/NavLinks'
 import Logo from './sub-components/Logo'
+import NavLinks from './sub-components/NavLinks'
 import HamburgerIcon from './sub-components/Icon_Hamburger'
 import CartIcon from './sub-components/Icon_Cart'
 
 // import { useDispatch } from 'react-redux'
 
-export default function Header(props) {
-  const { 
-    page, 
-    setPageMethods, 
-    // cartItems,
-    // onAdd,
-    // onRemove
-   } = props; 
+export default function NavBar() {
   const [mobileNavOpen, setMobileNavOpen] = useState('start');
 
   const mobileNavToggle = () => {
     switch (mobileNavOpen) {
+
       case 'start':
         return setMobileNavOpen(false);
+
       case true:
         return setMobileNavOpen(false);
+
       case false:
         return setMobileNavOpen(true);
+
       default:
         break;
     }
@@ -35,34 +34,36 @@ export default function Header(props) {
   }
 
   return (
-    <div className="COMPONENT__Header cbm-border-bottom">
-      <div className="Header__Main ">
-        <div id="nav" className="Header_Left flex px-2 lg:px-0 ">
+    <div className="NavBar cbm-border-bottom">
 
-          {/* <Logo setPageMethods={setPageMethods} /> */}
+      <div className="DesktopView">
+        <div id="Desktop_nav" className="Header_Left flex px-2 lg:px-0 ">
+
           <Logo />
 
-          <NavEl 
-          page={page} 
-          setPageMethods={setPageMethods} 
+          <NavLinks 
           mobileNavToggle={mobileNavToggle} 
           mobileNavOpen={mobileNavOpen} 
           isMobileNav={false} 
           />
 
         </div>
-        <div id="header-controls" className="Header_Right ">
+        <div id="Desktop_header-controls" className="Header_Right ">
 
           {/* <SearchBar /> */}
           {/* <UserIconAndNotificationBell /> */}
+          <CartIcon />
 
-          <CartIcon 
-          setPageMethods={setPageMethods} 
-          // isMobileNav={false} 
-          // cartItems={cartItems} 
-          // onAdd={onAdd} 
-          // onRemove={onRemove} 
-          />
+        </div>
+      </div>
+
+      <div className="MobileView">
+        <div id="Mobile_nav" className="Header_Left flex px-2 lg:px-0 ">
+          <Logo />
+        </div>
+        <div id="Mobile_header-controls" className="Header_Right ">
+
+          <CartIcon />
 
           <HamburgerIcon 
           mobileNavOpen={mobileNavOpen} 
@@ -70,14 +71,14 @@ export default function Header(props) {
           />
 
         </div>
-      </div>
-        <NavEl 
-        page={page} 
-        setPageMethods={setPageMethods} 
+        <NavLinks 
+        mobileNavToggle={mobileNavToggle}
         mobileNavOpen={mobileNavOpen} 
         isMobileNav={true} 
-        mobileNavToggle={mobileNavToggle}
         />
+      </div>
+
     </div>
   )
 }
+

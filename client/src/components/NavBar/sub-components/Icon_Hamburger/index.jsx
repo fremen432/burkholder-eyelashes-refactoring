@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from 'react'
 
-export default function HamburgerIcon(props) {
-    const { mobileNavOpen, mobileNavToggle } = props;
+export default function HamburgerIcon({ mobileNavOpen, mobileNavToggle }) {
     const [isRotated, setIsRotated] = useState('start')
     
     const [isRotatedLine1, setIsRotatedLine1] = useState('start')
@@ -9,7 +8,6 @@ export default function HamburgerIcon(props) {
     const [isRotatedLine3, setIsRotatedLine3] = useState('start')
 
     useEffect(() => {
-        // if (mobileNavOpen == 'start') return console.log("mobileNavOpen = 'start'")
         if (mobileNavOpen == 'start') return;
         if (mobileNavOpen == true) return rotateToggle();
         if (mobileNavOpen == false) return rotateToggle();
@@ -18,6 +16,7 @@ export default function HamburgerIcon(props) {
     const rotateToggle = () => {
 
         switch (isRotated) {
+            
             case 'start':
                 setIsRotated(true);
                 setIsRotatedLine1('rotate_IN_Line1');

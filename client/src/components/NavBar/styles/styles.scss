@@ -1,0 +1,142 @@
+.NavBar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: column;
+    border-bottom: 1px solid var(--gray2);
+
+    .NavLinks {
+        color: var(--text-gray);
+        font-size: 14px;
+    }
+    .CartIcon {
+        // display: flex;
+        // background-color: purple;
+    }
+    .HamburgerIcon {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+    
+        height: 50px;
+        width: 50px;
+        cursor: pointer;
+        /* border: 1px solid var(--text-gray-hover); */
+        border-radius: 10px;
+
+        &:hover{
+            border: 1px solid var(--text-gray-hover);
+        }
+        &:focus {
+            background-color: var(--text-gray-hover);
+        }
+        .HamburgerLine{
+            position: relative;
+            display: block;
+            width: 20px;
+            height: 2px;
+        
+            background-color: var(--text-gray);
+        
+            margin-top: 2.5px;
+            margin-bottom: 2.5px;
+            /* padding: 1px; */
+        }
+        &:focus .HamburgerLine{
+            background-color: var(--text-gray-hover);
+        }
+
+
+
+    }
+    .Logo {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    
+        height: 50px;
+        width: 50px;
+    
+        img {
+            min-width: 50px;
+        }
+    }
+
+    .Header_Left, .Header_Right {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    
+        height: 100%;
+        margin-right: 25px;
+    }
+
+    .MobileView, .DesktopView {
+        justify-content: space-between;
+        align-items: center;
+        
+        width: 100%;
+        min-height: var(--header_height);
+        border-bottom: 1px solid var(--gray2);
+    }
+
+    .DesktopView {
+        display: none;
+
+        .NavLinks {
+            justify-content: center;
+            align-items: center;
+
+            .NavLink {
+                padding: 5px;
+                margin-left: 2vw;
+            }
+        }
+    }
+
+    .MobileView {
+        display: flex;
+
+        .Header_Right {
+
+            div {
+                margin-right: 15px ;
+                margin-left: 15px;
+            }
+        }
+
+        .NavLinks {
+            display: flex;
+
+            flex-direction: column;
+        
+            position: absolute;
+            z-index: 1;
+            top: var(--header_height);
+            max-height: 0px;
+            overflow-y: hidden;
+        
+            width: 100%;
+            border-bottom: 1px solid var(--gray2);
+
+            .NavLink {
+                width: 100%;
+                padding-top: 8px;
+                padding-bottom: 8px;
+            
+                background-color: white;
+                border-bottom: 1px solid var(--gray2);
+            
+                span { 
+                    margin-left: 30px; 
+                }
+            
+                &:focus { 
+                    background-color: var(--text-gray-hover); 
+                }
+            }
+        }
+    }
+
+}

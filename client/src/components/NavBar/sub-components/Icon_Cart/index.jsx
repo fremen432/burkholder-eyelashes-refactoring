@@ -8,7 +8,7 @@ export default function CartIcon() {
     const cartItems = useSelector(state => state.cartItems);
 
     return (
-        <div className="COMPONENT__HeaderCartIcon_Container" >
+        <div className="CartIcon" >
             <a 
             href="/#Cart" 
             onClick={() => dispatch(setPageMethods.cart())} 

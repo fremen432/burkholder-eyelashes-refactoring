@@ -15,7 +15,8 @@ export default function NavEl(props){
 
   const page = useSelector(state => state.page);
 
-  const basicClasses = 'box ' + ( isMobileNav == true ? 'MobileNavLink ' : 'DesktopNavLink ' )
+  // const basicClasses = 'box ' + ( isMobileNav == true ? 'NavLink ' : 'NavLink ' )
+  const basicClasses = `box NavLink `
 
   const navOnClicks = {
     home:         () => { dispatch(setPageMethods.home()); mobileNavToggle(); },
@@ -61,7 +62,7 @@ export default function NavEl(props){
       key={ el.name + ( isMobileNav == true ? '_mobile' : '_desktop' ) } 
       href={ el.ref } 
       onClick={ el.onClick }
-      className={ basicClasses } 
+      className={ basicClasses }
       >
         <span>{ el.name }</span>
       </a>
@@ -81,8 +82,8 @@ export default function NavEl(props){
     mobileNavOpen == true ? 'MobileNav_Closed ' : ''
 
   const getClasses = () => 
-    isMobileNav == true ? ('COMPONENT__MobileNavElements ' + openOrClosed ) :
-    isMobileNav == false ? 'COMPONENT__DesktopNavElements ' : ''
+    isMobileNav == true ? (`NavLinks ${openOrClosed}` ) :
+    isMobileNav == false ? 'NavLinks ' : ''
 
   return (
     <div id='NavElements' className={ getClasses() }>

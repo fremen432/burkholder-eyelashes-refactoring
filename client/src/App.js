@@ -37,44 +37,24 @@ export default function App() {
 
   return (
     <div className="App ">
-      <NavBar 
-        page={page} 
-      />
+
+      <NavBar page={page} />
+
       <div className="Body_Content box " >
         { 
-          page == 'home' ?
-          <HomePage 
-          page={page} 
-          /> :
+          page == 'home' ?          <HomePage page={page} /> :
 
-          page == 'allProducts' ?
-            <AllProducts 
-            page={page} 
-            /> :
+          page == 'allProducts' ?   <AllProducts page={page} /> :
 
-          page == 'cart' ?
-            <Cart 
-            page={page} 
-            /> :
+          page == 'cart' ?          <Cart page={page} /> :
 
-          page == 'addProduct' ?
-            <AddProduct 
-            page={page} 
-            /> :
+          page == 'addProduct' ?    <AddProduct page={page} /> :
 
-          page == 'login' ?
-            <Login__COMP 
-            page={page} 
-            /> :
+          page == 'login' ?         <Login__COMP page={page} /> :
 
-          page == 'signUp' ?
-            <SignUp__COMP 
-            page={page} 
-            /> :
+          page == 'signUp' ?        <SignUp__COMP page={page} /> :
 
-            <HomePage 
-            page={page} 
-            />
+          <HomePage page={page} />
         }
         <Footer />
       </div>

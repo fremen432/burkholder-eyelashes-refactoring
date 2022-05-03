@@ -1,0 +1,172 @@
+.NavBar {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  border-bottom: 1px solid var(--gray2);
+}
+
+.NavBar .NavLinks {
+  color: var(--text-gray);
+  font-size: 14px;
+}
+
+.NavBar .HamburgerIcon {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  height: 50px;
+  width: 50px;
+  cursor: pointer;
+  /* border: 1px solid var(--text-gray-hover); */
+  border-radius: 10px;
+}
+
+.NavBar .HamburgerIcon:hover {
+  border: 1px solid var(--text-gray-hover);
+}
+
+.NavBar .HamburgerIcon:focus {
+  background-color: var(--text-gray-hover);
+}
+
+.NavBar .HamburgerIcon .HamburgerLine {
+  position: relative;
+  display: block;
+  width: 20px;
+  height: 2px;
+  background-color: var(--text-gray);
+  margin-top: 2.5px;
+  margin-bottom: 2.5px;
+  /* padding: 1px; */
+}
+
+.NavBar .HamburgerIcon:focus .HamburgerLine {
+  background-color: var(--text-gray-hover);
+}
+
+.NavBar .Logo {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  height: 50px;
+  width: 50px;
+}
+
+.NavBar .Logo img {
+  min-width: 50px;
+}
+
+.NavBar .Header_Left, .NavBar .Header_Right {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  height: 100%;
+  margin-right: 25px;
+}
+
+.NavBar .MobileView, .NavBar .DesktopView {
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 100%;
+  min-height: var(--header_height);
+  border-bottom: 1px solid var(--gray2);
+}
+
+.NavBar .DesktopView {
+  display: none;
+}
+
+.NavBar .DesktopView .NavLinks {
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.NavBar .DesktopView .NavLinks .NavLink {
+  padding: 5px;
+  margin-left: 2vw;
+}
+
+.NavBar .MobileView {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.NavBar .MobileView .Header_Right div {
+  margin-right: 15px;
+  margin-left: 15px;
+}
+
+.NavBar .MobileView .NavLinks {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  position: absolute;
+  z-index: 1;
+  top: var(--header_height);
+  max-height: 0px;
+  overflow-y: hidden;
+  width: 100%;
+  border-bottom: 1px solid var(--gray2);
+}
+
+.NavBar .MobileView .NavLinks .NavLink {
+  width: 100%;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  background-color: white;
+  border-bottom: 1px solid var(--gray2);
+}
+
+.NavBar .MobileView .NavLinks .NavLink span {
+  margin-left: 30px;
+}
+
+.NavBar .MobileView .NavLinks .NavLink:focus {
+  background-color: var(--text-gray-hover);
+}
+/*# sourceMappingURL=styles.css.map */

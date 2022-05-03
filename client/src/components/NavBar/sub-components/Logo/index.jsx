@@ -7,9 +7,9 @@ export default function Logo() {
   const handleClick = () => { dispatch(setPageMethods.home()); }
 
   return (
-    <a href="/#Home" onClick={ handleClick } className="LogoAnchor box">
+    <a href="/#Home" onClick={ handleClick } className="Logo box">
       <img
-        className="LogoImg box"
+        className="box"
         src={logoSmall}
         alt="Company Logo"
       />
