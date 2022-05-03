@@ -64,6 +64,11 @@
   position: relative;
 }
 
+.App .COMPONENT__ContactUs {
+  width: 100%;
+  min-height: calc(100vh - var(--header_height) - var(--footer_height));
+}
+
 .App .COMPONENT__Footer {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -112,11 +117,6 @@
 .App .SECTION__SinglePage {
   min-height: calc(100vh - var(--header_height) - var(--footer_height));
   overflow-y: scroll;
-}
-
-.App .bottomSection {
-  width: 100%;
-  min-height: calc(100vh - var(--header_height) - var(--footer_height));
 }
 
 .App .Body_Content {

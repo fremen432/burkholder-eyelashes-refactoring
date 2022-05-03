@@ -56,7 +56,6 @@
       
         min-height: calc(100vh - var(--header_height) - var(--footer_height));
       }
-
       .section, .COMPONENT__Hero {
         width: 100%;
         min-height: calc(100vh - var(--header_height));
@@ -66,8 +65,11 @@
         background-color: var(--text-gray-900);
         position: relative;
       }
+      .COMPONENT__ContactUs {
+        width: 100%;
+        min-height: calc(100vh - var(--header_height) - var(--footer_height));
+      }
 
-      
 
       .COMPONENT__Footer{
         display: flex;
@@ -117,10 +119,6 @@
       }
       .COMPONENT__CartItems{
       
-      }
-      .bottomSection{
-        width: 100%;
-        min-height: calc(100vh - var(--header_height) - var(--footer_height));
       }
       
       .Body_Content{
