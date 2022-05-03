@@ -7,8 +7,7 @@ import { useSelector } from 'react-redux';
 import ProductCard from '../../components/ProductCard';
 
 
-export default function AllProducts(props) {
-  const { page } = props;
+export default function AllProducts() {
 
     // the 'state' parameter comes from the global react-redux 'store' property we defined in the application's index.js
     // the state.products comes from reducers index.js

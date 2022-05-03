@@ -18,7 +18,6 @@ import AllProducts from './components/All-Products'
 import Cart from "./components/Cart";
 import AddProduct from "./components/Add-Product";
 
-
 // CSS imports
 import './assets/css/main/App.css'
 import './assets/css/utils/MediaQueries.css'
@@ -26,38 +25,38 @@ import './assets/css/utils/Animations.css'
 
 export default function App() {
 
-  const page = useSelector( state => state.pageMethods );
+    const page = useSelector( state => state.pageMethods );
 
-  const dispatch = useDispatch();
+    const dispatch = useDispatch();
 
-  // every time the 'dispatch' state is changed, it will call () => dispatch(getProducts()) to get all products
-  useEffect(() => {
-    dispatch(getProducts());
-  }, [dispatch])
+    // every time the 'dispatch' state is changed, it will call () => dispatch(getProducts()) to get all products
+    useEffect(() => {
+        dispatch(getProducts());
+    }, [dispatch])
 
-  return (
-    <div className="App ">
+    return (
+        <div className="App ">
 
-      <NavBar page={page} />
+            <NavBar page={page} />
 
-      <div className="Body_Content box " >
-        { 
-          page == 'home' ?          <HomePage page={page} /> :
+            <div className="Body_Content box " >
+                { 
+                    page == 'home' ?          <HomePage /> :
 
-          page == 'allProducts' ?   <AllProducts page={page} /> :
+                    page == 'allProducts' ?   <AllProducts /> :
 
-          page == 'cart' ?          <Cart page={page} /> :
+                    page == 'cart' ?          <Cart /> :
 
-          page == 'addProduct' ?    <AddProduct page={page} /> :
+                    page == 'addProduct' ?    <AddProduct /> :
 
-          page == 'login' ?         <Login__COMP page={page} /> :
+                    page == 'login' ?         <Login__COMP /> :
 
-          page == 'signUp' ?        <SignUp__COMP page={page} /> :
+                    page == 'signUp' ?        <SignUp__COMP /> :
 
-          <HomePage page={page} />
-        }
-        <Footer />
-      </div>
-    </div>
-  );
+                    <HomePage />
+                }
+                <Footer />
+            </div>
+        </div>
+    );
 }
