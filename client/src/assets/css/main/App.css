@@ -59,6 +59,10 @@
   min-height: calc(100vh - var(--header_height));
 }
 
+.App .SECTION__SinglePage, .App .COMPONENT__Cart {
+  min-height: calc(100vh - var(--header_height) - var(--footer_height));
+}
+
 .App .COMPONENT__Hero {
   background-color: var(--text-gray-900);
   position: relative;
@@ -77,20 +81,6 @@
 .App .COMPONENT__ContactUs {
   width: 100%;
   min-height: calc(100vh - var(--header_height) - var(--footer_height));
-}
-
-.App .COMPONENT__Footer {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  /* flex-direction: column; */
-  min-height: var(--footer_height);
 }
 
 .App .COMPONENT__AddProduct .inputProduct-form {
@@ -124,9 +114,18 @@
   margin-bottom: var(--margin-topBottom);
 }
 
-.App .SECTION__SinglePage {
-  min-height: calc(100vh - var(--header_height) - var(--footer_height));
-  overflow-y: scroll;
+.App .COMPONENT__Footer {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  /* flex-direction: column; */
+  min-height: var(--footer_height);
 }
 
 .App .Body_Content {

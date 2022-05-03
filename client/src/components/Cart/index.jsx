@@ -8,7 +8,7 @@ export default function Cart() {
   const onCheckout = () => alert('checkout complete');
 
   return (
-    <div id="Cart" className="COMPONENT__Cart_Body SECTION__SinglePage box">
+    <div id="Cart" className="COMPONENT__Cart box">
       <div className="max-w-2xl px-4 pt-16 pb-24 mx-auto sm:px-6 lg:max-w-7xl lg:px-8">
         <h1 className="text-3xl font-extrabold tracking-tight text-gray-900 sm:text-4xl">Shopping Cart</h1>
 

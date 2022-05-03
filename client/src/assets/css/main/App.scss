@@ -38,178 +38,174 @@
 
 }
 
-// .Main_Styles{
   
-  .App {
+.App {
     display: flex;
     flex-direction: column;
-  
+
     height: 100vh;
     overflow: hidden;
 
     // .Body_Content {
 
-      .COMPONENT__Login , .COMPONENT__SignUp, .COMPONENT__AddProduct{
-        display: flex;
-        justify-content: center;
-        align-items: center;
-      
-        min-height: calc(100vh - var(--header_height) - var(--footer_height));
-      }
-      .section, .COMPONENT__Hero, .COMPONENT__FeaturedProducts {
-        width: 100%;
-        min-height: calc(100vh - var(--header_height));
-      }
-
-      .COMPONENT__Hero {
-        background-color: var(--text-gray-900);
-        position: relative;
-      }
-      .COMPONENT__AboutUs{
-        display: flex;
-        flex-direction: column;
-      }
-      .COMPONENT__FeaturedProducts {
-
-      }
-      .COMPONENT__ContactUs {
-        width: 100%;
-        min-height: calc(100vh - var(--header_height) - var(--footer_height));
-      }
-
-
-      .COMPONENT__Footer{
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        /* flex-direction: column; */
-      
-        min-height: var(--footer_height);
-      }
-
-      .COMPONENT__AddProduct {
-
-        .inputProduct-form{
-          display: flex;
-          justify-content: center;
-          flex-direction: column;
-  
-          width: 100%;
-          padding: var(--marginX-1);
-  
-          .form-pair {
-            grid-template-columns: 50% 50%;
-          }
-  
-          h1, div, button {
-            display: grid;
+        .COMPONENT__Login , .COMPONENT__SignUp, .COMPONENT__AddProduct{
+            display: flex;
+            justify-content: center;
             align-items: center;
-            
-            width: 100%;
-          
-            margin-top: var(--margin-topBottom);
-            margin-bottom: var(--margin-topBottom);
-          }
+
+            min-height: calc(100vh - var(--header_height) - var(--footer_height));
         }
-      }
-      
-      .COMPONENT__AllProducts{
-      
-      }
-      
-      .SECTION__SinglePage{
-        min-height: calc(100vh - var(--header_height) - var(--footer_height));
-        overflow-y: scroll;
-      }
-      
-      .COMPONENT__Cart_Body{
-      }
-      .COMPONENT__CartItems{
-      
-      }
-      
-      .Body_Content{
-        position: relative;
-      
-        display: flex;
-        flex-direction: column;
-      
-        /* max-height: calc( 100vh - var(--headerFooter_height)); */
-      
-        /* height: calc( 100vh - var(--headerFooter_height)); */
-        overflow-y: scroll;
-      }
-      
-      .PAGE__HomePage{
-        // display: flex;
-        // justify-content: center;
-        // align-items: center;
-        // flex-direction: column;
-      
-        /* height: 100%; */
-        /* overflow-y: scroll; */
-      }
-      
-      
-      .section{
-        /* min-height: 100vh; */
-      }
-      .topBottom_section{
-        /* min-height: calc(100vh - var(--headerFooter_height)); */
-      }
-      
-      .signUpHere, .loginHere{
-        font-weight: bold;
-        color: var(--bgColor_indigo)
-      }
-      .signUpHere:hover, .loginHere:hover{
-        color: var(--bgColor_indigo_Hover)
-      }
-      
-      .App-link {
-        color: #61dafb;
-      }
-      
-      .cbm-border-bottom {  
-        border-bottom: 1px solid var(--light-gray)
-      }
-      
-      .COMP_Hero{
-      
-      }
+        .section, .COMPONENT__Hero, .COMPONENT__FeaturedProducts {
+            width: 100%;
+            min-height: calc(100vh - var(--header_height));
+        }
+
+        .SECTION__SinglePage, .COMPONENT__Cart {
+            min-height: calc(100vh - var(--header_height) - var(--footer_height));
+            // overflow-y: scroll;
+        }
+
+
+        .COMPONENT__Hero {
+            background-color: var(--text-gray-900);
+            position: relative;
+        }
+        .COMPONENT__AboutUs{
+            display: flex;
+            flex-direction: column;
+        }
+        .COMPONENT__FeaturedProducts {
+
+        }
+        .COMPONENT__ContactUs {
+            width: 100%;
+            min-height: calc(100vh - var(--header_height) - var(--footer_height));
+        }
+        .COMPONENT__AllProducts{
+
+        }
+        .COMPONENT__Cart{
+
+            .COMPONENT__CartItems{
+        
+            }
+            .COMPONENT__OrderSummary {
+
+            }
+        }
+        .COMPONENT__AddProduct {
+            .inputProduct-form{
+                display: flex;
+                justify-content: center;
+                flex-direction: column;
+
+                width: 100%;
+                padding: var(--marginX-1);
+
+                .form-pair {
+                    grid-template-columns: 50% 50%;
+                }
+
+                h1, div, button {
+                    display: grid;
+                    align-items: center;
+                    
+                    width: 100%;
+                
+                    margin-top: var(--margin-topBottom);
+                    margin-bottom: var(--margin-topBottom);
+                }
+            }
+        }
+
+
+
+        .COMPONENT__Footer{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            /* flex-direction: column; */
+            
+            min-height: var(--footer_height);
+        }
+
+        .Body_Content{
+            position: relative;
+            
+            display: flex;
+            flex-direction: column;
+            
+            /* max-height: calc( 100vh - var(--headerFooter_height)); */
+            /* height: calc( 100vh - var(--headerFooter_height)); */
+            overflow-y: scroll;
+        }
+        
+        .PAGE__HomePage{
+            // display: flex;
+            // justify-content: center;
+            // align-items: center;
+            // flex-direction: column;
+            
+            /* height: 100%; */
+            /* overflow-y: scroll; */
+        }
+        
+        
+        .section{
+            /* min-height: 100vh; */
+        }
+        .topBottom_section{
+            /* min-height: calc(100vh - var(--headerFooter_height)); */
+        }
+        
+        .signUpHere, .loginHere{
+            font-weight: bold;
+            color: var(--bgColor_indigo);
+
+            &:hover {
+                color: var(--bgColor_indigo_Hover)
+            }
+        }
+        
+        .App-link {
+            color: #61dafb;
+        }
+        
+        .cbm-border-bottom {  
+            border-bottom: 1px solid var(--light-gray)
+        }
+        
     // }
-    
-  }
-  
-  .titleBasic{
+
+}
+
+.titleBasic{
     text-align: center;
     padding: 5px;
-  
-  }
-  
-  .btnStyle_clear, .btnStyle{
+
+}
+
+.btnStyle_clear, .btnStyle{
     color: white;
     padding: var(--pixel_Y_1) ;
     border-radius: 5px;
-  }
-  
-  .btnStyle{ 
+}
+
+.btnStyle{ 
     background-color: var(--bgColor_indigo); 
 
     &:hover{ 
-      background-color: var(--bgColor_indigo_Hover); 
+        background-color: var(--bgColor_indigo_Hover); 
     }
-  }
-  
-  .btnStyle_clear{ 
+}
+
+.btnStyle_clear{ 
     background-color: var(--bgColor_clear);
 
     &:hover{ 
-      background-color: var(--bgColor_clear_Hover);
+        background-color: var(--bgColor_clear_Hover);
     }
-  }
-
-// }
+}
 
 
 /* HEADER */
