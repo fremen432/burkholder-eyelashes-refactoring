@@ -2,7 +2,7 @@ import { people } from "../../assets/js/data"
 
 export default function AboutUs() {
     return (
-        <div id="AboutUs" className="section SECTION__AboutUs bg-white max-w-7xl mx-auto py-12 px-4 text-center sm:px-6 lg:px-8 lg:py-24 space-y-12">
+        <div id="AboutUs" className="COMPONENT__AboutUs bg-white max-w-7xl mx-auto py-12 px-4 text-center sm:px-6 lg:px-8 lg:py-24 space-y-12">
             <div className="space-y-5 sm:mx-auto sm:max-w-xl sm:space-y-4 lg:max-w-5xl">
                 <h2 className="text-3xl font-extrabold tracking-tight sm:text-4xl">Meet our team</h2>
                 <p className="text-xl text-gray-500">
