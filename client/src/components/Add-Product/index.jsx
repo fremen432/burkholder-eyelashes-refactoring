@@ -39,10 +39,10 @@ export default function Form() {
     // const getFiles = (files) => this.setState
 
   return (
-    <div id="Add-Product" >
-        <form className="inputProduct-form" onSubmit={ e => handleSubmit(e) }>
+    <div id="Add-Product" className="COMPONENT__AddProduct ">
+        <form className="inputProduct-form box" onSubmit={ e => handleSubmit(e) }>
             
-            <h1 className="titleBasic box">Insert a Product!</h1>
+            <h1 className="titleBasic">Insert a Product!</h1>
 
             <div className="form-pair" >
                 <p className="input-label">Creator Name</p>
@@ -107,6 +107,7 @@ export default function Form() {
 
             <br />
             <button className="btnStyle" type="submit">SUBMIT</button>
+            
             <br />
             <button className="btnStyle_clear" onClick={e => clear(e)}>Clear</button>
 

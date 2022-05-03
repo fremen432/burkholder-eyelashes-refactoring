@@ -38,9 +38,10 @@
       -ms-flex-direction: column;
           flex-direction: column;
   height: 100vh;
+  overflow: hidden;
 }
 
-.App .COMPONENT__Login, .App .COMPONENT__SignUp {
+.App .COMPONENT__Login, .App .COMPONENT__SignUp, .App .COMPONENT__AddProduct {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -51,6 +52,37 @@
       -ms-flex-align: center;
           align-items: center;
   min-height: calc(100vh - var(--header_height) - var(--footer_height));
+}
+
+.App .COMPONENT__AddProduct .inputProduct-form {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  width: 100%;
+  padding: var(--marginX-1);
+}
+
+.App .COMPONENT__AddProduct .inputProduct-form .form-pair {
+  -ms-grid-columns: 50% 50%;
+      grid-template-columns: 50% 50%;
+}
+
+.App .COMPONENT__AddProduct .inputProduct-form h1, .App .COMPONENT__AddProduct .inputProduct-form div, .App .COMPONENT__AddProduct .inputProduct-form button {
+  display: -ms-grid;
+  display: grid;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 100%;
+  margin-top: var(--margin-topBottom);
+  margin-bottom: var(--margin-topBottom);
 }
 
 .App .section {
@@ -83,19 +115,6 @@
 }
 
 .App .PAGE__HomePage {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
   /* height: 100%; */
   /* overflow-y: scroll; */
 }
@@ -150,33 +169,6 @@
 
 .App .cbm-border-bottom {
   border-bottom: 1px solid var(--light-gray);
-}
-
-.App .inputProduct-form {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  padding-left: var(--marginX-1);
-  padding-right: var(--marginX-1);
-}
-
-.App .form-pair {
-  display: -ms-grid;
-  display: grid;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -ms-grid-columns: 50% 50%;
-      grid-template-columns: 50% 50%;
-  margin-top: var(--margin-topBottom);
-  margin-bottom: var(--margin-topBottom);
 }
 
 .titleBasic {
