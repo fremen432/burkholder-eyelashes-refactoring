@@ -5,7 +5,7 @@ import ProductCard from '../../components/ProductCard';
 export default function FeaturedProducts(props) {
   const { page } = props;
   return (
-      <div id="Featured" className="section SECTION__Products max-w-2xl mx-auto py-16 px-4 sm:py-24 sm:px-6 lg:max-w-7xl lg:px-8">
+      <div id="Featured" className="COMPONENT__FeaturedProducts max-w-2xl mx-auto py-16 px-4 sm:py-24 sm:px-6 lg:max-w-7xl lg:px-8">
         <div className="md:flex md:items-center md:justify-between">
           <h2 className="text-2xl font-extrabold tracking-tight text-gray-900 uppercase">Featured Products</h2>
         </div>

@@ -56,7 +56,7 @@
       
         min-height: calc(100vh - var(--header_height) - var(--footer_height));
       }
-      .section, .COMPONENT__Hero {
+      .section, .COMPONENT__Hero, .COMPONENT__FeaturedProducts {
         width: 100%;
         min-height: calc(100vh - var(--header_height));
       }
@@ -68,6 +68,9 @@
       .COMPONENT__AboutUs{
         display: flex;
         flex-direction: column;
+      }
+      .COMPONENT__FeaturedProducts {
+
       }
       .COMPONENT__ContactUs {
         width: 100%;
