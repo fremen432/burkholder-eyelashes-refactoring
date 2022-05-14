@@ -3,10 +3,10 @@ import React, { Fragment, useState } from "react";
 import "./styles/styles.css";
 
 // Importing components
-import Logo from "./sub-components/Logo";
-import NavLinks from "./sub-components/NavLinks";
-import HamburgerIcon from "./sub-components/Icon_Hamburger";
-import CartIcon from "./sub-components/Icon_Cart";
+import Logo from "./sub-components/Logo.jsx";
+import NavLinks from "./sub-components/NavLinks.jsx";
+import HamburgerIcon from "./sub-components/Icon_Hamburger.jsx";
+import CartIcon from "./sub-components/Icon_Cart.jsx";
 
 // import { useDispatch } from 'react-redux'
 

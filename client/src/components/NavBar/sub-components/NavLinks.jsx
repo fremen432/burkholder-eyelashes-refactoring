@@ -1,6 +1,6 @@
-import Auth from "../../../../assets/js/utils/auth";
+import Auth from "../../../assets/js/utils/auth";
 import { useSelector, useDispatch } from "react-redux";
-import { setPageMethods } from "../../../../state management/actions/pageMethods";
+import { setPageMethods } from "../../../state management/actions/pageMethods";
 
 const logout = (event) => {
 	event.preventDefault();

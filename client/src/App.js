@@ -8,14 +8,14 @@ import { getProducts } from "./state management/actions/products";
 // import { addCartItem, removeCartItem } from './actions/cartItems'
 
 // Component Imports
-import NavBar from "./components/NavBar";
+import NavBar from "./components/NavBar/NavBar";
 import Footer from "./components/Footer";
 
 import HomePage from "./components/HomePage";
 import Login__COMP from "./components/Login";
 import SignUp__COMP from "./components/SignUp";
 import AllProducts from "./components/All-Products";
-import Cart from "./components/Cart";
+import Cart from "./components/Cart/Cart";
 import AddProduct from "./components/Add-Product";
 
 // CSS imports
