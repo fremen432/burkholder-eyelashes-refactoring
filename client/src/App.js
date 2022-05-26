@@ -11,12 +11,13 @@ import { getProducts } from "./state management/actions/products";
 import NavBar from "./components/NavBar/NavBar";
 import Footer from "./components/Footer";
 
-import HomePage from "./components/HomePage";
-import Login__COMP from "./components/Login";
-import SignUp__COMP from "./components/SignUp";
-import AllProducts from "./components/All-Products";
-import Cart from "./components/Cart/Cart";
-import AddProduct from "./components/Add-Product";
+import Login__COMP from "./Pages/SignIn_Login/LogIn";
+import SignUp__COMP from "./Pages/SignIn_Login/SignUp";
+
+import PAGE_Home from "./Pages/Homepage/PAGE_Home";
+import PAGE_AllProducts from "./Pages/Products/PAGE_AllProducts";
+import PAGE_Cart from "./Pages/Cart/PAGE_Cart";
+import PAGE_AddProduct from "./Pages/AddProducts/PAGE_AddProduct.jsx";
 
 // CSS imports
 import "./assets/css/main/App.css";
@@ -39,19 +40,19 @@ export default function App() {
 
 			<div className="Body_Content box ">
 				{page == "home" ? (
-					<HomePage />
+					<PAGE_Home />
 				) : page == "allProducts" ? (
-					<AllProducts />
+					<PAGE_AllProducts />
 				) : page == "cart" ? (
-					<Cart />
+					<PAGE_Cart />
 				) : page == "addProduct" ? (
-					<AddProduct />
+					<PAGE_AddProduct />
 				) : page == "login" ? (
 					<Login__COMP />
 				) : page == "signUp" ? (
 					<SignUp__COMP />
 				) : (
-					<HomePage />
+					<PAGE_Home />
 				)}
 				<Footer />
 			</div>

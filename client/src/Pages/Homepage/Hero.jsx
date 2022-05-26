@@ -1,6 +1,6 @@
 import React from "react";
 import { useSelector, useDispatch } from "react-redux";
-import { setPageMethods } from "../state management/actions/pageMethods";
+import { setPageMethods } from "../../state management/actions/pageMethods";
 
 export default function Hero(props) {
 	const dispatch = useDispatch();

@@ -9,7 +9,7 @@ import { useDispatch } from "react-redux";
 import {
 	addCartItem,
 	removeCartItem,
-} from "../state management/actions/cartItems.js";
+} from "../../state management/actions/cartItems.js";
 
 import Box from "@mui/material/Box";
 import InputLabel from "@mui/material/InputLabel";

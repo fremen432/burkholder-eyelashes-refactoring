@@ -5,7 +5,8 @@ import {
 	QuestionMarkCircleIcon,
 	XIcon,
 } from "@heroicons/react/solid";
-import { CartItem } from "../CartItems";
+// import { CartItem } from "../CartItems";
+import { CartItem } from "./CartItems";
 import { useSelector } from "react-redux";
 
 export default function Cart() {

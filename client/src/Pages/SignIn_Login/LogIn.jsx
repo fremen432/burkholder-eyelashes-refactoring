@@ -1,31 +1,29 @@
 import React, { useState } from "react";
 // import { useMutation } from '@apollo/client';
-// import { ADD_USER } from '../utils/mutation';
+// import { LOGIN_USER } from '../utils/mutation';
 
 // import Auth from '../utils/auth';
 
 import { useDispatch, useSelector } from "react-redux";
-import { setPageMethods } from "../state management/actions/pageMethods";
+import { setPageMethods } from "../../state management/actions/pageMethods";
 
 import { LockClosedIcon } from "@heroicons/react/solid";
 
 const formInputStyles = `appearance-none rounded-none relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 focus:z-10 sm:text-sm`;
 const formSubmitBtnStyles = `group relative w-full flex justify-center py-2 px-4 border border-transparent text-sm font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500`;
 
-export default function SignUp__COMP() {
+export default function Login__COMP(props) {
 	const dispatch = useDispatch();
-	const handleClickHere = () => dispatch(setPageMethods.login());
+	const handleClickHere = () => dispatch(setPageMethods.signUp());
 
 	// keeps track of when the username, email and password is updated
 	const [formState, setFormState] = useState({
-		username: "",
 		email: "",
 		password: "",
-		// role: '',
 	});
 
 	// this comes from @apollo/client node module
-	//   const [addUser, { error }] = useMutation(ADD_USER);
+	//   const [login, { error }] = useMutation(LOGIN_USER);
 
 	// update state based on form input changes
 	const handleChange = (event) => {
@@ -40,17 +38,14 @@ export default function SignUp__COMP() {
 
 	// ---- SUBMIT FORM ----
 	const handleFormSubmit = async (event) => {
-		console.log("this works");
-
+		console.log(event);
 		// event.preventDefault();
-		// // console.log("this works");
 
 		// try {
-		//   const { data } = await addUser({
+		//   const { data } = await login({
 		//     variables: { ...formState },
 		//   });
-		//   console.log(data);
-		// //   Auth.login(data.addUser.token);
+		//   Auth.login(data.login.token);
 		// } catch (e) {
 		//   console.error(e);
 		// }
@@ -58,34 +53,23 @@ export default function SignUp__COMP() {
 
 	return (
 		<>
-			<div className="COMPONENT__SignUp ">
+			<div id="Login" className="COMPONENT__Login ">
 				<div className="max-w-md w-full space-y-8">
-					<h4 className="card-header">Sign Up</h4>
+					<h4 className="card-header">Log In</h4>
 
 					{/* Logo */}
-					<div>
-						{/* <img
-                            className="mx-auto h-12 w-auto"
-                            src="https://tailwindui.com/img/logos/workflow-mark-indigo-600.svg"
-                            alt="Workflow"
-                        /> */}
-					</div>
+					{/* <img
+                        className="mx-auto h-12 w-auto"
+                        src="https://tailwindui.com/img/logos/workflow-mark-indigo-600.svg"
+                        alt="Workflow"
+                    /> */}
 
-					{/* New Signup form */}
+					{/* New Sign In form */}
 					<form
 						className=" rounded-md shadow-sm space-y-px mt-8 space-y-6"
 						action="#"
 						onSubmit={handleFormSubmit}
 					>
-						<input
-							className={formInputStyles}
-							placeholder="Your username"
-							name="username"
-							type="username"
-							id="username"
-							value={formState.username}
-							onChange={handleChange}
-						/>
 						<input
 							className={formInputStyles}
 							placeholder="Your email"
@@ -104,29 +88,20 @@ export default function SignUp__COMP() {
 							value={formState.password}
 							onChange={handleChange}
 						/>
-						{/* <input
-                                className={formInputStyles} 
-                                placeholder="Your role (1 or 2)"
-                                name="role"
-                                type="role"
-                                id="role"
-                                value={formState.role}
-                                onChange={handleChange}
-                            /> */}
 						<button className={formSubmitBtnStyles} type="submit">
 							Submit
 						</button>
 					</form>
 					<p className=" text-sm ">
-						Already have an account? Click{" "}
+						Don't have an account? Click{" "}
 						<a
-							className="loginHere"
-							href="#Login"
+							className="signUpHere"
+							href="#SignUp"
 							onClick={handleClickHere}
 						>
 							here
 						</a>{" "}
-						to login.
+						to sign up.
 					</p>
 				</div>
 			</div>

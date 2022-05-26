@@ -4,9 +4,10 @@ import React, { useState } from "react";
 // this is to keep track of the state
 import { useSelector } from "react-redux";
 
-import ProductCard from "./ProductCard/ProductCard";
+// import ProductCard from "./ProductCard/ProductCard";
+import ProductCard from "../../components/ProductCard/ProductCard";
 
-export default function AllProducts() {
+export default function PAGE_AllProducts() {
 	// the 'state' parameter comes from the global react-redux 'store' property we defined in the application's index.js
 	// the state.products comes from reducers index.js
 	const products = useSelector((state) => state.products);
